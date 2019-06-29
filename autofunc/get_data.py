@@ -29,7 +29,7 @@ def get_data(file):
     """
 
     # Read in dataset
-    store_data = pd.read_csv(os.path.expanduser(file), header=None)
+    store_data = pd.read_csv(os.path.expanduser(file))
     store_data.head()
 
     # Convert dataset to a list

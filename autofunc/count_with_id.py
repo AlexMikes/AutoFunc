@@ -7,7 +7,7 @@ to the confidence metric in association rules (# of occurrences / total occurren
 
 import csv
 
-def count_stuff(filename):
+def count_with_id(filename, id_in = False):
 
     """
         Counts instances and sorts them by prevalence
@@ -34,37 +34,37 @@ def count_stuff(filename):
     counts = {}
 
     with open(filename, encoding='utf-8-sig') as input_file:
-
-        csvreader = csv.reader(input_file)
-
-        # This skips the first row of the CSV file.
-        # csvreader.next() also works in Python 2.
-        next(csvreader)
-
         for row in csv.reader(input_file, delimiter=','):
-
 
             # By convention, the first column is the component and the second column is the function and/or flow
             comp = row[0]
             func = row[1]
 
-            # Create a dictionary with a count of instances of each component
-            if comp not in counts:
-                counts[comp] = 1
-            else:
-                counts[comp] += 1
+            if id_in:
+                id = row[2]
 
-            # Create a dictionary that tracks the number of times a component has a function and/or flow
-            if comp not in combos:
-                combos[comp] = {}
-
-                combos[comp][func] = 1
-
-            else:
-                if func not in combos[comp]:
-                    combos[comp][func] = 1
+                if id is not id_in:
+                    continue
                 else:
-                    combos[comp][func] += 1
+
+
+                    # Create a dictionary with a count of instances of each component
+                    if comp not in counts:
+                        counts[comp] = 1
+                    else:
+                        counts[comp] += 1
+
+                    # Create a dictionary that tracks the number of times a component has a function and/or flow
+                    if comp not in combos:
+                        combos[comp] = {}
+
+                        combos[comp][func] = 1
+
+                    else:
+                        if func not in combos[comp]:
+                            combos[comp][func] = 1
+                        else:
+                            combos[comp][func] += 1
 
     # (1) Convert the dictionary of a dictionary to a dictionary of lists for sorting then (2) divide the functions
     # and/or flows for each component by the total number of component instances to get the percentage
