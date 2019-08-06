@@ -38,6 +38,17 @@ def get_data(file):
     for i in range(len(store_data)):
         records.append([str(store_data.values[i, j]) for j in range(len(store_data.columns))])
 
-    return store_data, records
+
+
+    store_data_no_ids = store_data[['comp', 'func']].copy()
+
+    records_no_ids = []
+
+    for i in range(len(store_data_no_ids)):
+        records_no_ids.append([str(store_data_no_ids.values[i, j]) for j in range(len(store_data_no_ids.columns))])
+
+
+
+    return store_data, records, store_data_no_ids, records_no_ids
 
 

@@ -39,7 +39,7 @@ def find_associations(store_data, records, support=0.0003, confidence=0.01, lift
 
 
     # Run apyori to get association rules
-    association_rules=apriori(records, min_support=support, min_confidence=confidence, min_lift=lift, min_length=0, max_length=len(store_data.columns))
+    association_rules=apriori(records, min_support=support, min_confidence=confidence, min_lift=lift, min_length=0, max_length=2)
 
     # Convert to iterable format
     association_results=list(association_rules)
@@ -52,7 +52,7 @@ def find_associations(store_data, records, support=0.0003, confidence=0.01, lift
     ls = []
 
     # Association Rule head is the component(first column of csv)
-    heads = list(store_data[0])
+    heads = list(store_data['comp'])
 
     # Loop through list of results from Apyori library
     for e in association_results:

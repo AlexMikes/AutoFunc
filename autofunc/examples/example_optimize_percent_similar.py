@@ -9,7 +9,8 @@ import matplotlib.pyplot as plt
 
 # Dataset used for data mining
 script_dir = os.path.dirname(__file__)
-file1 = os.path.join(script_dir, '../assets/bladeCombined_id.csv')
+# file1 = os.path.join(script_dir, '../assets/bladeCombined_id.csv')
+file1 = os.path.join(script_dir, '../assets/all_products_id_autofunc.csv')
 file2 = os.path.join(script_dir, '../assets/jigsawQuery_headers.csv')
 
 input_data = pd.read_csv(file1)

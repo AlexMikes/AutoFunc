@@ -9,7 +9,7 @@ import os.path
 
 # Dataset used for data mining
 script_dir = os.path.dirname(__file__)
-file1 = os.path.join(script_dir, '../assets/bladeCombined.csv')
+file1 = os.path.join(script_dir, '../assets/bladeCombined_id.csv')
 
 # Convert file to data frame and list
 store_data, records = get_data(file1)
@@ -18,10 +18,10 @@ store_data, records = get_data(file1)
 conf_results, results = find_associations(store_data, records)
 
 # Use a threshold to get the top XX% of confidence values
-thresh_results = get_top_results(conf_results, 0.7)
+thresh_results = get_top_results(conf_results, 0.69)
 
 # Use a known product for verification
-test_file = os.path.join(script_dir, '../assets/jigsawQuery.csv')
+test_file = os.path.join(script_dir, '../assets/jigsawQuery_headers.csv')
 
 test_data, test_records = get_data(test_file)
 

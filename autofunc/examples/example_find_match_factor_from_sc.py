@@ -26,3 +26,4 @@ test_data, test_records = get_data(test_file)
 learned_dict, matched, overmatched, unmatched, match_factor = match(thresh_results, test_records)
 
 print('Match factor = {0:.5f}'.format(match_factor))
+

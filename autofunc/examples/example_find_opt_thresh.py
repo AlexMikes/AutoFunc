@@ -10,7 +10,8 @@ import matplotlib.pyplot as plt
 
 # Dataset used for data mining
 script_dir = os.path.dirname(__file__)
-file1 = os.path.join(script_dir, '../assets/bladeCombined.csv')
+# file1 = os.path.join(script_dir, '../assets/bladeCombined.csv')
+file1 = os.path.join(script_dir, '../assets/all_products_id_autofunc.csv')
 
 comb_sort = count_stuff(file1)
 
