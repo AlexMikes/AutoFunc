@@ -1,0 +1,3528 @@
+﻿comp,func,id
+ic motor,convert chemical,169
+ic motor,convert chemical,169
+ic motor,convert chemical,169
+ic motor,convert chemical,169
+wheel,convert control,169
+pulley,convert human energy,169
+ic motor,convert liquid-gas,169
+blade,couple solid,169
+nut-bolt,couple solid,169
+mixer,couple solid,169
+clamp,couple solid,169
+guiders,couple solid,169
+housing,couple solid,169
+ic motor,couple solid,169
+tube,couple solid,169
+container,couple solid,169
+handle,couple solid,169
+hinge,couple solid,169
+pulley,couple solid,169
+wheel,export human energy,169
+guiders,export solid,169
+guiders,export visual,169
+wheel,export visual,169
+material filter,extract solid-gas,169
+guiders,guide solid,169
+housing,guide solid,169
+handle,guide solid,169
+lever,guide solid,169
+wheel,guide solid,169
+container,import chemical,169
+handle,import control,169
+lever,import control,169
+handle,import human energy,169
+container,import liquid,169
+blade,import solid,169
+material filter,import solid-gas,169
+mixer,mix chemical,169
+mixer,mix gas,169
+mixer,mix liquid,169
+blade,remove solid,169
+material filter,secure solid,169
+mixer,secure solid,169
+ic motor,secure solid,169
+lever,secure solid,169
+link,secure solid,169
+assembly,separate chemical,169
+assembly,separate chemical,169
+assembly,separate chemical,169
+assembly,separate human energy,169
+assembly,separate human material,169
+assembly,separate solid-liquid-gas,169
+container,store chemical,169
+container,store liquid,169
+tube,transfer chemical,169
+housing,transfer control,169
+link,transfer control,169
+housing,transfer human energy,169
+blade,transfer solid,169
+electric switch,actuate control,319
+electric switch,actuate electrical,319
+electric wire,actuate electrical,319
+distributor,change electrical,319
+belt,change mechanical,319
+gear,change mechanical,319
+ic motor,convert chemical,319
+gear,convert control,319
+pneumatic pump,convert control,319
+ic motor,convert electrical,319
+assembly,convert human energy,319
+ic motor,convert mechanical,319
+ic motor,convert mechanical,319
+em sensor,couple solid,319
+container,couple solid,319
+light source,couple solid,319
+guiders,couple solid,319
+securer,couple solid,319
+fan,couple solid,319
+mixer,couple solid,319
+converter,couple solid,319
+container,couple solid,319
+tube,couple solid,319
+cover,couple solid,319
+housing,couple solid,319
+mechanical transformer,couple solid,319
+light source,couple solid,319
+hinge,couple solid,319
+latch release,couple solid,319
+guiders,couple solid,319
+tube,couple solid,319
+fan,couple solid,319
+cover,couple solid,319
+cover,couple solid,319
+nozzle,couple solid,319
+light source,couple solid,319
+signaler,couple solid,319
+visual indicator,couple solid,319
+tube,couple solid,319
+regulator,couple solid,319
+pneumatic pump,couple solid,319
+container,couple solid,319
+seal,couple solid,319
+latch release,couple solid,319
+coupler,couple solid,319
+cover,couple solid,319
+guiders,couple solid,319
+support,couple solid,319
+light source,couple solid,319
+cover,couple solid,319
+thermal insulator,couple solid,319
+hinge,couple solid,319
+tube,couple solid,319
+support,couple solid,319
+guiders,couple solid,319
+latch release,couple solid,319
+latch release,couple solid,319
+housing,couple solid,319
+light source,couple solid,319
+hydraulic pump,couple solid,319
+needle,couple solid,319
+acoustic insulator,couple solid,319
+cover,couple solid,319
+reservoir,couple solid,319
+heat exchanger,couple solid,319
+signal filter,couple solid,319
+unclassified,couple solid,319
+cover,couple solid,319
+coupler,couple solid,319
+positioner,couple solid,319
+link,couple solid,319
+unclassified,couple solid,319
+cover,couple solid,319
+speaker,couple solid,319
+shaft,couple solid,319
+hydraulic pump,couple solid,319
+wheel,couple solid,319
+support,couple solid,319
+tube,couple solid,319
+cover,couple solid,319
+securer,couple solid,319
+unclassified,couple solid,319
+cover,couple solid,319
+stop,couple solid,319
+bearing,couple solid,319
+cover,couple solid,319
+electric motor,couple solid,319
+electric wire,distribute electrical,319
+ic motor,distribute mechanical,319
+ic motor,export acoustic,319
+tube,export gas,319
+pneumatic pump,export status,319
+gear,export status,319
+ic motor,export thermal,319
+tube,guide chemical,319
+regulator,guide chemical,319
+ic motor,guide gas,319
+tube,guide liquid,319
+regulator,guide liquid,319
+pneumatic pump,guide liquid,319
+generator,guide solid,319
+belt,guide solid,319
+lever,guide solid,319
+clutch,guide solid,319
+lever,guide solid,319
+lever,guide solid,319
+hinge,guide solid,319
+cover,guide solid,319
+shaft,guide solid,319
+assembly,guide solid,319
+fan,guide solid,319
+clutch,guide solid,319
+door,guide solid,319
+housing,guide solid,319
+guiders,guide solid,319
+assembly,guide solid,319
+ic motor,guide solid,319
+link,guide solid,319
+lever,guide solid,319
+shaft,guide solid,319
+pulley,guide solid,319
+wheel,guide solid,319
+link,guide solid,319
+unclassified,guide solid,319
+shaft,guide solid,319
+wheel,guide solid,319
+gear,guide solid,319
+bearing,guide solid,319
+nozzle,import chemical,319
+ic motor,import chemical,319
+lever,import control,319
+lever,import control,319
+electric switch,import control,319
+battery,import electrical,319
+ic motor,import electrical,319
+material filter,import gas,319
+assembly,import human energy,319
+nozzle,import liquid,319
+mixer,mix gas,319
+mixer,mix liquid,319
+link,position solid,319
+blade,position solid,319
+tube,position solid,319
+lever,position solid,319
+seal,position solid,319
+guiders,position solid,319
+fan,position solid,319
+cover,position solid,319
+container,position solid,319
+seal,position solid,319
+housing,position solid,319
+heat exchanger,position solid,319
+wheel,position solid,319
+spring,position solid,319
+securer,position solid,319
+lever,position solid,319
+thermostat,position solid,319
+bearing,position solid,319
+seal,position solid,319
+electric motor,position solid,319
+regulator,regulate chemical,319
+distributor,regulate electrical,319
+regulator,regulate liquid,319
+assembly,regulate mechanical,319
+assembly,regulate mechanical,319
+gear,regulate mechanical,319
+generator,secure solid,319
+link,secure solid,319
+guiders,secure solid,319
+battery,secure solid,319
+securer,secure solid,319
+fan,secure solid,319
+housing,secure solid,319
+link,secure solid,319
+hydraulic piston,secure solid,319
+cap,secure solid,319
+condenser,secure solid,319
+guiders,secure solid,319
+lever,secure solid,319
+distributor,secure solid,319
+latch release,secure solid,319
+latch release,secure solid,319
+seal,secure solid,319
+stop,secure solid,319
+assembly,secure solid,319
+nozzle,secure solid,319
+guiders,secure solid,319
+cap,secure solid,319
+assembly,secure solid,319
+ic motor,secure solid,319
+guiders,secure solid,319
+hydraulic pump,secure solid,319
+nozzle,secure solid,319
+cap,secure solid,319
+reservoir,secure solid,319
+friction enhancer,secure solid,319
+lever,secure solid,319
+heat exchanger,secure solid,319
+cap,secure solid,319
+positioner,secure solid,319
+electric wire,secure solid,319
+securer,secure solid,319
+bearing,secure solid,319
+seal,secure solid,319
+reservoir,secure solid,319
+electric motor,secure solid,319
+material filter,separate gas,319
+converter,separate gas,319
+cap,stop liquid,319
+cover,stop solid,319
+container,store chemical,319
+container,store liquid,319
+electric wire,supply electrical,319
+material filter,supply gas,319
+mixer,supply liquid-gas,319
+assembly,support mechanical,319
+nozzle,transfer chemical,319
+tube,transfer chemical,319
+lever,transfer control,319
+assembly,transfer control,319
+battery,transfer electrical,319
+electric wire,transfer electrical,319
+electric wire,transfer electrical,319
+guiders,transfer gas,319
+tube,transfer gas,319
+acoustic insulator,transfer gas,319
+nozzle,transfer liquid,319
+tube,transfer liquid,319
+ic motor,transfer mechanical,319
+system,transport control,319
+system,transport human energy,319
+system,transport human material,319
+system,transport solid,319
+electric switch,actuate electrical,320
+gear,change mechanical,320
+gear,change mechanical,320
+gear,change mechanical,320
+gear,change mechanical,320
+assembly,convert electrical,320
+electric switch,convert human energy,320
+wheel,convert magnetic,320
+wheel,convert magnetic,320
+shaft,convert mechanical,320
+hinge,couple solid,320
+screw,couple solid,320
+screw,couple solid,320
+screw,couple solid,320
+screw,couple solid,320
+screw,couple solid,320
+nut-bolt,couple solid,320
+wheel,export acoustic,320
+carousel,export mechanical,320
+shaft,export mechanical,320
+blade,export solid,320
+carousel,export solid,320
+shaft,guide solid,320
+shaft,guide solid,320
+shaft,guide solid,320
+gear,guide solid,320
+gear,guide solid,320
+housing,guide solid,320
+wheel,guide solid,320
+assembly,guide solid,320
+cover,guide solid,320
+electric cord,import electrical,320
+cover,import human energy,320
+carousel,import solid,320
+housing,position solid,320
+cover,position solid,320
+latch release,position solid,320
+housing,position solid,320
+cover,position solid,320
+guiders,secure solid,320
+housing,secure solid,320
+lever,secure solid,320
+cover,secure solid,320
+shaft,secure solid,320
+shaft,secure solid,320
+latch release,secure solid,320
+housing,secure solid,320
+assembly,secure solid,320
+system,separate control,320
+system,separate electrical,320
+system,separate human energy,320
+system,separate human material,320
+system,separate solid,320
+electric cord,transfer electrical,320
+electric wire,transfer electrical,320
+electric wire,transfer electrical,320
+shaft,transfer mechanical,320
+electric switch,actuate control,355
+electric switch,actuate electrical,355
+screw,couple solid,355
+screw,couple solid,355
+screw,couple solid,355
+screw,couple solid,355
+housing,guide liquid,355
+housing,guide solid,355
+housing,guide solid,355
+housing,guide solid,355
+electric cord,import electrical,355
+cover,position solid,355
+housing,position solid,355
+housing,position solid,355
+housing,position solid,355
+washer,position solid,355
+electric switch,regulate control,355
+electric switch,regulate electrical,355
+latch release,secure solid,355
+housing,secure solid,355
+flywheel,secure solid,355
+blade,separate solid,355
+unclassified,separate solid,355
+blade,separate solid,355
+reservoir,store liquid,355
+reservoir,store solid,355
+electric switch,transfer electrical,355
+electric motor,transfer electrical,355
+electric wire,transfer electrical,355
+electric wire,transfer electrical,355
+flywheel,transfer mechanical,355
+electric switch,actuate control,357
+electric switch,actuate electrical,357
+gear,change mechanical,357
+gear,change mechanical,357
+gear,change mechanical,357
+gear,change mechanical,357
+gear,change mechanical,357
+gear,change mechanical,357
+electric motor,convert electrical,357
+electric switch,convert human energy,357
+electric switch,convert human energy,357
+cover,convert human material,357
+electric wire,couple solid,357
+electric wire,couple solid,357
+clamp,couple solid,357
+screw,couple solid,357
+support,couple solid,357
+housing,couple solid,357
+housing,couple solid,357
+housing,couple solid,357
+electric motor,couple solid,357
+electric wire,couple solid,357
+housing,couple solid,357
+screw,couple solid,357
+screw,couple solid,357
+shaft,couple solid,357
+electric wire,couple solid,357
+electric switch,couple solid,357
+washer,couple solid,357
+electric wire,couple solid,357
+electric switch,export human material,357
+electric switch,export human material,357
+positioner,guide solid,357
+positioner,guide solid,357
+positioner,guide solid,357
+housing,guide solid,357
+support,guide solid,357
+cover,guide solid,357
+gear,guide solid,357
+gear,guide solid,357
+housing,guide solid,357
+cover,guide solid,357
+cover,guide solid,357
+link,guide solid,357
+gear,guide solid,357
+electric switch,guide solid,357
+electric motor,guide solid,357
+gear,guide solid,357
+gear,guide solid,357
+gear,guide solid,357
+gear,guide solid,357
+gear,guide solid,357
+shaft,guide solid,357
+housing,guide solid,357
+spring,guide solid,357
+housing,guide solid,357
+washer,guide solid,357
+electric switch,import human material,357
+housing,import human material,357
+electric switch,import human material,357
+assembly,import solid,357
+positioner,position solid,357
+battery,position solid,357
+electric wire,position solid,357
+electric wire,position solid,357
+cap,position solid,357
+guiders,position solid,357
+clamp,position solid,357
+housing,position solid,357
+support,position solid,357
+cover,position solid,357
+gear,position solid,357
+housing,position solid,357
+cover,position solid,357
+cover,position solid,357
+link,position solid,357
+electric switch,position solid,357
+gear,position solid,357
+gear,position solid,357
+shaft,position solid,357
+spring,position solid,357
+housing,position solid,357
+gear,regulate control,357
+electric switch,regulate control,357
+electric switch,regulate electrical,357
+gear,regulate mechanical,357
+system,secure electrical,357
+system,secure human energy,357
+system,secure human material,357
+system,secure rotational,357
+electric wire,secure solid,357
+electric wire,secure solid,357
+cap,secure solid,357
+blade,secure solid,357
+clamp,secure solid,357
+system,secure solid,357
+housing,secure solid,357
+electric motor,secure solid,357
+housing,secure solid,357
+electric switch,secure solid,357
+battery,store electrical,357
+battery,supply electrical,357
+guiders,transfer control,357
+support,transfer control,357
+link,transfer control,357
+gear,transfer control,357
+spring,transfer control,357
+housing,transfer control,357
+battery,transfer electrical,357
+electric wire,transfer electrical,357
+electric wire,transfer electrical,357
+electric wire,transfer electrical,357
+electric wire,transfer electrical,357
+assembly,transfer electrical,357
+electric motor,transfer electrical,357
+electric wire,transfer electrical,357
+electric switch,transfer electrical,357
+electric wire,transfer electrical,357
+blade,transfer mechanical,357
+clamp,transfer mechanical,357
+gear,transfer mechanical,357
+gear,transfer mechanical,357
+gear,transfer mechanical,357
+gear,transfer mechanical,357
+gear,transfer mechanical,357
+electric switch,actuate electrical,359
+electric motor,change electrical,359
+gear,change mechanical,359
+gear,change mechanical,359
+electric motor,convert electrical,359
+cover,couple solid,359
+support,couple solid,359
+support,couple solid,359
+gear,couple solid,359
+electric motor,couple solid,359
+support,couple solid,359
+electric wire,couple solid,359
+electric switch,couple solid,359
+screw,couple solid,359
+screw,couple solid,359
+screw,couple solid,359
+screw,couple solid,359
+screw,couple solid,359
+electric wire,couple solid,359
+support,couple solid,359
+housing,couple solid,359
+electric wire,couple solid,359
+electric wire,couple solid,359
+electric wire,couple solid,359
+electric wire,couple solid,359
+electric wire,couple solid,359
+electric wire,couple solid,359
+electric wire,couple solid,359
+gear,guide mechanical,359
+support,guide solid,359
+gear,guide solid,359
+gear,guide solid,359
+blade,guide solid,359
+electric wire,import electrical,359
+system,mix solid,359
+system,mix solid-liquid,359
+cover,position solid,359
+support,position solid,359
+support,position solid,359
+gear,position solid,359
+gear,position solid,359
+support,position solid,359
+electric wire,position solid,359
+support,position solid,359
+housing,position solid,359
+electric switch,regulate control,359
+electric switch,regulate electrical,359
+support,secure solid,359
+gear,secure solid,359
+gear,secure solid,359
+blade,secure solid,359
+electric switch,secure solid,359
+electric switch,secure solid,359
+support,secure solid,359
+electric motor,transfer electrical,359
+electric wire,transfer electrical,359
+electric switch,transfer electrical,359
+electric wire,transfer electrical,359
+electric wire,transfer electrical,359
+electric wire,transfer electrical,359
+electric wire,transfer electrical,359
+electric wire,transfer electrical,359
+electric wire,transfer electrical,359
+electric wire,transfer electrical,359
+gear,transfer mechanical,359
+gear,transfer mechanical,359
+gear,transfer mechanical,359
+blade,change gas,364
+rotational coupler,change gas,364
+wheel,change gas,364
+blade,change liquid,364
+punch,change liquid,364
+bearing,change mechanical,364
+shaft,change mechanical,364
+wheel,change pneumatic,364
+blade,convert mechanical,364
+rotational coupler,convert mechanical,364
+tube,convert mechanical,364
+wheel,convert mechanical,364
+transistor,convert radioactive/nuclear,364
+circuit board,convert radioactive/nuclear,364
+bearing,distribute mechanical,364
+blade,distribute mechanical,364
+bracket,distribute mechanical,364
+unclassified,distribute mechanical,364
+cap,distribute mechanical,364
+cover,distribute mechanical,364
+cover,distribute mechanical,364
+link,distribute mechanical,364
+key,distribute mechanical,364
+punch,distribute mechanical,364
+reservoir,distribute mechanical,364
+rotational coupler,distribute mechanical,364
+support,distribute mechanical,364
+tube,distribute mechanical,364
+wheel,distribute mechanical,364
+shaft,distribute thermal,364
+belt,distribute thermal,364
+unclassified,distribute thermal,364
+cover,distribute thermal,364
+cover,distribute thermal,364
+divider,distribute thermal,364
+shaft,distribute thermal,364
+electric wire,distribute thermal,364
+unclassified,distribute thermal,364
+housing,distribute thermal,364
+nut-bolt,distribute thermal,364
+key,distribute thermal,364
+reservoir,distribute thermal,364
+rotational coupler,distribute thermal,364
+support,distribute thermal,364
+tube,distribute thermal,364
+wheel,distribute thermal,364
+unclassified,export electrical,364
+electric wire,export electrical,364
+link,export electrical,364
+spring,export electrical,364
+airfoil,export gas,364
+blade,export gas,364
+unclassified,export gas,364
+cover,export gas,364
+cover,export gas,364
+divider,export gas,364
+shaft,export gas,364
+electric wire,export gas,364
+unclassified,export gas,364
+housing,export gas,364
+punch,export gas,364
+reservoir,export gas,364
+rotational coupler,export gas,364
+spring,export gas,364
+tube,export gas,364
+wheel,export gas,364
+airfoil,export liquid,364
+shaft,export liquid,364
+bearing,export liquid,364
+blade,export liquid,364
+bracket,export liquid,364
+unclassified,export liquid,364
+cover,export liquid,364
+cover,export liquid,364
+divider,export liquid,364
+shaft,export liquid,364
+unclassified,export liquid,364
+gear,export liquid,364
+clamp,export liquid,364
+hinge,export liquid,364
+link,export liquid,364
+material filter,export liquid,364
+nut-bolt,export liquid,364
+key,export liquid,364
+reservoir,export liquid,364
+rotational coupler,export liquid,364
+rotational coupler,export liquid,364
+electric socket,export liquid,364
+spring,export liquid,364
+support,export liquid,364
+reservoir,export liquid,364
+tube,export liquid,364
+valve,export liquid,364
+wheel,export liquid,364
+shaft,export mechanical,364
+bearing,export mechanical,364
+belt,export mechanical,364
+unclassified,export mechanical,364
+cap,export mechanical,364
+cover,export mechanical,364
+cover,export mechanical,364
+divider,export mechanical,364
+shaft,export mechanical,364
+electric motor,export mechanical,364
+electric wire,export mechanical,364
+unclassified,export mechanical,364
+fastener,export mechanical,364
+gear,export mechanical,364
+clamp,export mechanical,364
+guiders,export mechanical,364
+hinge,export mechanical,364
+transistor,export mechanical,364
+link,export mechanical,364
+nut-bolt,export mechanical,364
+key,export mechanical,364
+punch,export mechanical,364
+reservoir,export mechanical,364
+rotational coupler,export mechanical,364
+rotational coupler,export mechanical,364
+screw,export mechanical,364
+solder,export mechanical,364
+spring,export mechanical,364
+sprocket,export mechanical,364
+support,export mechanical,364
+tube,export mechanical,364
+wheel,export mechanical,364
+airfoil,export pneumatic,364
+blade,export pneumatic,364
+cover,export pneumatic,364
+cover,export pneumatic,364
+unclassified,export pneumatic,364
+reservoir,export pneumatic,364
+rotational coupler,export pneumatic,364
+tube,export pneumatic,364
+wheel,export pneumatic,364
+lens,export radioactive/nuclear,364
+shaft,export thermal,364
+belt,export thermal,364
+unclassified,export thermal,364
+cover,export thermal,364
+cover,export thermal,364
+divider,export thermal,364
+shaft,export thermal,364
+electric wire,export thermal,364
+unclassified,export thermal,364
+housing,export thermal,364
+material filter,export thermal,364
+nut-bolt,export thermal,364
+key,export thermal,364
+punch,export thermal,364
+reservoir,export thermal,364
+rotational coupler,export thermal,364
+electric socket,export thermal,364
+spring,export thermal,364
+support,export thermal,364
+tube,export thermal,364
+wheel,export thermal,364
+airfoil,guide gas,364
+blade,guide gas,364
+cover,guide gas,364
+cover,guide gas,364
+divider,guide gas,364
+shaft,guide gas,364
+electric wire,guide gas,364
+unclassified,guide gas,364
+housing,guide gas,364
+rotational coupler,guide gas,364
+spring,guide gas,364
+tube,guide gas,364
+wheel,guide gas,364
+airfoil,guide liquid,364
+blade,guide liquid,364
+bracket,guide liquid,364
+unclassified,guide liquid,364
+cover,guide liquid,364
+cover,guide liquid,364
+divider,guide liquid,364
+shaft,guide liquid,364
+unclassified,guide liquid,364
+housing,guide liquid,364
+link,guide liquid,364
+nut-bolt,guide liquid,364
+key,guide liquid,364
+punch,guide liquid,364
+rotational coupler,guide liquid,364
+rotational coupler,guide liquid,364
+electric socket,guide liquid,364
+support,guide liquid,364
+tube,guide liquid,364
+valve,guide liquid,364
+wheel,guide liquid,364
+bearing,guide mechanical,364
+belt,guide mechanical,364
+cover,guide mechanical,364
+cover,guide mechanical,364
+divider,guide mechanical,364
+shaft,guide mechanical,364
+electric motor,guide mechanical,364
+electric wire,guide mechanical,364
+unclassified,guide mechanical,364
+gear,guide mechanical,364
+guiders,guide mechanical,364
+hinge,guide mechanical,364
+link,guide mechanical,364
+nut-bolt,guide mechanical,364
+punch,guide mechanical,364
+rotational coupler,guide mechanical,364
+spring,guide mechanical,364
+support,guide mechanical,364
+electric motor,guide radioactive/nuclear,364
+lens,guide radioactive/nuclear,364
+cover,guide thermal,364
+unclassified,guide thermal,364
+tube,guide thermal,364
+unclassified,import electrical,364
+electric wire,import electrical,364
+guiders,import electrical,364
+link,import electrical,364
+solder,import electrical,364
+spring,import electrical,364
+airfoil,import gas,364
+blade,import gas,364
+cover,import gas,364
+cover,import gas,364
+divider,import gas,364
+shaft,import gas,364
+electric wire,import gas,364
+unclassified,import gas,364
+punch,import gas,364
+reservoir,import gas,364
+rotational coupler,import gas,364
+spring,import gas,364
+tube,import gas,364
+wheel,import gas,364
+airfoil,import liquid,364
+shaft,import liquid,364
+bearing,import liquid,364
+blade,import liquid,364
+bracket,import liquid,364
+unclassified,import liquid,364
+cap,import liquid,364
+cover,import liquid,364
+cover,import liquid,364
+shaft,import liquid,364
+unclassified,import liquid,364
+fastener,import liquid,364
+gear,import liquid,364
+clamp,import liquid,364
+guiders,import liquid,364
+hinge,import liquid,364
+housing,import liquid,364
+transistor,import liquid,364
+link,import liquid,364
+material filter,import liquid,364
+nut-bolt,import liquid,364
+key,import liquid,364
+punch,import liquid,364
+reservoir,import liquid,364
+rotational coupler,import liquid,364
+rotational coupler,import liquid,364
+screw,import liquid,364
+electric socket,import liquid,364
+spring,import liquid,364
+support,import liquid,364
+reservoir,import liquid,364
+tube,import liquid,364
+wheel,import liquid,364
+shaft,import mechanical,364
+bearing,import mechanical,364
+belt,import mechanical,364
+blade,import mechanical,364
+unclassified,import mechanical,364
+cap,import mechanical,364
+cover,import mechanical,364
+cover,import mechanical,364
+divider,import mechanical,364
+shaft,import mechanical,364
+electric motor,import mechanical,364
+electric wire,import mechanical,364
+unclassified,import mechanical,364
+fastener,import mechanical,364
+gear,import mechanical,364
+clamp,import mechanical,364
+guiders,import mechanical,364
+hinge,import mechanical,364
+transistor,import mechanical,364
+link,import mechanical,364
+nut-bolt,import mechanical,364
+key,import mechanical,364
+punch,import mechanical,364
+reservoir,import mechanical,364
+rotational coupler,import mechanical,364
+rotational coupler,import mechanical,364
+screw,import mechanical,364
+solder,import mechanical,364
+spring,import mechanical,364
+sprocket,import mechanical,364
+support,import mechanical,364
+tube,import mechanical,364
+wheel,import mechanical,364
+transistor,import radioactive/nuclear,364
+shaft,import thermal,364
+belt,import thermal,364
+unclassified,import thermal,364
+cover,import thermal,364
+cover,import thermal,364
+divider,import thermal,364
+shaft,import thermal,364
+electric insulator,import thermal,364
+electric wire,import thermal,364
+unclassified,import thermal,364
+housing,import thermal,364
+material filter,import thermal,364
+nut-bolt,import thermal,364
+key,import thermal,364
+reservoir,import thermal,364
+rotational coupler,import thermal,364
+electric socket,import thermal,364
+spring,import thermal,364
+support,import thermal,364
+tube,import thermal,364
+wheel,import thermal,364
+cover,regulate liquid,364
+support,regulate liquid,364
+bracket,regulate mechanical,364
+support,regulate mechanical,364
+cover,stop gas,364
+tube,stop gas,364
+cap,stop liquid,364
+cover,stop liquid,364
+fastener,stop liquid,364
+clamp,stop liquid,364
+guiders,stop liquid,364
+hinge,stop liquid,364
+transistor,stop liquid,364
+nut-bolt,stop liquid,364
+reservoir,stop liquid,364
+seal,stop liquid,364
+spring,stop liquid,364
+support,stop liquid,364
+tube,stop liquid,364
+valve,stop liquid,364
+wheel,stop liquid,364
+blade,store gas,364
+cover,store gas,364
+electric wire,store gas,364
+reservoir,store gas,364
+tube,store gas,364
+material filter,store liquid,364
+reservoir,store liquid,364
+reservoir,store liquid,364
+system,supply control,364
+system,supply electrical,364
+system,supply liquid,364
+system,supply mechanical,364
+system,supply radioactive/nuclear,364
+system,supply solid,364
+system,supply status,364
+electric wire,transfer electrical,364
+guiders,transfer electrical,364
+solder,transfer electrical,364
+spring,transfer electrical,364
+shaft,transfer liquid,364
+airfoil,transfer mechanical,364
+shaft,transfer mechanical,364
+bracket,transfer mechanical,364
+unclassified,transfer mechanical,364
+cover,transfer mechanical,364
+cover,transfer mechanical,364
+shaft,transfer mechanical,364
+unclassified,transfer mechanical,364
+fastener,transfer mechanical,364
+gear,transfer mechanical,364
+guiders,transfer mechanical,364
+hinge,transfer mechanical,364
+transistor,transfer mechanical,364
+link,transfer mechanical,364
+nut-bolt,transfer mechanical,364
+key,transfer mechanical,364
+punch,transfer mechanical,364
+rotational coupler,transfer mechanical,364
+rotational coupler,transfer mechanical,364
+solder,transfer mechanical,364
+sprocket,transfer mechanical,364
+support,transfer mechanical,364
+tube,transfer mechanical,364
+wheel,transfer mechanical,364
+tube,transfer pneumatic,364
+bearing,transfer thermal,364
+belt,transfer thermal,364
+unclassified,transfer thermal,364
+cover,transfer thermal,364
+cover,transfer thermal,364
+divider,transfer thermal,364
+shaft,transfer thermal,364
+electric wire,transfer thermal,364
+unclassified,transfer thermal,364
+gear,transfer thermal,364
+housing,transfer thermal,364
+material filter,transfer thermal,364
+nut-bolt,transfer thermal,364
+punch,transfer thermal,364
+reservoir,transfer thermal,364
+rotational coupler,transfer thermal,364
+electric socket,transfer thermal,364
+spring,transfer thermal,364
+support,transfer thermal,364
+tube,transfer thermal,364
+wheel,transfer thermal,364
+electric switch,actuate control,365
+electric switch,actuate electrical,365
+gear,change mechanical,365
+gear,change mechanical,365
+electric motor,convert electrical,365
+electric motor,convert electrical,365
+electric switch,convert human energy,365
+hydraulic piston,convert human energy,365
+fan,convert mechanical,365
+electric wire,couple solid,365
+electric wire,couple solid,365
+connector,couple solid,365
+connector,couple solid,365
+electric cord,couple solid,365
+housing,couple solid,365
+electric wire,couple solid,365
+screw,couple solid,365
+rivet,couple solid,365
+screw,couple solid,365
+screw,couple solid,365
+screw,couple solid,365
+electric motor,couple solid,365
+electric switch,couple solid,365
+electric switch,couple solid,365
+electric motor,distribute mechanical,365
+electric cord,export electrical,365
+housing,export human material,365
+electric switch,export human material,365
+blade,export solid,365
+housing,guide human material,365
+blade,guide solid,365
+guiders,guide solid,365
+housing,guide solid,365
+gear,guide solid,365
+gear,guide solid,365
+housing,guide solid,365
+guiders,guide solid,365
+hydraulic piston,guide solid,365
+electric motor,guide solid,365
+electric cord,import electrical,365
+hydraulic piston,import human energy,365
+electric switch,import human energy,365
+housing,import human material,365
+electric switch,import human material,365
+guiders,import solid,365
+blade,position solid,365
+housing,position solid,365
+gear,position solid,365
+electric cord,position solid,365
+housing,position solid,365
+guiders,secure solid,365
+housing,secure solid,365
+fan,secure solid,365
+housing,secure solid,365
+guiders,secure solid,365
+electric motor,secure solid,365
+electric switch,secure solid,365
+electric switch,secure solid,365
+blade,separate solid,365
+system,separate solid,365
+electric wire,transfer electrical,365
+connector,transfer electrical,365
+connector,transfer electrical,365
+electric cord,transfer electrical,365
+electric wire,transfer electrical,365
+electric motor,transfer electrical,365
+blade,transfer mechanical,365
+gear,transfer mechanical,365
+gear,transfer mechanical,365
+hydraulic piston,transfer mechanical,365
+fan,transfer thermal,365
+transistor,actuate electrical,370
+circuit board,actuate electrical,370
+circuit board,actuate radioactive/nuclear,370
+electric motor,convert electrical,370
+rotational coupler,convert electrical,370
+heating element,convert electrical,370
+transistor,convert radioactive/nuclear,370
+circuit board,convert radioactive/nuclear,370
+transistor,convert status,370
+circuit board,convert status,370
+electric switch,convert status,370
+airfoil,couple solid,370
+shaft,couple solid,370
+bearing,couple solid,370
+blade,couple solid,370
+bracket,couple solid,370
+unclassified,couple solid,370
+cap,couple solid,370
+cover,couple solid,370
+cover,couple solid,370
+divider,couple solid,370
+shaft,couple solid,370
+electric motor,couple solid,370
+electric wire,couple solid,370
+unclassified,couple solid,370
+fastener,couple solid,370
+gear,couple solid,370
+clamp,couple solid,370
+guiders,couple solid,370
+hinge,couple solid,370
+transistor,couple solid,370
+link,couple solid,370
+nut-bolt,couple solid,370
+key,couple solid,370
+punch,couple solid,370
+reservoir,couple solid,370
+rotational coupler,couple solid,370
+rotational coupler,couple solid,370
+screw,couple solid,370
+seal,couple solid,370
+electric socket,couple solid,370
+solder,couple solid,370
+spring,couple solid,370
+sprocket,couple solid,370
+support,couple solid,370
+reservoir,couple solid,370
+tube,couple solid,370
+valve,couple solid,370
+wheel,couple solid,370
+electric wire,export control,370
+guiders,export control,370
+solder,export control,370
+unclassified,export electrical,370
+electric wire,export electrical,370
+link,export electrical,370
+spring,export electrical,370
+lens,export radioactive/nuclear,370
+airfoil,export solid,370
+shaft,export solid,370
+bearing,export solid,370
+belt,export solid,370
+blade,export solid,370
+bracket,export solid,370
+unclassified,export solid,370
+cap,export solid,370
+transistor,export solid,370
+cover,export solid,370
+cover,export solid,370
+divider,export solid,370
+shaft,export solid,370
+electric motor,export solid,370
+electric wire,export solid,370
+unclassified,export solid,370
+fastener,export solid,370
+gear,export solid,370
+clamp,export solid,370
+guiders,export solid,370
+hinge,export solid,370
+transistor,export solid,370
+link,export solid,370
+material filter,export solid,370
+nut-bolt,export solid,370
+key,export solid,370
+punch,export solid,370
+reservoir,export solid,370
+rotational coupler,export solid,370
+rotational coupler,export solid,370
+screw,export solid,370
+seal,export solid,370
+electric socket,export solid,370
+spring,export solid,370
+sprocket,export solid,370
+support,export solid,370
+reservoir,export solid,370
+tube,export solid,370
+valve,export solid,370
+wheel,export solid,370
+shaft,export thermal,370
+belt,export thermal,370
+unclassified,export thermal,370
+cover,export thermal,370
+cover,export thermal,370
+divider,export thermal,370
+shaft,export thermal,370
+electric wire,export thermal,370
+unclassified,export thermal,370
+housing,export thermal,370
+material filter,export thermal,370
+nut-bolt,export thermal,370
+key,export thermal,370
+punch,export thermal,370
+reservoir,export thermal,370
+rotational coupler,export thermal,370
+electric socket,export thermal,370
+spring,export thermal,370
+support,export thermal,370
+tube,export thermal,370
+wheel,export thermal,370
+unclassified,guide control,370
+unclassified,guide electrical,370
+unclassified,guide mechanical,370
+bearing,guide mechanical,370
+belt,guide mechanical,370
+cover,guide mechanical,370
+cover,guide mechanical,370
+divider,guide mechanical,370
+shaft,guide mechanical,370
+electric motor,guide mechanical,370
+electric wire,guide mechanical,370
+unclassified,guide mechanical,370
+gear,guide mechanical,370
+guiders,guide mechanical,370
+hinge,guide mechanical,370
+link,guide mechanical,370
+nut-bolt,guide mechanical,370
+punch,guide mechanical,370
+rotational coupler,guide mechanical,370
+spring,guide mechanical,370
+support,guide mechanical,370
+electric motor,guide radioactive/nuclear,370
+lens,guide radioactive/nuclear,370
+airfoil,guide solid,370
+unclassified,guide solid,370
+bearing,guide solid,370
+belt,guide solid,370
+blade,guide solid,370
+bracket,guide solid,370
+cover,guide solid,370
+divider,guide solid,370
+shaft,guide solid,370
+electric motor,guide solid,370
+gear,guide solid,370
+nut-bolt,guide solid,370
+punch,guide solid,370
+sprocket,guide solid,370
+wheel,guide solid,370
+unclassified,guide status,370
+transistor,import control,370
+electric wire,import control,370
+lens,import control,370
+unclassified,import electrical,370
+electric wire,import electrical,370
+guiders,import electrical,370
+link,import electrical,370
+solder,import electrical,370
+spring,import electrical,370
+transistor,import radioactive/nuclear,370
+airfoil,import solid,370
+shaft,import solid,370
+bearing,import solid,370
+belt,import solid,370
+blade,import solid,370
+bracket,import solid,370
+unclassified,import solid,370
+cap,import solid,370
+transistor,import solid,370
+cover,import solid,370
+cover,import solid,370
+divider,import solid,370
+shaft,import solid,370
+electric motor,import solid,370
+electric wire,import solid,370
+unclassified,import solid,370
+fastener,import solid,370
+gear,import solid,370
+clamp,import solid,370
+guiders,import solid,370
+hinge,import solid,370
+housing,import solid,370
+transistor,import solid,370
+link,import solid,370
+material filter,import solid,370
+nut-bolt,import solid,370
+key,import solid,370
+punch,import solid,370
+reservoir,import solid,370
+rotational coupler,import solid,370
+rotational coupler,import solid,370
+screw,import solid,370
+seal,import solid,370
+electric socket,import solid,370
+solder,import solid,370
+spring,import solid,370
+sprocket,import solid,370
+support,import solid,370
+reservoir,import solid,370
+tube,import solid,370
+valve,import solid,370
+wheel,import solid,370
+airfoil,position solid,370
+shaft,position solid,370
+bearing,position solid,370
+belt,position solid,370
+blade,position solid,370
+bracket,position solid,370
+unclassified,position solid,370
+cap,position solid,370
+cover,position solid,370
+cover,position solid,370
+divider,position solid,370
+shaft,position solid,370
+electric motor,position solid,370
+electric wire,position solid,370
+unclassified,position solid,370
+fastener,position solid,370
+gear,position solid,370
+clamp,position solid,370
+guiders,position solid,370
+transistor,position solid,370
+link,position solid,370
+nut-bolt,position solid,370
+key,position solid,370
+punch,position solid,370
+reservoir,position solid,370
+rotational coupler,position solid,370
+rotational coupler,position solid,370
+screw,position solid,370
+electric socket,position solid,370
+spring,position solid,370
+sprocket,position solid,370
+support,position solid,370
+reservoir,position solid,370
+tube,position solid,370
+valve,position solid,370
+wheel,position solid,370
+airfoil,secure solid,370
+shaft,secure solid,370
+bearing,secure solid,370
+blade,secure solid,370
+bracket,secure solid,370
+unclassified,secure solid,370
+cap,secure solid,370
+cover,secure solid,370
+cover,secure solid,370
+divider,secure solid,370
+shaft,secure solid,370
+electric wire,secure solid,370
+unclassified,secure solid,370
+fastener,secure solid,370
+gear,secure solid,370
+clamp,secure solid,370
+guiders,secure solid,370
+hinge,secure solid,370
+transistor,secure solid,370
+link,secure solid,370
+nut-bolt,secure solid,370
+key,secure solid,370
+punch,secure solid,370
+reservoir,secure solid,370
+rotational coupler,secure solid,370
+rotational coupler,secure solid,370
+screw,secure solid,370
+electric socket,secure solid,370
+solder,secure solid,370
+spring,secure solid,370
+sprocket,secure solid,370
+support,secure solid,370
+reservoir,secure solid,370
+tube,secure solid,370
+valve,secure solid,370
+wheel,secure solid,370
+transistor,sense solid,370
+electric switch,sense solid,370
+transistor,sense status,370
+screw,separate solid,370
+wheel,separate solid,370
+bearing,stop solid,370
+cover,stop solid,370
+divider,stop solid,370
+housing,stop solid,370
+nut-bolt,stop solid,370
+screw,stop solid,370
+tube,stop solid,370
+electric wire,transfer control,370
+guiders,transfer control,370
+solder,transfer control,370
+electric wire,transfer electrical,370
+guiders,transfer electrical,370
+solder,transfer electrical,370
+spring,transfer electrical,370
+bearing,transfer thermal,370
+belt,transfer thermal,370
+unclassified,transfer thermal,370
+cover,transfer thermal,370
+cover,transfer thermal,370
+divider,transfer thermal,370
+shaft,transfer thermal,370
+electric wire,transfer thermal,370
+unclassified,transfer thermal,370
+gear,transfer thermal,370
+housing,transfer thermal,370
+material filter,transfer thermal,370
+nut-bolt,transfer thermal,370
+punch,transfer thermal,370
+reservoir,transfer thermal,370
+rotational coupler,transfer thermal,370
+electric socket,transfer thermal,370
+spring,transfer thermal,370
+support,transfer thermal,370
+tube,transfer thermal,370
+wheel,transfer thermal,370
+assembly,actuate mechanical,376
+assembly,convert electrical,376
+light source,convert electrical,376
+screw,couple solid,376
+screw,couple solid,376
+screw,couple solid,376
+screw,couple solid,376
+screw,couple solid,376
+blade,distribute solid,376
+light source,export optical,376
+shaft,guide acoustic,376
+bearing,guide solid,376
+blade,guide solid,376
+assembly,guide solid,376
+washer,guide solid,376
+shaft,guide solid,376
+lever,guide solid,376
+hinge,guide solid,376
+nut-bolt,guide solid,376
+nut-bolt,guide solid,376
+gear,guide solid,376
+guiders,guide solid,376
+shaft,guide solid,376
+washer,guide solid,376
+housing,guide solid,376
+assembly,guide solid,376
+washer,guide solid,376
+housing,guide solid,376
+assembly,guide solid,376
+electric switch,guide solid,376
+assembly,import electrical,376
+blade,import human energy,376
+lever,import human energy,376
+housing,import human energy,376
+lever,import human energy,376
+housing,import human energy,376
+assembly,import human energy,376
+electric switch,import human energy,376
+bearing,position solid,376
+assembly,position solid,376
+washer,position solid,376
+container,position solid,376
+shaft,position solid,376
+positioner,position solid,376
+hinge,position solid,376
+nut-bolt,position solid,376
+nut-bolt,position solid,376
+gear,position solid,376
+housing,position solid,376
+shaft,position solid,376
+washer,position solid,376
+assembly,position solid,376
+housing,position solid,376
+cover,position solid,376
+assembly,position solid,376
+lever,position solid,376
+shaft,position solid,376
+housing,position solid,376
+washer,position solid,376
+assembly,position solid,376
+light source,position solid,376
+assembly,regulate electrical,376
+gear,regulate mechanical,376
+shaft,regulate mechanical,376
+assembly,secure solid,376
+blade,secure solid,376
+assembly,secure solid,376
+assembly,secure solid,376
+shaft,secure solid,376
+hinge,secure solid,376
+gear,secure solid,376
+housing,secure solid,376
+housing,secure solid,376
+cover,secure solid,376
+lever,secure solid,376
+housing,secure solid,376
+washer,secure solid,376
+spring,secure solid,376
+electric switch,secure solid,376
+cover,secure solid,376
+system,separate electrical,376
+system,separate human energy,376
+system,separate human material,376
+system,separate mechanical,376
+blade,separate solid,376
+system,separate solid,376
+spring,store mechanical,376
+container,store solid,376
+assembly,supply electrical,376
+electric wire,transfer electrical,376
+electric wire,transfer electrical,376
+electric wire,transfer electrical,376
+electric wire,transfer electrical,376
+electric wire,transfer electrical,376
+electric wire,transfer electrical,376
+electric wire,transfer electrical,376
+electric wire,transfer electrical,376
+electric wire,transfer electrical,376
+electric wire,transfer electrical,376
+hinge,transfer human energy,376
+shaft,transfer human energy,376
+washer,transfer human energy,376
+assembly,transfer mechanical,376
+shaft,transfer mechanical,376
+gear,transfer mechanical,376
+shaft,transfer mechanical,376
+cover,transfer optical,376
+electric switch,actuate electrical,378
+electric switch,actuate status,378
+gear,change rotational,378
+gear,change rotational,378
+gear,change rotational,378
+gear,change rotational,378
+blade,change solid,378
+system,convert electrical,378
+electric motor,convert electrical,378
+system,convert electrical,378
+cover,convert human energy,378
+system,convert human material,378
+electric switch,convert mechanical,378
+extension,convert rotational,378
+system,convert solid,378
+screw,couple solid,378
+screw,couple solid,378
+screw,couple solid,378
+screw,couple solid,378
+screw,couple solid,378
+screw,couple solid,378
+screw,couple solid,378
+support,distribute mechanical,378
+support,distribute mechanical,378
+support,export mechanical,378
+container,export solid,378
+support,extract mechanical,378
+gear,guide solid,378
+gear,guide solid,378
+gear,guide solid,378
+guiders,guide solid,378
+cover,guide solid,378
+electric motor,guide solid,378
+housing,guide solid,378
+shaft,guide solid,378
+shaft,guide solid,378
+shaft,guide solid,378
+support,guide solid,378
+electric cord,import electrical,378
+cover,import human energy,378
+housing,import mechanical,378
+housing,import solid,378
+housing,position solid,378
+housing,position solid,378
+extension,position solid,378
+stop,position solid,378
+housing,position solid,378
+cover,position solid,378
+housing,position solid,378
+shaft,position solid,378
+extension,position solid,378
+housing,position solid,378
+housing,secure solid,378
+gear,secure solid,378
+cover,secure solid,378
+electric motor,secure solid,378
+shaft,secure solid,378
+housing,secure solid,378
+support,stabilize mechanical,378
+support,stabilize mechanical,378
+spring,store mechanical,378
+spring,store mechanical,378
+container,store solid,378
+housing,store solid,378
+electric cord,transfer electrical,378
+extension,transfer mechanical,378
+shaft,transfer rotational,378
+capacitor,actuate control,380
+transistor,actuate control,380
+diode,actuate control,380
+electric resistor,actuate control,380
+electric switch,actuate control,380
+transistor,actuate electrical,380
+circuit board,actuate electrical,380
+capacitor,change control,380
+transistor,change control,380
+electric resistor,change control,380
+capacitor,change electrical,380
+diode,change electrical,380
+electric resistor,change electrical,380
+electric wire,change electrical,380
+inductor,change electrical,380
+tube,change electrical,380
+lens,change electromagnetic,380
+transistor,convert control,380
+transistor,convert electrical,380
+electric resistor,convert electrical,380
+capacitor,convert electrical,380
+transistor,convert electrical,380
+diode,convert electrical,380
+electric resistor,convert electrical,380
+inductor,convert electrical,380
+unclassified,convert electrical,380
+electric wire,convert electrical,380
+indicator light,convert electrical,380
+tube,convert electromagnetic,380
+airfoil,couple solid,380
+shaft,couple solid,380
+bearing,couple solid,380
+blade,couple solid,380
+bracket,couple solid,380
+unclassified,couple solid,380
+cap,couple solid,380
+cover,couple solid,380
+cover,couple solid,380
+divider,couple solid,380
+shaft,couple solid,380
+electric motor,couple solid,380
+electric wire,couple solid,380
+unclassified,couple solid,380
+fastener,couple solid,380
+gear,couple solid,380
+clamp,couple solid,380
+guiders,couple solid,380
+hinge,couple solid,380
+transistor,couple solid,380
+link,couple solid,380
+nut-bolt,couple solid,380
+key,couple solid,380
+punch,couple solid,380
+reservoir,couple solid,380
+rotational coupler,couple solid,380
+rotational coupler,couple solid,380
+screw,couple solid,380
+seal,couple solid,380
+electric socket,couple solid,380
+solder,couple solid,380
+spring,couple solid,380
+sprocket,couple solid,380
+support,couple solid,380
+reservoir,couple solid,380
+tube,couple solid,380
+valve,couple solid,380
+wheel,couple solid,380
+electric wire,export control,380
+guiders,export control,380
+solder,export control,380
+lens,guide electromagnetic,380
+unclassified,guide electromagnetic,380
+transistor,import control,380
+electric wire,import control,380
+lens,import control,380
+unclassified,import electrical,380
+electric wire,import electrical,380
+guiders,import electrical,380
+link,import electrical,380
+solder,import electrical,380
+spring,import electrical,380
+cover,import electromagnetic,380
+airfoil,import solid,380
+shaft,import solid,380
+bearing,import solid,380
+belt,import solid,380
+blade,import solid,380
+bracket,import solid,380
+unclassified,import solid,380
+cap,import solid,380
+transistor,import solid,380
+cover,import solid,380
+cover,import solid,380
+divider,import solid,380
+shaft,import solid,380
+electric motor,import solid,380
+electric wire,import solid,380
+unclassified,import solid,380
+fastener,import solid,380
+gear,import solid,380
+clamp,import solid,380
+guiders,import solid,380
+hinge,import solid,380
+housing,import solid,380
+transistor,import solid,380
+link,import solid,380
+material filter,import solid,380
+nut-bolt,import solid,380
+key,import solid,380
+punch,import solid,380
+reservoir,import solid,380
+rotational coupler,import solid,380
+rotational coupler,import solid,380
+screw,import solid,380
+seal,import solid,380
+electric socket,import solid,380
+solder,import solid,380
+spring,import solid,380
+sprocket,import solid,380
+support,import solid,380
+reservoir,import solid,380
+tube,import solid,380
+valve,import solid,380
+wheel,import solid,380
+shaft,import thermal,380
+belt,import thermal,380
+unclassified,import thermal,380
+cover,import thermal,380
+cover,import thermal,380
+divider,import thermal,380
+shaft,import thermal,380
+electric insulator,import thermal,380
+electric wire,import thermal,380
+unclassified,import thermal,380
+housing,import thermal,380
+material filter,import thermal,380
+nut-bolt,import thermal,380
+key,import thermal,380
+reservoir,import thermal,380
+rotational coupler,import thermal,380
+electric socket,import thermal,380
+spring,import thermal,380
+support,import thermal,380
+tube,import thermal,380
+wheel,import thermal,380
+airfoil,position solid,380
+shaft,position solid,380
+bearing,position solid,380
+belt,position solid,380
+blade,position solid,380
+bracket,position solid,380
+unclassified,position solid,380
+cap,position solid,380
+cover,position solid,380
+cover,position solid,380
+divider,position solid,380
+shaft,position solid,380
+electric motor,position solid,380
+electric wire,position solid,380
+unclassified,position solid,380
+fastener,position solid,380
+gear,position solid,380
+clamp,position solid,380
+guiders,position solid,380
+transistor,position solid,380
+link,position solid,380
+nut-bolt,position solid,380
+key,position solid,380
+punch,position solid,380
+reservoir,position solid,380
+rotational coupler,position solid,380
+rotational coupler,position solid,380
+screw,position solid,380
+electric socket,position solid,380
+spring,position solid,380
+sprocket,position solid,380
+support,position solid,380
+reservoir,position solid,380
+tube,position solid,380
+valve,position solid,380
+wheel,position solid,380
+capacitor,process control,380
+transistor,process control,380
+electric resistor,process control,380
+electric resistor,regulate control,380
+capacitor,regulate electrical,380
+transistor,regulate electrical,380
+diode,regulate electrical,380
+electric resistor,regulate electrical,380
+inductor,regulate electrical,380
+airfoil,secure solid,380
+shaft,secure solid,380
+bearing,secure solid,380
+blade,secure solid,380
+bracket,secure solid,380
+unclassified,secure solid,380
+cap,secure solid,380
+cover,secure solid,380
+cover,secure solid,380
+divider,secure solid,380
+shaft,secure solid,380
+electric wire,secure solid,380
+unclassified,secure solid,380
+fastener,secure solid,380
+gear,secure solid,380
+clamp,secure solid,380
+guiders,secure solid,380
+hinge,secure solid,380
+transistor,secure solid,380
+link,secure solid,380
+nut-bolt,secure solid,380
+key,secure solid,380
+punch,secure solid,380
+reservoir,secure solid,380
+rotational coupler,secure solid,380
+rotational coupler,secure solid,380
+screw,secure solid,380
+electric socket,secure solid,380
+solder,secure solid,380
+spring,secure solid,380
+sprocket,secure solid,380
+support,secure solid,380
+reservoir,secure solid,380
+tube,secure solid,380
+valve,secure solid,380
+wheel,secure solid,380
+capacitor,sense control,380
+transistor,sense control,380
+diode,sense control,380
+electric resistor,sense control,380
+divider,sense electromagnetic,380
+transistor,separate control,380
+cover,separate electromagnetic,380
+cover,stop electromagnetic,380
+bearing,stop solid,380
+cover,stop solid,380
+divider,stop solid,380
+housing,stop solid,380
+nut-bolt,stop solid,380
+screw,stop solid,380
+tube,stop solid,380
+cover,stop thermal,380
+electric insulator,stop thermal,380
+reservoir,stop thermal,380
+tube,stop thermal,380
+capacitor,store control,380
+transistor,store control,380
+diode,store control,380
+electric resistor,store control,380
+electric wire,transfer control,380
+guiders,transfer control,380
+solder,transfer control,380
+electric wire,transfer electrical,380
+guiders,transfer electrical,380
+solder,transfer electrical,380
+spring,transfer electrical,380
+wheel,transfer electrical,380
+electric switch,actuate control,387
+gear,change rotational,387
+gear,change rotational,387
+gear,change rotational,387
+gear,change rotational,387
+system,convert electrical,387
+system,convert electrical,387
+electric motor,convert electrical,387
+system,convert electrical,387
+system,convert human energy,387
+blade,couple solid,387
+screw,couple solid,387
+shaft,couple solid,387
+electric wire,couple solid,387
+housing,couple solid,387
+insert,couple solid,387
+housing,couple solid,387
+electric motor,couple solid,387
+insert,couple solid,387
+cover,couple solid,387
+housing,couple solid,387
+screw,couple solid,387
+screw,couple solid,387
+electric wire,couple solid,387
+housing,distribute mechanical,387
+housing,distribute mechanical,387
+cushion,distribute mechanical,387
+system,export acoustic,387
+system,export human material,387
+blade,export mechanical,387
+system,export mechanical,387
+system,export solid,387
+system,export thermal,387
+system,export translational,387
+shaft,guide solid,387
+gear,guide solid,387
+gear,guide solid,387
+gear,guide solid,387
+gear,guide solid,387
+housing,guide solid,387
+cover,guide solid,387
+support,guide solid,387
+cover,guide solid,387
+battery,import electrical,387
+housing,import human material,387
+housing,import human material,387
+support,position solid,387
+gear,position solid,387
+gear,position solid,387
+housing,position solid,387
+housing,position solid,387
+guiders,position solid,387
+insert,position solid,387
+electric motor,position solid,387
+housing,position solid,387
+cushion,position solid,387
+battery,position solid,387
+electric switch,regulate electrical,387
+support,secure solid,387
+support,secure solid,387
+shaft,secure solid,387
+shaft,secure solid,387
+gear,secure solid,387
+gear,secure solid,387
+gear,secure solid,387
+housing,secure solid,387
+support,secure solid,387
+insert,secure solid,387
+insert,secure solid,387
+electric switch,secure solid,387
+battery,secure solid,387
+electric wire,secure solid,387
+blade,separate solid,387
+guiders,stop solid,387
+cover,stop solid,387
+battery,store electrical,387
+battery,supply electrical,387
+support,transfer electrical,387
+electric wire,transfer electrical,387
+shaft,transfer rotational,387
+shaft,transfer rotational,387
+electric switch,actuate electrical,389
+electric switch,actuate mechanical,389
+latch release,convert human energy,389
+housing,convert human energy,389
+electric switch,convert human energy,389
+blade,convert mechanical,389
+blade,convert mechanical,389
+electric wire,couple solid,389
+electric motor,couple solid,389
+electric wire,couple solid,389
+blade,export acoustic,389
+blade,export human material,389
+housing,export human material,389
+blade,export status,389
+blade,export thermal,389
+blade,guide human material,389
+housing,guide human material,389
+spring,guide solid,389
+latch release,import human energy,389
+housing,import human energy,389
+electric switch,import human energy,389
+blade,import human material,389
+housing,import human material,389
+blade,position solid,389
+housing,secure solid,389
+blade,secure solid,389
+housing,secure solid,389
+housing,secure solid,389
+cam,secure solid,389
+housing,secure solid,389
+electric motor,secure solid,389
+electric switch,secure solid,389
+blade,separate human material,389
+system,separate human material,389
+housing,stop solid-liquid,389
+electric wire,transfer electrical,389
+electric motor,transfer electrical,389
+electric wire,transfer electrical,389
+housing,transfer mechanical,389
+latch release,transfer mechanical,389
+cam,transfer mechanical,389
+housing,transfer mechanical,389
+spring,transfer mechanical,389
+electric switch,actuate electrical,391
+electric motor,convert electrical,391
+blade,convert mechanical,391
+transferor,couple solid,391
+screen,couple solid,391
+electric wire,couple solid,391
+electric wire,couple solid,391
+housing,couple solid,391
+clamp,couple solid,391
+housing,couple solid,391
+housing,couple solid,391
+electric motor,couple solid,391
+nozzle,couple solid,391
+screw,couple solid,391
+electric switch,couple solid,391
+stabilizer,couple solid,391
+electric wire,couple solid,391
+blade,export pneumatic,391
+blade,guide mechanical,391
+transferor,import electrical,391
+housing,position solid,391
+housing,position solid,391
+electric motor,position solid,391
+nozzle,position solid,391
+blade,secure solid,391
+housing,secure solid,391
+electric motor,secure solid,391
+electric wire,transfer electrical,391
+electric wire,transfer electrical,391
+system,transfer liquid,391
+blade,transfer pneumatic,391
+electric switch,actuate control,591
+electric switch,actuate electrical,591
+gear,change mechanical,591
+gear,change mechanical,591
+gear,change mechanical,591
+system,convert electrical,591
+electric motor,convert electrical,591
+lever,convert human energy,591
+system,convert human energy,591
+system,convert human material,591
+system,convert solid,591
+clamp,couple solid,591
+electric conductor,couple solid,591
+housing,couple solid,591
+unclassified,couple solid,591
+electric motor,couple solid,591
+electric cord,couple solid,591
+housing,couple solid,591
+rivet,couple solid,591
+screw,couple solid,591
+screw,couple solid,591
+screw,couple solid,591
+screw,couple solid,591
+solder,couple solid,591
+solder,couple solid,591
+solder,couple solid,591
+electric switch,couple solid,591
+support,couple solid,591
+housing,distribute mechanical,591
+electric cord,export electrical,591
+housing,export mechanical,591
+clamp,export solid,591
+blade,export solid,591
+unclassified,export solid,591
+blade,guide solid,591
+housing,guide solid,591
+gear,guide solid,591
+gear,guide solid,591
+gear,guide solid,591
+lever,guide solid,591
+magnet,guide solid,591
+electric motor,guide solid,591
+shaft,guide solid,591
+electric switch,guide solid,591
+electric cord,import electrical,591
+lever,import human energy,591
+lever,import human material,591
+clamp,import solid,591
+blade,import solid,591
+gear,import solid,591
+lever,import solid,591
+unclassified,import solid,591
+magnet,import solid,591
+clamp,position solid,591
+housing,position solid,591
+gear,position solid,591
+gear,position solid,591
+unclassified,position solid,591
+electric cord,position solid,591
+housing,position solid,591
+electric switch,position solid,591
+support,position solid,591
+blade,secure solid,591
+gear,secure solid,591
+gear,secure solid,591
+gear,secure solid,591
+gear,secure solid,591
+shaft,secure solid,591
+clamp,separate solid,591
+blade,separate solid,591
+system,separate solid,591
+unclassified,separate solid,591
+housing,stabilize mechanical,591
+electric motor,transfer electrical,591
+electric cord,transfer electrical,591
+gear,transfer mechanical,591
+gear,transfer mechanical,591
+gear,transfer mechanical,591
+gear,transfer mechanical,591
+shaft,transfer mechanical,591
+gear,change mechanical,592
+electric switch,convert human energy,592
+screw,couple solid,592
+screw,couple solid,592
+screw,couple solid,592
+screw,couple solid,592
+screw,couple solid,592
+support,export human energy,592
+housing,export human material,592
+housing,export human material,592
+support,export mechanical,592
+blade,export mechanical,592
+support,guide human energy,592
+housing,guide human material,592
+housing,guide human material,592
+support,guide mechanical,592
+link,guide mechanical,592
+gear,guide mechanical,592
+blade,guide mechanical,592
+gear,guide mechanical,592
+spring,guide solid,592
+positioner,guide solid,592
+insert,guide solid,592
+housing,guide solid,592
+positioner,guide solid,592
+housing,guide solid,592
+electric switch,import human energy,592
+support,import human energy,592
+housing,import human material,592
+housing,import human material,592
+link,import mechanical,592
+link,import solid,592
+screw,position solid,592
+support,position solid,592
+housing,position solid,592
+support,position solid,592
+housing,position solid,592
+housing,position solid,592
+system,secure human material,592
+support,secure solid,592
+system,secure solid,592
+link,secure solid,592
+link,secure solid,592
+stop,secure solid,592
+stop,secure solid,592
+stop,secure solid,592
+cover,stop solid,592
+cover,stop solid,592
+support,stop solid,592
+spring,store mechanical,592
+spring,supply mechanical,592
+link,transfer mechanical,592
+gear,transfer mechanical,592
+gear,change mechanical,595
+cam,change mechanical,595
+gear,change mechanical,595
+cover,convert human energy,595
+screw,couple solid,595
+screw,couple solid,595
+screw,couple solid,595
+screw,couple solid,595
+housing,export human material,595
+housing,export human material,595
+electric switch,export mechanical,595
+blade,export mechanical,595
+electric switch,guide human energy,595
+housing,guide human material,595
+housing,guide human material,595
+guiders,guide mechanical,595
+positioner,guide mechanical,595
+link,guide mechanical,595
+guiders,guide solid,595
+sled,guide solid,595
+guiders,guide solid,595
+guiders,guide solid,595
+support,guide solid,595
+cover,guide solid,595
+cover,guide solid,595
+housing,guide solid,595
+gear,guide solid,595
+housing,guide solid,595
+cover,guide solid,595
+positioner,guide solid,595
+positioner,guide solid,595
+positioner,guide solid,595
+guiders,guide solid,595
+guiders,guide solid,595
+gear,guide solid,595
+electric switch,import human energy,595
+cover,import human energy,595
+housing,import human material,595
+housing,import human material,595
+sled,position solid,595
+guiders,position solid,595
+guiders,position solid,595
+support,position solid,595
+housing,position solid,595
+link,position solid,595
+cover,position solid,595
+housing,position solid,595
+housing,position solid,595
+cover,position solid,595
+link,position solid,595
+guiders,position solid,595
+washer,position solid,595
+stop,secure solid,595
+nut-bolt,secure solid,595
+stop,secure solid,595
+nut-bolt,secure solid,595
+guiders,secure solid,595
+stop,secure solid,595
+stop,secure solid,595
+spring,store mechanical,595
+spring,supply mechanical,595
+guiders,transfer mechanical,595
+link,transfer mechanical,595
+cover,transfer mechanical,595
+cam,transfer mechanical,595
+blade,transfer mechanical,595
+positioner,transfer mechanical,595
+link,transfer mechanical,595
+gear,transfer mechanical,595
+system,translate human energy,595
+system,translate human material,595
+system,translate rotational,595
+system,translate signal,595
+system,translate solid,595
+guiders,convert human energy,596
+retaining clip,couple solid,596
+screw,couple solid,596
+screw,couple solid,596
+screw,couple solid,596
+guiders,export human material,596
+guiders,export solid,596
+support,export solid,596
+shaft,export solid,596
+guiders,extract human energy,596
+positioner,guide solid,596
+support,guide solid,596
+housing,guide solid,596
+housing,guide solid,596
+guiders,guide solid,596
+guiders,import human material,596
+guiders,import solid,596
+support,import solid,596
+shaft,import solid,596
+guiders,position solid,596
+guiders,position solid,596
+latch release,position solid,596
+latch release,position solid,596
+spring,position solid,596
+spring,position solid,596
+housing,position solid,596
+housing,position solid,596
+spring,position solid,596
+housing,position solid,596
+housing,position solid,596
+support,position solid,596
+screw,position solid,596
+screw,position solid,596
+shaft,position solid,596
+nut-bolt,secure solid,596
+housing,secure solid,596
+housing,secure solid,596
+shaft,secure solid,596
+system,separate solid,596
+blade,transfer mechanical,596
+shaft,transfer mechanical,596
+electric switch,actuate control,600
+electric switch,actuate electrical,600
+gear,change mechanical,600
+electric motor,convert electrical,600
+electric motor,convert electrical,600
+electric switch,convert human energy,600
+fan,convert mechanical,600
+electric conductor,couple solid,600
+glue,couple solid,600
+rivet,couple solid,600
+screw,couple solid,600
+screw,couple solid,600
+screw,couple solid,600
+screw,couple solid,600
+screw,couple solid,600
+screw,couple solid,600
+solder,couple solid,600
+electric cord,export electrical,600
+housing,export gas,600
+housing,export human material,600
+latch release,export human material,600
+electric switch,export human material,600
+housing,export human material,600
+blade,export solid,600
+electric motor,export thermal,600
+housing,guide human material,600
+latch release,guide human material,600
+electric switch,guide human material,600
+housing,guide human material,600
+guiders,guide solid,600
+housing,guide solid,600
+guiders,guide solid,600
+gear,guide solid,600
+latch release,guide solid,600
+electric switch,guide solid,600
+housing,guide solid,600
+electric cord,import electrical,600
+housing,import gas,600
+electric switch,import human energy,600
+housing,import human material,600
+latch release,import human material,600
+electric switch,import human material,600
+housing,import human material,600
+blade,import solid,600
+link,position solid,600
+guiders,position solid,600
+housing,position solid,600
+electric motor,position solid,600
+support,position solid,600
+unclassified,secure solid,600
+electric motor,secure solid,600
+link,secure solid,600
+blade,separate solid,600
+system,separate solid,600
+electric motor,transfer electrical,600
+electric cord,transfer electrical,600
+electric wire,transfer electrical,600
+electric wire,transfer electrical,600
+electric wire,transfer electrical,600
+link,transfer mechanical,600
+blade,transfer mechanical,600
+gear,transfer mechanical,600
+link,transfer mechanical,600
+electric switch,actuate control,605
+electric switch,actuate electrical,605
+gear,change mechanical,605
+electric motor,convert electrical,605
+latch release,convert human energy,605
+electric switch,convert human material,605
+electric switch,convert human material,605
+hinge,couple solid,605
+hinge,couple solid,605
+screw,couple solid,605
+screw,couple solid,605
+screw,couple solid,605
+screw,couple solid,605
+screw,couple solid,605
+screw,couple solid,605
+housing,export human energy,605
+latch release,export human material,605
+electric switch,export human material,605
+blade,export solid,605
+latch release,export solid,605
+handle,export solid,605
+latch release,export solid,605
+latch release,export solid,605
+housing,guide human energy,605
+battery,guide solid,605
+positioner,guide solid,605
+positioner,guide solid,605
+guiders,guide solid,605
+guiders,guide solid,605
+latch release,guide solid,605
+housing,guide solid,605
+handle,guide solid,605
+screw,guide solid,605
+latch release,guide solid,605
+latch release,guide solid,605
+electric motor,guide solid,605
+shaft,guide solid,605
+cover,guide solid,605
+guiders,guide solid,605
+spring,guide solid,605
+spring,guide solid,605
+electric switch,guide solid,605
+latch release,import human energy,605
+housing,import human energy,605
+electric switch,import human material,605
+electric switch,import human material,605
+blade,import solid,605
+latch release,import solid,605
+handle,import solid,605
+latch release,import solid,605
+latch release,import solid,605
+cap,position solid,605
+stop,position solid,605
+screw,position solid,605
+housing,position solid,605
+shaft,position solid,605
+housing,position solid,605
+cover,position solid,605
+guiders,position solid,605
+support,position solid,605
+support,position solid,605
+housing,position solid,605
+shaft,regulate control,605
+shaft,regulate mechanical,605
+cap,secure solid,605
+housing,secure solid,605
+support,secure solid,605
+gear,secure solid,605
+electric switch,secure solid,605
+blade,separate solid,605
+system,separate solid,605
+cover,stop solid,605
+battery,store electrical,605
+battery,supply electrical,605
+stop,transfer control,605
+battery,transfer electrical,605
+electric wire,transfer electrical,605
+electric wire,transfer electrical,605
+electric wire,transfer electrical,605
+electric wire,transfer electrical,605
+electric motor,transfer electrical,605
+electric wire,transfer electrical,605
+electric wire,transfer electrical,605
+electric switch,transfer electrical,605
+blade,transfer mechanical,605
+gear,transfer mechanical,605
+shaft,transfer mechanical,605
+gear,change mechanical,606
+gear,change mechanical,606
+gear,change mechanical,606
+gear,change mechanical,606
+gear,change mechanical,606
+gear,change mechanical,606
+electric motor,convert electrical,606
+cover,convert human energy,606
+electric switch,convert human energy,606
+electric switch,convert human energy,606
+screw,couple solid,606
+support,couple solid,606
+screw,couple solid,606
+screw,couple solid,606
+electric wire,couple solid,606
+cover,export human material,606
+electric switch,export human material,606
+housing,export human material,606
+unclassified,export status,606
+housing,guide human material,606
+positioner,guide solid,606
+housing,guide solid,606
+cover,guide solid,606
+housing,guide solid,606
+cover,guide solid,606
+cover,guide solid,606
+gear,guide solid,606
+electric motor,guide solid,606
+gear,guide solid,606
+gear,guide solid,606
+gear,guide solid,606
+housing,guide solid,606
+spring,guide solid,606
+housing,guide solid,606
+washer,guide solid,606
+cover,import human energy,606
+electric switch,import human energy,606
+electric switch,import human energy,606
+cover,import human material,606
+electric switch,import human material,606
+housing,import human material,606
+electric switch,import human material,606
+cap,position solid,606
+positioner,position solid,606
+guiders,position solid,606
+housing,position solid,606
+support,position solid,606
+cover,position solid,606
+gear,position solid,606
+housing,position solid,606
+cover,position solid,606
+cover,position solid,606
+electric switch,position solid,606
+housing,position solid,606
+gear,regulate control,606
+gear,regulate control,606
+electric switch,regulate control,606
+electric switch,regulate electrical,606
+gear,regulate mechanical,606
+gear,regulate mechanical,606
+cap,secure solid,606
+clamp,secure solid,606
+housing,secure solid,606
+housing,secure solid,606
+electric switch,secure solid,606
+system,separate control,606
+system,separate electrical,606
+system,separate human energy,606
+system,separate human material,606
+system,separate mechanical,606
+system,separate solid,606
+battery,store electrical,606
+battery,supply electrical,606
+positioner,transfer control,606
+guiders,transfer control,606
+support,transfer control,606
+link,transfer control,606
+gear,transfer control,606
+spring,transfer control,606
+housing,transfer control,606
+battery,transfer electrical,606
+electric wire,transfer electrical,606
+electric wire,transfer electrical,606
+electric wire,transfer electrical,606
+electric wire,transfer electrical,606
+assembly,transfer electrical,606
+electric motor,transfer electrical,606
+electric wire,transfer electrical,606
+electric switch,transfer electrical,606
+electric wire,transfer electrical,606
+blade,transfer mechanical,606
+clamp,transfer mechanical,606
+gear,transfer mechanical,606
+gear,transfer mechanical,606
+gear,transfer mechanical,606
+gear,transfer mechanical,606
+gear,transfer mechanical,606
+electric switch,actuate electrical,608
+gear,change mechanical,608
+electric motor,convert electrical,608
+unclassified,convert human energy,608
+electric switch,convert human material,608
+screw,couple solid,608
+screw,couple solid,608
+screw,couple solid,608
+screw,couple solid,608
+screw,couple solid,608
+electric wire,couple solid,608
+unclassified,export human energy,608
+housing,export human energy,608
+electric switch,export human material,608
+blade,export solid,608
+housing,guide human energy,608
+gear,guide mechanical,608
+cap,guide solid,608
+gear,guide solid,608
+electric motor,guide solid,608
+housing,guide solid,608
+guiders,guide solid,608
+unclassified,guide solid,608
+guiders,guide solid,608
+housing,guide solid,608
+spring,guide solid,608
+washer,guide solid,608
+unclassified,import human energy,608
+housing,import human energy,608
+electric switch,import human material,608
+blade,import solid,608
+unclassified,import solid,608
+cam,position solid,608
+guiders,position solid,608
+housing,position solid,608
+housing,position solid,608
+housing,position solid,608
+latch release,position solid,608
+housing,position solid,608
+washer,position solid,608
+electric switch,regulate control,608
+electric switch,regulate electrical,608
+cap,secure solid,608
+housing,secure solid,608
+electric switch,secure solid,608
+system,separate control,608
+system,separate human energy,608
+system,separate human material,608
+system,separate mechanical,608
+blade,separate solid,608
+system,separate solid,608
+battery,store electrical,608
+battery,supply electrical,608
+battery,transfer electrical,608
+electric wire,transfer electrical,608
+electric wire,transfer electrical,608
+electric wire,transfer electrical,608
+electric wire,transfer electrical,608
+electric motor,transfer electrical,608
+electric wire,transfer electrical,608
+electric switch,transfer electrical,608
+electric wire,transfer electrical,608
+blade,transfer mechanical,608
+cam,transfer mechanical,608
+gear,transfer mechanical,608
+electric switch,actuate control,609
+electric switch,actuate control,609
+electric switch,actuate electrical,609
+electric switch,actuate electrical,609
+gear,change mechanical,609
+gear,change mechanical,609
+gear,change mechanical,609
+gear,change mechanical,609
+gear,change mechanical,609
+gear,change mechanical,609
+electric motor,convert electrical,609
+blade,convert human material,609
+unclassified,convert human material,609
+unclassified,couple solid,609
+system,couple solid,609
+key,couple solid,609
+support,couple solid,609
+screw,couple solid,609
+screw,couple solid,609
+screw,couple solid,609
+screw,couple solid,609
+solder,couple solid,609
+housing,export human energy,609
+blade,export human material,609
+unclassified,export human material,609
+housing,guide human energy,609
+cam,guide mechanical,609
+cap,guide solid,609
+positioner,guide solid,609
+container,guide solid,609
+guiders,guide solid,609
+cam,guide solid,609
+lever,guide solid,609
+gear,guide solid,609
+gear,guide solid,609
+guiders,guide solid,609
+support,guide solid,609
+support,guide solid,609
+spring,guide solid,609
+electric motor,guide solid,609
+gear,guide solid,609
+gear,guide solid,609
+gear,guide solid,609
+blade,guide solid,609
+gear,guide solid,609
+gear,guide solid,609
+link,guide solid,609
+housing,guide solid,609
+spring,guide solid,609
+link,import control,609
+housing,import human energy,609
+blade,import human material,609
+unclassified,import human material,609
+key,position solid,609
+gear,position solid,609
+housing,position solid,609
+link,position solid,609
+unclassified,position solid,609
+housing,position solid,609
+electric motor,position solid,609
+shaft,position solid,609
+spring,regulate control,609
+spring,regulate mechanical,609
+cap,secure solid,609
+container,secure solid,609
+guiders,secure solid,609
+housing,secure solid,609
+electric motor,secure solid,609
+lever,secure solid,609
+housing,secure solid,609
+battery,store electrical,609
+spring,store mechanical,609
+battery,supply electrical,609
+spring,supply mechanical,609
+battery,transfer electrical,609
+electric wire,transfer electrical,609
+electric wire,transfer electrical,609
+electric wire,transfer electrical,609
+electric wire,transfer electrical,609
+electric wire,transfer electrical,609
+electric motor,transfer electrical,609
+electric wire,transfer electrical,609
+electric wire,transfer electrical,609
+electric switch,transfer electrical,609
+electric wire,transfer electrical,609
+cam,transfer mechanical,609
+gear,transfer mechanical,609
+gear,transfer mechanical,609
+gear,transfer mechanical,609
+link,transfer mechanical,609
+unclassified,transfer mechanical,609
+shaft,transfer mechanical,609
+gear,transfer mechanical,609
+gear,transfer mechanical,609
+gear,transfer mechanical,609
+electric switch,actuate electrical,614
+electric switch,actuate status,614
+electric motor,convert electrical,614
+electric motor,convert electrical,614
+electric switch,convert human energy,614
+link,convert rotational,614
+guiders,convert rotational,614
+blade,export solid,614
+blade,export solid,614
+housing,export solid,614
+blade,export solid,614
+blade,export solid,614
+housing,export solid,614
+housing,guide solid,614
+link,guide solid,614
+link,guide solid,614
+shaft,guide solid,614
+guiders,guide solid,614
+guiders,guide solid,614
+housing,guide solid,614
+housing,guide solid,614
+electric motor,guide solid,614
+housing,guide solid,614
+guiders,guide solid,614
+electric switch,import human energy,614
+housing,import solid,614
+blade,import solid,614
+blade,import solid,614
+housing,import solid,614
+housing,position solid,614
+housing,position solid,614
+guiders,position solid,614
+housing,position solid,614
+electric wire,position solid,614
+housing,position solid,614
+housing,position solid,614
+housing,position solid,614
+electric switch,position solid,614
+housing,position solid,614
+hinge,position solid,614
+housing,secure solid,614
+housing,secure solid,614
+housing,secure solid,614
+housing,secure solid,614
+housing,secure solid,614
+housing,secure solid,614
+guiders,secure solid,614
+guiders,secure solid,614
+housing,secure solid,614
+system,separate electrical,614
+system,separate human energy,614
+system,separate human material,614
+system,separate mechanical,614
+blade,separate solid,614
+blade,separate solid,614
+blade,separate solid,614
+blade,separate solid,614
+housing,store solid,614
+housing,store solid,614
+electric wire,transfer electrical,614
+spring,transfer electrical,614
+electric wire,transfer electrical,614
+link,transfer mechanical,614
+link,transfer mechanical,614
+electric switch,actuate electrical,652
+electric switch,actuate electrical,652
+electric switch,actuate electrical,652
+key,actuate electrical,652
+electric switch,actuate electrical,652
+wheel,change mechanical,652
+converter,convert chemical,652
+converter,convert chemical,652
+converter,convert chemical,652
+converter,convert chemical,652
+converter,convert electrical,652
+actuator,convert human energy,652
+shaft,convert human energy,652
+clutch,convert human energy,652
+lever,convert human energy,652
+tube,convert human energy,652
+wheel,convert human energy,652
+converter,convert liquid,652
+converter,convert liquid,652
+converter,convert mechanical,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+screw,couple solid,652
+screw,couple solid,652
+nut-bolt,couple solid,652
+screw,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+screw,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+screw,couple solid,652
+screw,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+screw,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+key,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+knob,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+screw,couple solid,652
+nut-bolt,couple solid,652
+shaft,couple solid,652
+retaining clip,couple solid,652
+nut-bolt,couple solid,652
+cap,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+retaining clip,couple solid,652
+screw,couple solid,652
+nut-bolt,couple solid,652
+nut-bolt,couple solid,652
+support,export human material,652
+bracket,export mechanical,652
+blade,export mechanical,652
+wheel,export mechanical,652
+shaft,export mechanical,652
+housing,export mechanical,652
+wheel,export mechanical,652
+wheel,export mechanical,652
+bracket,export mechanical,652
+wheel,export mechanical,652
+spring,export mechanical,652
+housing,export solid,652
+guiders,export solid,652
+wheel,export solid,652
+link,guide solid,652
+link,guide solid,652
+bearing,guide solid,652
+cover,guide solid,652
+wheel,guide solid,652
+bracket,guide solid,652
+pulley,guide solid,652
+shaft,guide solid,652
+bearing,guide solid,652
+bracket,guide solid,652
+wheel,guide solid,652
+shaft,guide solid,652
+nut-bolt,guide solid,652
+bracket,guide solid,652
+bearing,guide solid,652
+bearing,guide solid,652
+bearing,guide solid,652
+converter,import chemical,652
+converter,import chemical,652
+converter,import chemical,652
+actuator,import human energy,652
+shaft,import human energy,652
+clutch,import human energy,652
+lever,import human energy,652
+support,import human energy,652
+tube,import human energy,652
+wheel,import human energy,652
+support,import human material,652
+support,import human material,652
+converter,import liquid,652
+converter,import liquid,652
+support,import mechanical,652
+wheel,import solid,652
+wheel,import solid,652
+electric wire,indicate control,652
+lever,indicate status,652
+support,position solid,652
+support,position solid,652
+bracket,position solid,652
+bracket,position solid,652
+cap,position solid,652
+stopper,position solid,652
+washer,position solid,652
+washer,position solid,652
+shaft,position solid,652
+bracket,position solid,652
+support,position solid,652
+housing,position solid,652
+link,position solid,652
+spring,position solid,652
+shaft,position solid,652
+support,position solid,652
+washer,position solid,652
+bearing,position solid,652
+support,position solid,652
+washer,position solid,652
+washer,position solid,652
+washer,position solid,652
+washer,position solid,652
+washer,position solid,652
+washer,position solid,652
+washer,position solid,652
+support,position solid,652
+cover,prevent human material,652
+cover,prevent human material,652
+cover,prevent human material,652
+cap,prevent liquid,652
+cap,prevent liquid,652
+support,prevent solid,652
+cover,prevent solid,652
+cover,prevent solid,652
+cover,prevent solid,652
+cap,prevent solid,652
+cap,prevent solid,652
+cap,prevent solid,652
+cover,prevent solid,652
+circuit board,process control,652
+fuse,regulate electrical,652
+fuse,regulate electrical,652
+electric switch,regulate electrical,652
+circuit board,regulate electrical,652
+gear,regulate mechanical,652
+spring,rotate solid,652
+nut-bolt,secure solid,652
+washer,secure solid,652
+bracket,secure solid,652
+bracket,secure solid,652
+bracket,secure solid,652
+bracket,secure solid,652
+retaining clip,secure solid,652
+bracket,secure solid,652
+bracket,secure solid,652
+nut-bolt,secure solid,652
+spring,secure solid,652
+housing,secure solid,652
+retaining clip,secure solid,652
+nut-bolt,secure solid,652
+retaining clip,secure solid,652
+washer,secure solid,652
+retaining clip,secure solid,652
+washer,secure solid,652
+shaft,secure solid,652
+retaining clip,secure solid,652
+cover,secure solid,652
+nut-bolt,secure solid,652
+bracket,secure solid,652
+nut-bolt,secure solid,652
+nut-bolt,secure solid,652
+washer,secure solid,652
+retaining clip,secure solid,652
+nut-bolt,secure solid,652
+shaft,secure solid,652
+retaining clip,secure solid,652
+retaining clip,secure solid,652
+bracket,secure solid,652
+retaining clip,secure solid,652
+nut-bolt,secure solid,652
+washer,secure solid,652
+retaining clip,secure solid,652
+washer,secure solid,652
+washer,secure solid,652
+nut-bolt,secure solid,652
+support,secure solid,652
+washer,secure solid,652
+bracket,secure solid,652
+washer,secure solid,652
+retaining clip,secure solid,652
+retaining clip,secure solid,652
+washer,secure solid,652
+washer,separate solid,652
+blade,separate solid,652
+washer,stabilize solid,652
+stopper,stop mechanical,652
+stopper,stop solid,652
+converter,store chemical,652
+battery,store electrical,652
+support,store human material,652
+converter,store liquid,652
+spring,store mechanical,652
+support,store mechanical,652
+spring,store mechanical,652
+spring,store mechanical,652
+battery,supply electrical,652
+spring,supply mechanical,652
+support,supply mechanical,652
+spring,supply mechanical,652
+bracket,support solid,652
+support,support solid,652
+support,support solid,652
+support,support solid,652
+cushion,support solid,652
+support,support solid,652
+spring,support solid,652
+bracket,support solid,652
+electric wire,transfer electrical,652
+bracket,transfer material,652
+belt,transfer mechanical,652
+actuator,transfer mechanical,652
+spring,transfer mechanical,652
+spring,transfer mechanical,652
+bracket,transfer mechanical,652
+guiders,transfer mechanical,652
+bracket,transfer mechanical,652
+link,transfer mechanical,652
+gear,transfer mechanical,652
+pulley,transfer mechanical,652
+lever,transfer mechanical,652
+shaft,transfer mechanical,652
+link,transfer mechanical,652
+shaft,transfer mechanical,652
+gear,transfer mechanical,652
+shaft,transfer mechanical,652
+pulley,transfer mechanical,652
+guiders,transfer mechanical,652
+shaft,transfer mechanical,652
+link,transfer mechanical,652
+support,transfer mechanical,652
+shaft,transfer mechanical,652
+bracket,transfer mechanical,652
+bracket,transfer mechanical,652
+lever,transfer mechanical,652
+link,transfer mechanical,652
+bracket,transfer mechanical,652
+shaft,transfer mechanical,652
+changer,transfer mechanical,652
+bracket,transfer mechanical,652
+sprocket,transfer mechanical,652
+housing,transfer solid,652
+handle,convert human energy,683
+handle,export human material,683
+blade,export mechanical,683
+blade,export solid,683
+blade,guide solid,683
+handle,import control,683
+handle,import human energy,683
+handle,import human material,683
+blade,import solid,683
+blade,indicate status,683
+blade,secure solid,683
+handle,secure solid,683
+blade,separate solid,683
+electric motor,actuate electrical,684
+blade,change solid,684
+electric motor,convert electrical,684
+electric switch,convert human energy,684
+electric switch,convert mechanical,684
+screw,couple solid,684
+clamp,couple solid,684
+housing,distribute mechanical,684
+electric motor,export acoustic,684
+cover,export human material,684
+housing,export mechanical,684
+blade,export mechanical,684
+container,export solid,684
+electric motor,export thermal,684
+cover,guide human material,684
+housing,guide solid,684
+container,guide solid,684
+cover,guide solid,684
+electric cord,import electrical,684
+electric switch,import human energy,684
+cover,import human material,684
+housing,import mechanical,684
+cover,import solid,684
+cover,indicate solid,684
+housing,position solid,684
+electric motor,position solid,684
+housing,position solid,684
+container,position solid,684
+cover,position solid,684
+electric motor,secure solid,684
+nut-bolt,secure solid,684
+unclassified,separate electrical,684
+unclassified,separate human energy,684
+unclassified,separate human material,684
+unclassified,separate solid,684
+housing,stabilize mechanical,684
+electric switch,store mechanical,684
+container,store solid,684
+electric cord,transfer electrical,684
+electric switch,transfer mechanical,684
+nut-bolt,transfer mechanical,684
+cover,transfer solid,684
+electric switch,actuate control,686
+electric switch,actuate electrical,686
+gear,change mechanical,686
+electric motor,convert electrical,686
+electric switch,convert human energy,686
+link,couple solid,686
+housing,couple solid,686
+screw,couple solid,686
+screw,couple solid,686
+screw,couple solid,686
+housing,export human material,686
+housing,export human material,686
+blade,export mechanical,686
+electric switch,export mechanical,686
+blade,export solid,686
+guiders,guide mechanical,686
+positioner,guide solid,686
+positioner,guide solid,686
+shaft,guide solid,686
+gear,guide solid,686
+friction enhancer,guide solid,686
+guiders,guide solid,686
+electric motor,guide solid,686
+guiders,guide solid,686
+battery,import electrical,686
+battery,import electrical,686
+electric switch,import human energy,686
+housing,import human material,686
+housing,import human material,686
+blade,import solid,686
+housing,position human material,686
+housing,position human material,686
+electric wire,position solid,686
+electric wire,position solid,686
+electric wire,position solid,686
+electric wire,position solid,686
+support,position solid,686
+housing,position solid,686
+guiders,position solid,686
+housing,position solid,686
+support,position solid,686
+housing,position solid,686
+shaft,position solid,686
+support,position solid,686
+spring,position solid,686
+electric wire,secure solid,686
+electric wire,secure solid,686
+electric wire,secure solid,686
+electric wire,secure solid,686
+support,secure solid,686
+housing,secure solid,686
+guiders,secure solid,686
+gear,secure solid,686
+housing,secure solid,686
+electric motor,secure solid,686
+support,secure solid,686
+housing,secure solid,686
+shaft,secure solid,686
+electric switch,secure solid,686
+blade,separate solid,686
+unclassified,separate solid,686
+battery,store electrical,686
+battery,store electrical,686
+battery,supply electrical,686
+battery,supply electrical,686
+housing,support human material,686
+housing,support human material,686
+battery,transfer electrical,686
+battery,transfer electrical,686
+electric wire,transfer electrical,686
+electric wire,transfer electrical,686
+electric wire,transfer electrical,686
+electric wire,transfer electrical,686
+electric wire,transfer electrical,686
+electric motor,transfer electrical,686
+electric wire,transfer electrical,686
+electric wire,transfer electrical,686
+electric wire,transfer electrical,686
+shaft,transfer mechanical,686
+guiders,transfer mechanical,686
+gear,transfer mechanical,686
+guiders,transfer mechanical,686
+link,transfer mechanical,686
+electric switch,actuate electrical,688
+gear,change mechanical,688
+gear,change mechanical,688
+electric motor,convert electrical,688
+electric switch,convert human energy,688
+handle,convert human energy,688
+guiders,couple solid,688
+nut-bolt,couple solid,688
+unclassified,couple solid,688
+unclassified,couple solid,688
+screw,couple solid,688
+screw,couple solid,688
+screw,couple solid,688
+screw,couple solid,688
+screw,couple solid,688
+screw,couple solid,688
+electric wire,couple solid,688
+blade,distribute mechanical,688
+electric motor,export acoustic,688
+guiders,export human material,688
+battery,export human material,688
+housing,export human material,688
+unclassified,export human material,688
+handle,export human material,688
+latch release,export human material,688
+housing,export human material,688
+electric switch,export human material,688
+handle,export human material,688
+blade,export mechanical,688
+electric switch,export mechanical,688
+handle,export mechanical,688
+guiders,export solid,688
+blade,export solid,688
+blade,export thermal,688
+electric motor,export thermal,688
+handle,guide mechanical,688
+positioner,guide solid,688
+positioner,guide solid,688
+positioner,guide solid,688
+gear,guide solid,688
+unclassified,guide solid,688
+nut-bolt,guide solid,688
+nut-bolt,guide solid,688
+nut-bolt,guide solid,688
+nut-bolt,guide solid,688
+housing,guide solid,688
+housing,guide solid,688
+housing,guide solid,688
+gear,guide solid,688
+cover,guide solid,688
+support,guide solid,688
+electric motor,guide solid,688
+nut-bolt,guide solid,688
+nut-bolt,guide solid,688
+shaft,guide solid,688
+guiders,guide solid,688
+stop,guide solid,688
+screw,guide solid,688
+positioner,guide solid,688
+unclassified,guide solid,688
+unclassified,guide solid,688
+unclassified,guide solid,688
+nut-bolt,guide solid,688
+electric switch,import control,688
+battery,import electrical,688
+electric switch,import human energy,688
+handle,import human energy,688
+guiders,import human material,688
+battery,import human material,688
+housing,import human material,688
+unclassified,import human material,688
+handle,import human material,688
+latch release,import human material,688
+housing,import human material,688
+electric switch,import human material,688
+handle,import human material,688
+handle,import mechanical,688
+guiders,import solid,688
+blade,import solid,688
+handle,mix mechanical,688
+guiders,position solid,688
+indicator light,position solid,688
+electric wire,position solid,688
+electric wire,position solid,688
+unclassified,position solid,688
+spring,position solid,688
+unclassified,position solid,688
+unclassified,position solid,688
+nut-bolt,position solid,688
+nut-bolt,position solid,688
+cushion,position solid,688
+housing,position solid,688
+housing,position solid,688
+cover,position solid,688
+support,position solid,688
+latch release,position solid,688
+positioner,position solid,688
+electric motor,position solid,688
+housing,position solid,688
+nut-bolt,position solid,688
+nut-bolt,position solid,688
+shaft,position solid,688
+guiders,position solid,688
+stop,position solid,688
+spring,position solid,688
+screw,position solid,688
+cushion,position solid,688
+unclassified,position solid,688
+spring,position solid,688
+electric switch,position solid,688
+unclassified,position solid,688
+door,position solid,688
+guiders,position solid,688
+electric switch,regulate mechanical,688
+shaft,rotate solid,688
+battery,secure solid,688
+unclassified,secure solid,688
+positioner,secure solid,688
+positioner,secure solid,688
+positioner,secure solid,688
+gear,secure solid,688
+nut-bolt,secure solid,688
+housing,secure solid,688
+housing,secure solid,688
+shaft,secure solid,688
+stop,secure solid,688
+spring,secure solid,688
+door,secure solid,688
+guiders,secure solid,688
+guiders,separate solid,688
+unclassified,separate solid,688
+battery,store electrical,688
+battery,supply electrical,688
+battery,transfer electrical,688
+electric wire,transfer electrical,688
+electric wire,transfer electrical,688
+electric wire,transfer electrical,688
+electric motor,transfer electrical,688
+electric wire,transfer electrical,688
+electric wire,transfer electrical,688
+electric wire,transfer electrical,688
+gear,transfer mechanical,688
+gear,transfer mechanical,688
+shaft,transfer mechanical,688
+handle,transfer mechanical,688
+electric switch,actuate electrical,689
+gear,change mechanical,689
+gear,change mechanical,689
+shaft,change mechanical,689
+gear,change mechanical,689
+shaft,change mechanical,689
+gear,change mechanical,689
+gear,change mechanical,689
+gear,change mechanical,689
+gear,change mechanical,689
+electric motor,convert electrical,689
+unclassified,convert human energy,689
+electric switch,convert human energy,689
+unclassified,couple solid,689
+key,couple solid,689
+screw,couple solid,689
+screw,couple solid,689
+screw,couple solid,689
+screw,couple solid,689
+screw,couple solid,689
+screw,couple solid,689
+screw,couple solid,689
+screw,couple solid,689
+electric wire,couple solid,689
+unclassified,distribute solid,689
+blade,export acoustic,689
+electric motor,export acoustic,689
+shaft,export acoustic,689
+unclassified,export human material,689
+electric switch,export human material,689
+blade,export human material,689
+shaft,export human material,689
+unclassified,export human material,689
+electric switch,export human material,689
+unclassified,export mechanical,689
+blade,export mechanical,689
+housing,export mechanical,689
+housing,export mechanical,689
+shaft,export mechanical,689
+electric switch,export mechanical,689
+blade,export solid,689
+shaft,export solid,689
+blade,export thermal,689
+electric motor,export thermal,689
+shaft,export thermal,689
+positioner,guide solid,689
+cover,guide solid,689
+housing,guide solid,689
+unclassified,guide solid,689
+stop,guide solid,689
+electric switch,guide solid,689
+gear,guide solid,689
+gear,guide solid,689
+housing,guide solid,689
+housing,guide solid,689
+cover,guide solid,689
+divider,guide solid,689
+gear,guide solid,689
+circuit board,guide solid,689
+electric motor,guide solid,689
+shaft,guide solid,689
+gear,guide solid,689
+gear,guide solid,689
+gear,guide solid,689
+gear,guide solid,689
+gear,guide solid,689
+guiders,guide solid,689
+guiders,guide solid,689
+guiders,guide solid,689
+unclassified,guide solid,689
+unclassified,guide solid,689
+unclassified,guide solid,689
+unclassified,guide solid,689
+guiders,guide solid,689
+electric switch,import control,689
+unclassified,import control,689
+unclassified,import control,689
+electric switch,import control,689
+battery,import electrical,689
+unclassified,import human energy,689
+electric switch,import human energy,689
+unclassified,import human material,689
+electric switch,import human material,689
+blade,import human material,689
+shaft,import human material,689
+unclassified,import human material,689
+electric switch,import human material,689
+housing,import mechanical,689
+housing,import mechanical,689
+blade,import solid,689
+shaft,import solid,689
+housing,mix mechanical,689
+housing,mix mechanical,689
+link,position solid,689
+electric wire,position solid,689
+electric wire,position solid,689
+unclassified,position solid,689
+spring,position solid,689
+support,position solid,689
+guiders,position solid,689
+spring,position solid,689
+unclassified,position solid,689
+spring,position solid,689
+stop,position solid,689
+gear,position solid,689
+housing,position solid,689
+housing,position solid,689
+cover,position solid,689
+divider,position solid,689
+gear,position solid,689
+positioner,position solid,689
+cover,position solid,689
+shaft,position solid,689
+gear,position solid,689
+unclassified,position solid,689
+unclassified,position solid,689
+unclassified,position solid,689
+cam,position solid,689
+spring,position solid,689
+diode,regulate electrical,689
+transistor,regulate electrical,689
+circuit board,regulate electrical,689
+electric switch,regulate electrical,689
+unclassified,rotate solid,689
+unclassified,secure solid,689
+cover,secure solid,689
+housing,secure solid,689
+unclassified,secure solid,689
+shaft,secure solid,689
+housing,secure solid,689
+transistor,secure solid,689
+electric motor,secure solid,689
+shaft,secure solid,689
+electric switch,secure solid,689
+unclassified,separate solid,689
+battery,store electrical,689
+battery,supply electrical,689
+electric wire,transfer control,689
+battery,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+transistor,transfer electrical,689
+indicator light,transfer electrical,689
+circuit board,transfer electrical,689
+electric motor,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+electric wire,transfer electrical,689
+gear,transfer mechanical,689
+gear,transfer mechanical,689
+shaft,transfer mechanical,689
+shaft,transfer mechanical,689
+gear,transfer mechanical,689
+gear,transfer mechanical,689
+gear,transfer mechanical,689
+housing,transmit mechanical,689
+housing,transmit mechanical,689
+electric switch,actuate electrical,697
+gear,change mechanical,697
+electric motor,convert electrical,697
+housing,convert human energy,697
+link,convert human energy,697
+housing,convert human energy,697
+electric switch,convert human energy,697
+link,convert mechanical,697
+screw,couple acoustic,697
+support,couple solid,697
+support,couple solid,697
+link,couple solid,697
+screw,couple solid,697
+screw,couple solid,697
+screw,couple solid,697
+positioner,couple solid,697
+solder,couple solid,697
+blade,distribute translational,697
+electric motor,export acoustic,697
+lever,export human material,697
+housing,export human material,697
+link,export human material,697
+unclassified,export human material,697
+link,export human material,697
+housing,export human material,697
+housing,export mechanical,697
+link,export mechanical,697
+housing,export mechanical,697
+electric switch,export mechanical,697
+blade,export solid,697
+blade,export thermal,697
+electric motor,export thermal,697
+blade,export translational,697
+support,guide solid,697
+battery,guide solid,697
+positioner,guide solid,697
+positioner,guide solid,697
+guiders,guide solid,697
+guiders,guide solid,697
+support,guide solid,697
+link,guide solid,697
+lever,guide solid,697
+guiders,guide solid,697
+unclassified,guide solid,697
+link,guide solid,697
+lever,guide solid,697
+electric motor,guide solid,697
+link,guide solid,697
+positioner,guide solid,697
+positioner,guide solid,697
+housing,guide solid,697
+electric switch,guide solid,697
+unclassified,import control,697
+electric switch,import control,697
+battery,import electrical,697
+housing,import human energy,697
+link,import human energy,697
+electric switch,import human energy,697
+housing,import human energy,697
+lever,import human material,697
+housing,import human material,697
+link,import human material,697
+unclassified,import human material,697
+link,import human material,697
+housing,import human material,697
+electric switch,import human material,697
+housing,import mechanical,697
+housing,import mechanical,697
+blade,import solid,697
+housing,mix mechanical,697
+housing,mix mechanical,697
+electric wire,position solid,697
+electric wire,position solid,697
+unclassified,position solid,697
+guiders,position solid,697
+support,position solid,697
+cover,position solid,697
+link,position solid,697
+housing,position solid,697
+spring,position solid,697
+housing,position solid,697
+transistor,regulate electrical,697
+electric switch,regulate electrical,697
+unclassified,secure solid,697
+support,secure solid,697
+gear,secure solid,697
+unclassified,secure solid,697
+link,secure solid,697
+link,secure solid,697
+positioner,secure solid,697
+positioner,secure solid,697
+positioner,secure solid,697
+electric switch,secure solid,697
+battery,store electrical,697
+battery,supply electrical,697
+battery,transfer electrical,697
+electric wire,transfer electrical,697
+electric wire,transfer electrical,697
+electric wire,transfer electrical,697
+electric wire,transfer electrical,697
+electric wire,transfer electrical,697
+electric wire,transfer electrical,697
+transistor,transfer electrical,697
+electric motor,transfer electrical,697
+electric wire,transfer electrical,697
+electric wire,transfer electrical,697
+electric switch,transfer electrical,697
+electric wire,transfer electrical,697
+shaft,transfer mechanical,697
+gear,transfer mechanical,697
+blade,transfer translational,697
+link,transfer translational,697
+shaft,transfer translational,697
+link,transfer translational,697
+link,transfer translational,697
+housing,transmit mechanical,697
+housing,transmit mechanical,697

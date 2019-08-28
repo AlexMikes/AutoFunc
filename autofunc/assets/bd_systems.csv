@@ -1,0 +1,832 @@
+﻿comp,func,id
+blade,export solid,591
+blade,guide solid,591
+blade,import solid,591
+blade,secure solid,591
+blade,separate solid,591
+clamp,couple solid,591
+clamp,export solid,591
+clamp,import solid,591
+clamp,position solid,591
+clamp,separate solid,591
+electric conductor,couple solid,591
+electric cord,couple solid,591
+electric cord,export electrical,591
+electric cord,import electrical,591
+electric cord,position solid,591
+electric cord,transfer electrical,591
+electric motor,convert electrical,591
+electric motor,couple solid,591
+electric motor,guide solid,591
+electric motor,transfer electrical,591
+electric switch,actuate control,591
+electric switch,actuate electrical,591
+electric switch,couple solid,591
+electric switch,guide solid,591
+electric switch,position solid,591
+gear,change mechanical,591
+gear,change mechanical,591
+gear,change mechanical,591
+gear,guide solid,591
+gear,guide solid,591
+gear,guide solid,591
+gear,import solid,591
+gear,position solid,591
+gear,position solid,591
+gear,secure solid,591
+gear,secure solid,591
+gear,secure solid,591
+gear,secure solid,591
+gear,transfer mechanical,591
+gear,transfer mechanical,591
+gear,transfer mechanical,591
+gear,transfer mechanical,591
+housing,couple solid,591
+housing,couple solid,591
+housing,distribute mechanical,591
+housing,export mechanical,591
+housing,guide solid,591
+housing,position solid,591
+housing,position solid,591
+housing,stabilize mechanical,591
+lever,convert human energy,591
+lever,guide solid,591
+lever,import human energy,591
+lever,import human material,591
+lever,import solid,591
+magnet,guide solid,591
+magnet,import solid,591
+rivet,couple solid,591
+screw,couple solid,591
+screw,couple solid,591
+screw,couple solid,591
+screw,couple solid,591
+shaft,guide solid,591
+shaft,secure solid,591
+shaft,transfer mechanical,591
+solder,couple solid,591
+solder,couple solid,591
+solder,couple solid,591
+support,couple solid,591
+support,position solid,591
+unclassified,couple solid,591
+unclassified,export solid,591
+unclassified,import solid,591
+unclassified,position solid,591
+unclassified,separate solid,591
+blade,export mechanical,592
+blade,guide mechanical,592
+cover,stop solid,592
+cover,stop solid,592
+electric switch,convert human energy,592
+electric switch,import human energy,592
+gear,change mechanical,592
+gear,guide mechanical,592
+gear,guide mechanical,592
+gear,transfer mechanical,592
+housing,export human material,592
+housing,export human material,592
+housing,guide human material,592
+housing,guide human material,592
+housing,guide solid,592
+housing,guide solid,592
+housing,import human material,592
+housing,import human material,592
+housing,position solid,592
+housing,position solid,592
+housing,position solid,592
+insert,guide solid,592
+link,guide mechanical,592
+link,import mechanical,592
+link,import solid,592
+link,secure solid,592
+link,secure solid,592
+link,transfer mechanical,592
+positioner,guide solid,592
+positioner,guide solid,592
+screw,couple solid,592
+screw,couple solid,592
+screw,couple solid,592
+screw,couple solid,592
+screw,couple solid,592
+screw,position solid,592
+spring,guide solid,592
+spring,store mechanical,592
+spring,supply mechanical,592
+stop,secure solid,592
+stop,secure solid,592
+stop,secure solid,592
+support,export human energy,592
+support,export mechanical,592
+support,guide human energy,592
+support,guide mechanical,592
+support,import human energy,592
+support,position solid,592
+support,position solid,592
+support,secure solid,592
+support,stop solid,592
+cover,guide solid,593
+cover,position solid,593
+cover,position solid,593
+cover,position solid,593
+gear,change mechanical,593
+gear,change mechanical,593
+gear,change mechanical,593
+gear,guide solid,593
+gear,guide solid,593
+gear,guide solid,593
+gear,guide solid,593
+gear,transfer mechanical,593
+gear,transfer mechanical,593
+gear,transfer mechanical,593
+guiders,guide solid,593
+guiders,position solid,593
+guiders,position solid,593
+guiders,position solid,593
+housing,position solid,593
+housing,position solid,593
+housing,position solid,593
+housing,secure solid,593
+latch release,secure solid,593
+latch release,transfer mechanical,593
+positioner,guide solid,593
+retaining clip,position solid,593
+screw,couple solid,593
+screw,couple solid,593
+screw,couple solid,593
+screw,couple solid,593
+shaft,change mechanical,593
+shaft,export solid,593
+shaft,guide solid,593
+shaft,import solid,593
+shaft,secure solid,593
+shaft,transfer mechanical,593
+shaft,transfer mechanical,593
+shaft,transfer mechanical,593
+spring,couple solid,593
+spring,position solid,593
+stop,position solid,593
+support,secure solid,593
+washer,guide solid,593
+washer,guide solid,593
+washer,position solid,593
+battery,store electrical,594
+battery,supply electrical,594
+cover,position solid,594
+diode,guide electrical,594
+electric cord,change electrical,594
+electric cord,export electrical,594
+electric cord,import electrical,594
+electric cord,transfer electrical,594
+electric motor,convert electrical,594
+electric motor,transfer electrical,594
+electric switch,actuate control,594
+electric switch,actuate electrical,594
+electric switch,convert human energy,594
+electric switch,export human material,594
+electric switch,guide human material,594
+electric switch,import human energy,594
+electric switch,import human material,594
+electric wire,guide solid,594
+electric wire,guide solid,594
+electric wire,position solid,594
+electric wire,position solid,594
+electric wire,secure solid,594
+electric wire,secure solid,594
+electric wire,secure solid,594
+electric wire,secure solid,594
+electric wire,secure solid,594
+electric wire,secure solid,594
+electric wire,transfer electrical,594
+electric wire,transfer electrical,594
+electric wire,transfer electrical,594
+electric wire,transfer electrical,594
+electric wire,transfer electrical,594
+electric wire,transfer electrical,594
+fan,convert mechanical,594
+fan,secure solid,594
+fastener,couple solid,594
+guiders,guide mixture,594
+guiders,import mixture,594
+guiders,secure solid,594
+housing,distribute mechanical,594
+housing,export human material,594
+housing,export human material,594
+housing,export mechanical,594
+housing,guide human material,594
+housing,guide human material,594
+housing,guide solid,594
+housing,guide solid,594
+housing,import human material,594
+housing,import human material,594
+housing,position solid,594
+housing,position solid,594
+housing,secure solid,594
+housing,secure solid,594
+housing,stabilize mechanical,594
+latch release,export human material,594
+latch release,guide human material,594
+latch release,import human material,594
+material filter,export solid,594
+material filter,separate mixture,594
+material filter,separate mixture,594
+material filter,store solid,594
+screw,couple solid,594
+support,guide mixture,594
+support,position solid,594
+support,position solid,594
+support,position solid,594
+support,secure solid,594
+support,secure solid,594
+support,secure solid,594
+valve,separate mixture,594
+valve,stop solid,594
+battery,import electrical,686
+battery,import electrical,686
+battery,store electrical,686
+battery,store electrical,686
+battery,supply electrical,686
+battery,supply electrical,686
+battery,transfer electrical,686
+battery,transfer electrical,686
+blade,export mechanical,686
+blade,export solid,686
+blade,import solid,686
+blade,separate solid,686
+electric motor,convert electrical,686
+electric motor,guide solid,686
+electric motor,secure solid,686
+electric motor,transfer electrical,686
+electric switch,actuate control,686
+electric switch,actuate electrical,686
+electric switch,convert human energy,686
+electric switch,export mechanical,686
+electric switch,import human energy,686
+electric switch,secure solid,686
+electric wire,position solid,686
+electric wire,position solid,686
+electric wire,position solid,686
+electric wire,position solid,686
+electric wire,secure solid,686
+electric wire,secure solid,686
+electric wire,secure solid,686
+electric wire,secure solid,686
+electric wire,transfer electrical,686
+electric wire,transfer electrical,686
+electric wire,transfer electrical,686
+electric wire,transfer electrical,686
+electric wire,transfer electrical,686
+electric wire,transfer electrical,686
+electric wire,transfer electrical,686
+electric wire,transfer electrical,686
+friction enhancer,guide solid,686
+gear,change mechanical,686
+gear,guide solid,686
+gear,secure solid,686
+gear,transfer mechanical,686
+guiders,guide mechanical,686
+guiders,guide solid,686
+guiders,guide solid,686
+guiders,position solid,686
+guiders,secure solid,686
+guiders,transfer mechanical,686
+guiders,transfer mechanical,686
+housing,couple solid,686
+housing,export human material,686
+housing,export human material,686
+housing,import human material,686
+housing,import human material,686
+housing,position human material,686
+housing,position human material,686
+housing,position solid,686
+housing,position solid,686
+housing,position solid,686
+housing,secure solid,686
+housing,secure solid,686
+housing,secure solid,686
+housing,support human material,686
+housing,support human material,686
+link,couple solid,686
+link,transfer mechanical,686
+positioner,guide solid,686
+positioner,guide solid,686
+screw,couple solid,686
+screw,couple solid,686
+screw,couple solid,686
+shaft,guide solid,686
+shaft,position solid,686
+shaft,secure solid,686
+shaft,transfer mechanical,686
+spring,position solid,686
+support,position solid,686
+support,position solid,686
+support,position solid,686
+support,secure solid,686
+support,secure solid,686
+blade,export mechanical,595
+blade,transfer mechanical,595
+cam,change mechanical,595
+cam,transfer mechanical,595
+cover,convert human energy,595
+cover,guide solid,595
+cover,guide solid,595
+cover,guide solid,595
+cover,import human energy,595
+cover,position solid,595
+cover,position solid,595
+cover,transfer mechanical,595
+electric switch,export mechanical,595
+electric switch,guide human energy,595
+electric switch,import human energy,595
+gear,change mechanical,595
+gear,change mechanical,595
+gear,guide solid,595
+gear,guide solid,595
+gear,transfer mechanical,595
+guiders,guide mechanical,595
+guiders,guide solid,595
+guiders,guide solid,595
+guiders,guide solid,595
+guiders,guide solid,595
+guiders,guide solid,595
+guiders,position solid,595
+guiders,position solid,595
+guiders,position solid,595
+guiders,secure solid,595
+guiders,transfer mechanical,595
+housing,export human material,595
+housing,export human material,595
+housing,guide human material,595
+housing,guide human material,595
+housing,guide solid,595
+housing,guide solid,595
+housing,import human material,595
+housing,import human material,595
+housing,position solid,595
+housing,position solid,595
+housing,position solid,595
+link,guide mechanical,595
+link,position solid,595
+link,position solid,595
+link,transfer mechanical,595
+link,transfer mechanical,595
+nut-bolt,secure solid,595
+nut-bolt,secure solid,595
+positioner,guide mechanical,595
+positioner,guide solid,595
+positioner,guide solid,595
+positioner,guide solid,595
+positioner,transfer mechanical,595
+screw,couple solid,595
+screw,couple solid,595
+screw,couple solid,595
+screw,couple solid,595
+sled,guide solid,595
+sled,position solid,595
+spring,store mechanical,595
+spring,supply mechanical,595
+stop,secure solid,595
+stop,secure solid,595
+stop,secure solid,595
+stop,secure solid,595
+support,guide solid,595
+support,position solid,595
+washer,position solid,595
+blade,transfer mechanical,596
+guiders,convert human energy,596
+guiders,export human material,596
+guiders,export solid,596
+guiders,extract human energy,596
+guiders,guide solid,596
+guiders,import human material,596
+guiders,import solid,596
+guiders,position solid,596
+guiders,position solid,596
+housing,guide solid,596
+housing,guide solid,596
+housing,position solid,596
+housing,position solid,596
+housing,position solid,596
+housing,position solid,596
+housing,secure solid,596
+housing,secure solid,596
+latch release,position solid,596
+latch release,position solid,596
+nut-bolt,secure solid,596
+positioner,guide solid,596
+retaining clip,couple solid,596
+screw,couple solid,596
+screw,couple solid,596
+screw,couple solid,596
+screw,position solid,596
+screw,position solid,596
+shaft,export solid,596
+shaft,import solid,596
+shaft,position solid,596
+shaft,secure solid,596
+shaft,transfer mechanical,596
+spring,position solid,596
+spring,position solid,596
+spring,position solid,596
+support,export solid,596
+support,guide solid,596
+support,import solid,596
+support,position solid,596
+bracket,secure solid,682
+clamp,export mechanical,682
+clamp,export solid,682
+clamp,import solid,682
+clamp,separate solid,682
+cover,position solid,682
+cushion,decrement rotational,682
+electric cord,guide electrical,682
+electric cord,import electrical,682
+electric cord,transfer electrical,682
+electric motor,convert electrical,682
+electric motor,export acoustic,682
+electric motor,export thermal,682
+electric motor,secure solid,682
+electric switch,actuate electrical,682
+electric switch,convert human energy,682
+electric switch,import human energy,682
+electric switch,secure solid,682
+friction enhancer,export solid,682
+friction enhancer,import solid,682
+guiders,change rotational,682
+guiders,decrement rotational,682
+guiders,export rotational,682
+guiders,export thermal,682
+guiders,position solid,682
+guiders,secure solid,682
+guiders,secure solid,682
+guiders,transfer gas,682
+housing,export gas,682
+housing,export gas,682
+housing,export human material,682
+housing,export human material,682
+housing,guide human material,682
+housing,guide human material,682
+housing,import gas,682
+housing,import gas,682
+housing,import human material,682
+housing,import human material,682
+housing,position solid,682
+housing,position solid,682
+housing,secure solid,682
+housing,secure solid,682
+positioner,guide rotational,682
+positioner,guide solid,682
+screw,couple solid,682
+screw,couple solid,682
+screw,couple solid,682
+shaft,distribute rotational,682
+shaft,secure solid,682
+battery,import electrical,597
+battery,position solid,597
+battery,secure solid,597
+battery,store electrical,597
+battery,supply electrical,597
+battery,transfer electrical,597
+cap,position solid,597
+cap,secure solid,597
+cover,guide solid,597
+cover,position solid,597
+cover,position solid,597
+electric motor,convert electrical,597
+electric motor,secure solid,597
+electric motor,transfer electrical,597
+electric switch,actuate control,597
+electric switch,actuate electrical,597
+electric switch,convert human energy,597
+electric switch,export human material,597
+electric switch,import human energy,597
+electric switch,import human material,597
+electric switch,regulate control,597
+electric switch,regulate electrical,597
+electric switch,secure solid,597
+electric wire,position solid,597
+electric wire,position solid,597
+electric wire,transfer electrical,597
+electric wire,transfer electrical,597
+electric wire,transfer electrical,597
+electric wire,transfer electrical,597
+electric wire,transfer electrical,597
+electric wire,transfer electrical,597
+electric wire,transfer electrical,597
+electric wire,transfer electrical,597
+electric wire,transfer electrical,597
+electric wire,transfer electrical,597
+electric wire,transfer electrical,597
+gear,change mechanical,597
+gear,change mechanical,597
+gear,guide solid,597
+gear,guide solid,597
+gear,guide solid,597
+gear,transfer mechanical,597
+gear,transfer mechanical,597
+guiders,convert human energy,597
+guiders,convert human energy,597
+guiders,export human material,597
+guiders,export human material,597
+guiders,import human energy,597
+guiders,import human energy,597
+guiders,import human material,597
+guiders,import human material,597
+guiders,position solid,597
+guiders,position solid,597
+guiders,regulate control,597
+guiders,transfer control,597
+handle,position solid,597
+housing,guide solid,597
+housing,position solid,597
+housing,position solid,597
+housing,position solid,597
+housing,position solid,597
+housing,secure solid,597
+latch release,export solid,597
+latch release,export solid,597
+latch release,import solid,597
+latch release,import solid,597
+latch release,regulate control,597
+latch release,secure solid,597
+latch release,secure solid,597
+lever,export solid,597
+lever,import control,597
+lever,import solid,597
+lever,transfer control,597
+screw,couple solid,597
+screw,couple solid,597
+screw,couple solid,597
+screw,couple solid,597
+spring,position solid,597
+spring,position solid,597
+spring,position solid,597
+spring,position solid,597
+sprocket,change mechanical,597
+sprocket,export solid,597
+sprocket,import solid,597
+sprocket,transfer mechanical,597
+stop,export solid,597
+stop,import solid,597
+stop,position solid,597
+stop,transfer control,597
+transistor,regulate electrical,597
+transistor,transfer electrical,597
+electric cord,import electrical,691
+electric cord,transfer electrical,691
+electric resistor,regulate electrical,691
+electric resistor,transfer electrical,691
+electric switch,actuate electrical,691
+electric switch,indicate control,691
+electric switch,position solid,691
+electric switch,regulate electrical,691
+electric switch,transfer electrical,691
+electric switch,transfer thermal,691
+electric wire,secure solid,691
+electric wire,transfer electrical,691
+electric wire,transfer electrical,691
+electric wire,transfer electrical,691
+electric wire,transfer electrical,691
+electric wire,transfer electrical,691
+electric wire,transfer electrical,691
+electric wire,transfer electrical,691
+electric wire,transfer electrical,691
+electric wire,transfer electrical,691
+handle,export human material,691
+handle,export human material,691
+handle,export human material,691
+handle,guide human material,691
+handle,guide human material,691
+handle,guide human material,691
+handle,import human material,691
+handle,import human material,691
+handle,import human material,691
+heating element,convert electrical,691
+heating element,transfer electrical,691
+housing,position solid,691
+indicator light,transfer electrical,691
+lever,convert human energy,691
+lever,export human material,691
+lever,export mechanical,691
+lever,guide solid,691
+lever,import human energy,691
+lever,import human material,691
+magnet,position solid,691
+magnet,transfer thermal,691
+nut-bolt,couple solid,691
+reservoir,export mixture,691
+reservoir,export thermal,691
+reservoir,guide solid,691
+reservoir,import liquid,691
+reservoir,import solid,691
+reservoir,mix liquid,691
+reservoir,mix solid,691
+reservoir,position solid,691
+reservoir,store liquid,691
+reservoir,store solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+screw,couple solid,691
+solder,couple solid,691
+spring,guide solid,691
+spring,guide solid,691
+support,guide solid,691
+support,position solid,691
+support,position solid,691
+support,secure solid,691
+support,secure solid,691
+support,transfer thermal,691
+cam,change mechanical,299
+clamp,guide solid,299
+clamp,import solid,299
+guiders,guide solid,299
+housing,guide solid,299
+housing,position solid,299
+housing,position solid,299
+nut-bolt,secure solid,299
+positioner,guide solid,299
+positioner,guide solid,299
+positioner,transfer mechanical,299
+rotational coupler,export solid,299
+rotational coupler,import solid,299
+rotational coupler,transfer mechanical,299
+screw,couple solid,299
+screw,couple solid,299
+shaft,position solid,299
+shaft,secure solid,299
+shaft,transfer mechanical,299
+stop,position solid,299
+support,guide solid,299
+support,guide solid,299
+support,position solid,299
+support,secure solid,299
+battery,store electrical,599
+battery,supply electrical,599
+clutch,guide solid,599
+clutch,secure solid,599
+clutch,transfer control,599
+electric motor,convert electrical,599
+electric motor,position solid,599
+electric motor,transfer electrical,599
+electric socket,transfer electrical,599
+electric switch,actuate control,599
+electric switch,actuate electrical,599
+electric switch,convert human energy,599
+electric switch,convert human energy,599
+electric switch,export human material,599
+electric switch,guide human material,599
+electric switch,guide solid,599
+electric switch,import human energy,599
+electric switch,import human material,599
+electric switch,prevent human energy,599
+electric switch,regulate control,599
+electric switch,regulate electrical,599
+electric wire,transfer electrical,599
+electric wire,transfer electrical,599
+electric wire,transfer electrical,599
+electric wire,transfer electrical,599
+gear,change mechanical,599
+gear,change mechanical,599
+gear,change mechanical,599
+gear,change mechanical,599
+gear,change mechanical,599
+gear,guide solid,599
+gear,guide solid,599
+gear,guide solid,599
+gear,guide solid,599
+gear,guide solid,599
+gear,position solid,599
+gear,regulate control,599
+gear,regulate mechanical,599
+gear,transfer mechanical,599
+gear,transfer mechanical,599
+gear,transfer mechanical,599
+gear,transfer mechanical,599
+gear,transfer mechanical,599
+guiders,guide solid,599
+guiders,guide solid,599
+guiders,guide solid,599
+guiders,guide solid,599
+guiders,guide solid,599
+guiders,guide solid,599
+guiders,position solid,599
+guiders,transfer control,599
+guiders,transfer control,599
+housing,export human material,599
+housing,export human material,599
+housing,guide human material,599
+housing,guide human material,599
+housing,guide solid,599
+housing,guide solid,599
+housing,import human material,599
+housing,import human material,599
+housing,position solid,599
+housing,position solid,599
+housing,position solid,599
+housing,position solid,599
+housing,secure solid,599
+housing,secure solid,599
+housing,secure solid,599
+housing,secure solid,599
+key,couple solid,599
+latch release,export human material,599
+latch release,guide human material,599
+latch release,guide solid,599
+latch release,import human material,599
+latch release,position solid,599
+latch release,secure solid,599
+positioner,guide solid,599
+screw,couple solid,599
+screw,couple solid,599
+screw,position solid,599
+shaft,export solid,599
+shaft,guide solid,599
+shaft,import solid,599
+shaft,position solid,599
+shaft,secure solid,599
+shaft,transfer mechanical,599
+shaft,transfer mechanical,599
+solder,couple solid,599
+spring,guide solid,599
+spring,secure solid,599
+support,position solid,599
+unclassified,couple solid,599
+blade,export solid,600
+blade,import solid,600
+blade,separate solid,600
+blade,transfer mechanical,600
+electric conductor,couple solid,600
+electric cord,export electrical,600
+electric cord,import electrical,600
+electric cord,transfer electrical,600
+electric motor,convert electrical,600
+electric motor,convert electrical,600
+electric motor,export thermal,600
+electric motor,position solid,600
+electric motor,secure solid,600
+electric motor,transfer electrical,600
+electric switch,actuate control,600
+electric switch,actuate electrical,600
+electric switch,convert human energy,600
+electric switch,export human material,600
+electric switch,guide human material,600
+electric switch,guide solid,600
+electric switch,import human energy,600
+electric switch,import human material,600
+electric wire,transfer electrical,600
+electric wire,transfer electrical,600
+electric wire,transfer electrical,600
+fan,convert mechanical,600
+gear,change mechanical,600
+gear,guide solid,600
+gear,transfer mechanical,600
+glue,couple solid,600
+guiders,guide solid,600
+guiders,guide solid,600
+guiders,position solid,600
+housing,export gas,600
+housing,export human material,600
+housing,export human material,600
+housing,guide human material,600
+housing,guide human material,600
+housing,guide solid,600
+housing,guide solid,600
+housing,import gas,600
+housing,import human material,600
+housing,import human material,600
+housing,position solid,600
+latch release,export human material,600
+latch release,guide human material,600
+latch release,guide solid,600
+latch release,import human material,600
+link,position solid,600
+link,secure solid,600
+link,transfer mechanical,600
+link,transfer mechanical,600
+rivet,couple solid,600
+screw,couple solid,600
+screw,couple solid,600
+screw,couple solid,600
+screw,couple solid,600
+screw,couple solid,600
+screw,couple solid,600
+solder,couple solid,600
+support,position solid,600
+unclassified,secure solid,600

@@ -27,8 +27,14 @@ def make_df(file):
     """
 
     # Read in dataset
-    data_frame = pd.read_csv(os.path.expanduser(file))
+    df = pd.read_csv(os.path.expanduser(file))
 
-    return data_frame
+    df = df[df.comp != 'unclassified']
+    df = df[df.comp != 'system']
+    df = df[df.comp != 'assembly']
+    df = df[~df.comp.str.contains('output')]
+
+
+    return df
 
 

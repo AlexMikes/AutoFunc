@@ -54,8 +54,8 @@ def precision_recall(thresh_results, test_records):
     # Create dictionary of format: {component: [function-flow1, function-flow 2, etc.]}
     for e in k:
 
-      # Make dictionary of list of function-flows for each component
-      test_actual.setdefault(e[0], []).append(e[1])
+        # Make dictionary of list of function-flows for each component
+        test_actual.setdefault(e[0], []).append(e[1])
 
 
     # List for keeping track of which function-flows happen for each component
@@ -66,22 +66,24 @@ def precision_recall(thresh_results, test_records):
 
     for k,v in thresh_results.items():
 
-      for vs in v:
+        for vs in v:
 
-         # Append list of all of the function-flows for each component
-         keep_flows.append(vs[0])
+            # Append list of all of the function-flows for each component
+            keep_flows.append(vs[0])
 
-      # Save list of function-flows for each component
-      learned_dict[k] = keep_flows
+        # Save list of function-flows for each component
+        learned_dict[k] = keep_flows
 
-      # Reset list for each component
-      keep_flows = []
+        # Reset list for each component
+        keep_flows = []
 
 
     # Empty dictionaries for each category
     overmatched = {}
     matched = {}
     unmatched = {}
+
+    not_found = {}
 
     # Zeroed number for each factor to sum
     overmatched_factor = 0
@@ -90,29 +92,35 @@ def precision_recall(thresh_results, test_records):
 
     for k, v in test_actual.items():
 
-      # Skip unclassified components
-      if k != 'unclassified':
+        # Skip unclassified components
+        if k != 'unclassified':
 
-         # Make a set for the lists of function-flows for each component
-         actual_flows = set(v)
-         learned_flows = set(learned_dict[k])
+            if k in learned_dict:
 
-         # Make dictionary for each component based on which category it falls in to
+                # Make a set for the lists of function-flows for each component
+                actual_flows = set(v)
+                learned_flows = set(learned_dict[k])
 
-         # If component is in the learning set but not in the test case, it is overmatched
-         overmatched[k] = learned_flows.difference(actual_flows)
+                # Make dictionary for each component based on which category it falls in to
 
-         # If component is in the test case but not in the learning set, it is unmatched
-         unmatched[k] = actual_flows.difference(learned_flows)
+                # If component is in the learning set but not in the test case, it is overmatched
+                overmatched[k] = learned_flows.difference(actual_flows)
 
-         # If component is in both sets, it is matched
-         matched[k] = actual_flows.intersection(learned_flows)
+                # If component is in the test case but not in the learning set, it is unmatched
+                unmatched[k] = actual_flows.difference(learned_flows)
+
+                # If component is in both sets, it is matched
+                matched[k] = actual_flows.intersection(learned_flows)
 
 
-         # Keep running sum of how many function-flows fell into each category
-         overmatched_factor += len(overmatched[k])
-         unmatched_factor += len(unmatched[k])
-         matched_factor += len(matched[k])
+                # Keep running sum of how many function-flows fell into each category
+                overmatched_factor += len(overmatched[k])
+                unmatched_factor += len(unmatched[k])
+                matched_factor += len(matched[k])
+
+            else:
+
+                unmatched_factor += len(test_actual[k])
 
 
     # Find overall match factor
@@ -134,7 +142,7 @@ def precision_recall(thresh_results, test_records):
 
     f1 = 2 * ((precision * recall)/(precision + recall))
 
-    return learned_dict, matched, overmatched, unmatched, recall, precision, f1
+    return learned_dict, matched, overmatched, unmatched, recall, precision, f1 #, match_factor
 
 
 
