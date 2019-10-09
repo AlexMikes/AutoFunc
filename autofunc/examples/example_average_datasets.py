@@ -26,11 +26,14 @@ start = time.time()
 
 # Dataset used for data mining
 script_dir = os.path.dirname(__file__)
-file1 = os.path.join(script_dir, '../assets/reservoir_systems.csv')
+file1 = os.path.join(script_dir, '../assets/heating_element_systems.csv')
+# file1 = os.path.join(script_dir, '../assets/F1TestDifferent.csv')
 
 
 # CSV with systems to test (blade, heating element, reservoir, etc.)
-file_to_test = os.path.join(script_dir, '../assets/reservoir_systems.csv')
+file_to_test = os.path.join(script_dir, '../assets/heating_element_systems.csv')
+# file_to_test = os.path.join(script_dir, '../assets/F1TestDifferent.csv')
+
 input_data = pd.read_csv(file_to_test)
 
 # ids = list(store_data.id.unique())
@@ -53,6 +56,8 @@ combos = list(combinations(ids, r))
 
 keep = []
 plots = []
+precisions = []
+recalls = []
 
 f1s = 0
 # match_factors = 0
@@ -70,7 +75,7 @@ for e in combos:
 
     # Learning
 
-    comb_sort = counter_pandas(learn_df)
+    comb_sort, counts, combos = counter_pandas(learn_df)
     thresh_results = get_top_results(comb_sort, threshold)
 
     # Find the F1 score of the verification test by comparing the learned results with the known function/flows
@@ -94,7 +99,8 @@ for e in combos:
     # learned_dict, matched, overmatched, unmatched, recall, precision, f1 = precision_recall(bd_thresh_results, ver_list)
 
 
-
+    precisions.append(precision)
+    recalls.append(recall)
 
     print(e)
 
@@ -111,8 +117,25 @@ optimum = max(keep,key=itemgetter(1))
 avg_f1 = f1s/len(combos)
 # avg_mf = match_factors/len(combos)
 
+
+# Scaling by maximum number of each component
+max_components = counts[max(counts, key=counts.get)]
+max_component_name = max(counts, key=counts.get)
+
+scaled = {}
+scaled_conf = {}
+for k,v in counts.items():
+    scaled[k] = v/max_components
+
+# for k,v in thresh_results.items():
+#
+#     scaled_conf[k][v] = thresh_results[k][v]*(v/max_components)
+
+
 print('Maximum is {0:.2f}'.format(optimum[1]))
 print('Average F1 is {0:.2f}'.format(avg_f1))
+
+
 # print('Average MF is {0:.2f}'.format(avg_mf))
 
 end = time.time()

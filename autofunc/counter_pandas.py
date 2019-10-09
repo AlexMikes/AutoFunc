@@ -73,7 +73,7 @@ def counter_pandas(dataframe):
     for k, v in comb_sort.items():
         v.sort(key=lambda x: x[1], reverse=True)
 
-    return comb_sort
+    return comb_sort, counts, combos
 
 
 
