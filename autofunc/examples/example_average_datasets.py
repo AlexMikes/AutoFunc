@@ -6,6 +6,7 @@ from autofunc.count_with_id import *
 from autofunc.get_top_results import get_top_results
 from autofunc.get_data import get_data
 from autofunc.counter_pandas import counter_pandas
+from autofunc.counter_pandas_with_counts import counter_pandas_with_counts
 from autofunc.make_df import make_df
 from autofunc.split_learning_verification import split_learning_verification
 from autofunc.df_to_list import df_to_list
@@ -75,7 +76,7 @@ for e in combos:
 
     # Learning
 
-    comb_sort, counts, combos = counter_pandas(learn_df)
+    comb_sort, counts, combos = counter_pandas_with_counts(learn_df)
     thresh_results = get_top_results(comb_sort, threshold)
 
     # Find the F1 score of the verification test by comparing the learned results with the known function/flows

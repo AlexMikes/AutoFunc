@@ -7,7 +7,7 @@ to the confidence metric in association rules (# of occurrences / total occurren
 
 # import pandas as pd
 
-def counter_pandas(dataframe):
+def counter_pandas_with_counts(dataframe):
 
     """
         Counts instances and sorts them by prevalence
@@ -67,13 +67,16 @@ def counter_pandas(dataframe):
     for cs, fs in combos.items():
         for k, v in combos[cs].items():
             # (2) Divide
-            comb_sort.setdefault(cs, []).append([k, v / counts[cs]])
+            # comb_sort.setdefault(cs, []).append([k, v / counts[cs], '{0}/{1}'.format(v,len(dataframe))])#  v/len(dataframe)])
+
+            # Two columns for support because excel can't handle not dividing them
+            comb_sort.setdefault(cs, []).append([k, v / counts[cs], v, len(dataframe)])
 
     # (3) Sort
     for k, v in comb_sort.items():
         v.sort(key=lambda x: x[1], reverse=True)
 
-    return comb_sort
+    return comb_sort, counts, combos
 
 
 

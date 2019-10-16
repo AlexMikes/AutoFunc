@@ -47,7 +47,7 @@ ver_list = df_to_list(ver_df)
 
 # Learning
 
-comb_sort = counter_pandas(learn_df)
+comb_sort, counts, combos = counter_pandas(learn_df)
 thresh_results = get_top_results(comb_sort, threshold)
 
 # Find the match factor of the verification test by comparing the learned results with the known function/flows
@@ -68,7 +68,7 @@ learned_dict, matched, overmatched, unmatched, recall, precision, f1 = precision
 # learned_dict, matched, overmatched, unmatched, recall, precision, f1 = precision_recall(bd_thresh_results, ver_list)
 # #
 
-write_results_from_dict(thresh_results, 'consumer_results_70.csv')
+# write_results_from_dict(thresh_results, 'consumer_results_70.csv')
 
 
 
