@@ -19,7 +19,7 @@ import pandas as pd
 """ Example showing how to find the match factor using the simple counting file """
 
 script_dir = os.path.dirname(__file__)
-file1 = os.path.join(script_dir, '../assets/consumer_systems.csv')
+file1 = os.path.join(script_dir, '../assets/blade_systems.csv')
 
 # Pandas
 df = make_df(file1)
@@ -94,17 +94,28 @@ max_average_count = average_count[max(average_count, key=average_count.get)]
 
 for k,v in combined_thresh_results.items():
     for vs in v:
+        for es in combined[k]:
+            vs.append(es)
         av_norm = averaged[k] / max_averaged
         av_count_norm = average_count[k]/max_average_count
-        vs.extend([av_norm, av_count_norm, hm((av_norm,av_count_norm))])
+        ratio_unique = len(thresh_results[k]) / count_cffs[k]
+        in_thresh = len(thresh_results[k])
+        vs.extend([av_norm, av_count_norm, in_thresh, ratio_unique, hm((av_norm,av_count_norm))])
+
+
+
 
 
 
 # Writing results with stuff from Rob meeting
 
-titles = ['comp','func-flow','prob','normalized occurrences','normalized unique CFFs','harmonic mean']
+titles = ['comp','func-flow','prob','Total CFF counts', 'averaged(/{0})'.format(average),
+          'scaled(/{0})'.format(max_component), '# of unique CFFs','average # CFFs','normalized occurrences',
+          'normalized unique CFFs','# unique CFFs in thresh','ratio unique','harmonic mean']
 
-write_results_from_dict(combined_thresh_results, 'consumer_counts4.csv',titles)
+
+
+write_results_from_dict(combined_thresh_results, 'blade_counts5.csv',titles)
 
 
 
