@@ -9,11 +9,11 @@ from autofunc.make_df import make_df
 from autofunc.split_learning_verification import split_learning_verification
 from autofunc.df_to_list import df_to_list
 from autofunc.write_results import write_results_from_dict
-from autofunc.find_associations import find_associations
 import os.path
 from statistics import mean
 from statistics import harmonic_mean as hm
 import pandas as pd
+import copy
 
 
 """ Example showing how to find the match factor using the simple counting file """
@@ -85,7 +85,7 @@ combined = {}
 # Average count shows the comparison to the average variance in unique CFFs
 
 
-combined_thresh_results = thresh_results
+combined_thresh_results = copy.deepcopy(thresh_results)
 
 # Old with too much output
 
@@ -134,8 +134,10 @@ for k,v in combined_thresh_results.items():
 
 
 
-
+hm_scaled = {}
+hm_ratio = {}
 ratio_uniques = {}
+norm_ratio = {}
 
 for k,v in combined_thresh_results.items():
     for vs in v:
@@ -145,6 +147,12 @@ for k,v in combined_thresh_results.items():
 max_ratio_uniques = ratio_uniques[max(ratio_uniques, key=ratio_uniques.get)]
 
 for k,v in combined_thresh_results.items():
+    norm_ratio[k] = ratio_uniques[k] / max_ratio_uniques
+    scaled_num = scaled[k]
+
+    hm_scaled[k] = hm((scaled_num,norm_ratio[k]))
+
+
     for vs in v:
         vs.append(combos[k][vs[0]])  # Number of CFF occurrences for each CFF
         vs.append(count_thresh_cffs[k])  # Sum of individual CFFS in threshold for each component
@@ -152,10 +160,9 @@ for k,v in combined_thresh_results.items():
         vs.append(count_cffs[k]) # Number of unique CFFs for each component
         vs.append(len(thresh_results[k]))  # Number of unique CFFs in threshold
         prob = vs[1]
-        normalized_ratio_uniques = ratio_uniques[k]/max_ratio_uniques
-        scaled_num = scaled[k]
-        vs.extend([scaled_num, normalized_ratio_uniques, hm((scaled_num,normalized_ratio_uniques)),
-                   hm((prob,scaled_num,normalized_ratio_uniques))])
+        hm_ratio[k] = hm((prob, scaled_num, norm_ratio[k]))
+        vs.extend([scaled_num, norm_ratio[k], hm_scaled[k],
+                   hm_ratio[k]])
 
 titles = ['comp', 'func-flow', 'prob', '# CFF occurrences', 'Sum of CFFs in threshold',  'Total CFF counts',
           'Number unique CFFs', '# Unique CFFs in thresh', 'scaled CFFs (#CFFs/max)',
@@ -168,6 +175,69 @@ titles = ['comp', 'func-flow', 'prob', '# CFF occurrences', 'Sum of CFFs in thre
 
 
 
+## Plotting
+import matplotlib.pyplot as plt
+
+## Scatter plot
+points = []
+points_dict = {}
+xs = []
+ys = []
+for k,v in combined_thresh_results.items():
+    points_dict[k] = (hm_scaled[k], hm_ratio[k])
+    points.append((hm_scaled[k], hm_ratio[k]))
+    xs.append(scaled[k])
+    ys.append(norm_ratio[k])
+
+
+# area = (30 * np.random.rand(N))**2  # 0 to 15 point radii
+
+plt.plot(xs, ys, 'o',alpha=0.5)
+plt.xlim(0, 1.2)
+plt.ylim(0, 1.2)
+plt.xlabel('Prevalence')
+plt.ylabel('Consistency')
+plt.show()
+
+
+## Bar Chart
+
+
+# plt.style.use('ggplot')
+
+xs_bar = []
+ys_bar = []
+
+k = 'housing'
+for vs in comb_sort[k]:
+    xs_bar.append(vs[0])
+    ys_bar.append(vs[1])
+
+x_pos = [i for i, _ in enumerate(xs_bar)]
+
+# plt.bar(x_pos, ys_bar, color='green')
+# plt.barh(ys_bar,x_pos, color='green')
+# plt.xlabel('Function Flow')
+# plt.ylabel('Percentage')
+# plt.title('Percentage of Function-Flow')
+
+fig, ax = plt.subplots()
+
+ax.barh(x_pos, ys_bar, align='center')
+ax.set_yticks(x_pos)
+ax.set_yticklabels(xs_bar)
+ax.invert_yaxis()  # labels read top-to-bottom
+ax.set_xlabel('Percentage')
+ax.set_title('Percentage of Function Flow in {0}'.format(k))
+
+# horizontal line indicating the threshold
+# ax.plot([0., threshold], [threshold, threshold], "k--")
+
+ax.axhline(0.5, color="black")
+# plt.xticks(x_pos, xs_bar)
+
+plt.show()
+
 
 
 # Writing results with stuff from Rob meeting
@@ -178,7 +248,7 @@ titles = ['comp', 'func-flow', 'prob', '# CFF occurrences', 'Sum of CFFs in thre
 
 
 
-write_results_from_dict(combined_thresh_results, 'blade_counts8.csv',titles)
+# write_results_from_dict(combined_thresh_results, 'heating_element_counts8.csv',titles)
 
 
 
