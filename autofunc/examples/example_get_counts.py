@@ -208,12 +208,15 @@ plt.show()
 xs_bar = []
 ys_bar = []
 
-k = 'housing'
+k = 'battery'
+
 for vs in comb_sort[k]:
     xs_bar.append(vs[0])
     ys_bar.append(vs[1])
 
 x_pos = [i for i, _ in enumerate(xs_bar)]
+
+line_index = xs_bar.index(thresh_results[k][-1][0])
 
 # plt.bar(x_pos, ys_bar, color='green')
 # plt.barh(ys_bar,x_pos, color='green')
@@ -233,7 +236,7 @@ ax.set_title('Percentage of Function Flow in {0}'.format(k))
 # horizontal line indicating the threshold
 # ax.plot([0., threshold], [threshold, threshold], "k--")
 
-ax.axhline(0.5, color="black")
+ax.axhline(line_index + 0.5, color="black")
 # plt.xticks(x_pos, xs_bar)
 
 plt.show()
