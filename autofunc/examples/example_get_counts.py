@@ -19,7 +19,7 @@ import copy
 """ Example showing how to find the match factor using the simple counting file """
 
 script_dir = os.path.dirname(__file__)
-file1 = os.path.join(script_dir, '../assets/blade_systems.csv')
+file1 = os.path.join(script_dir, '../assets/consumer_systems.csv')
 
 # Pandas
 df = make_df(file1)
@@ -214,6 +214,10 @@ for vs in comb_sort[k]:
     xs_bar.append(vs[0])
     ys_bar.append(vs[1])
 
+# ## Shorten blade or long sets
+# xs_bar = xs_bar[0:20]
+# ys_bar = ys_bar[0:20]
+
 x_pos = [i for i, _ in enumerate(xs_bar)]
 
 line_index = xs_bar.index(thresh_results[k][-1][0])
@@ -230,8 +234,8 @@ ax.barh(x_pos, ys_bar, align='center')
 ax.set_yticks(x_pos)
 ax.set_yticklabels(xs_bar)
 ax.invert_yaxis()  # labels read top-to-bottom
-ax.set_xlabel('Percentage')
-ax.set_title('Percentage of Function Flow in {0}'.format(k))
+ax.set_xlabel('frequency (%)')
+# ax.set_title('Percentage of Function Flow in {0}'.format(k))
 
 # horizontal line indicating the threshold
 # ax.plot([0., threshold], [threshold, threshold], "k--")
