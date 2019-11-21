@@ -26,11 +26,11 @@ start = time.time()
 
 # Dataset used for data mining
 script_dir = os.path.dirname(__file__)
-file1 = os.path.join(script_dir, '../assets/reservoir_systems.csv')
+file1 = os.path.join(script_dir, '../assets/heating_element_systems.csv')
 
 
 # CSV with systems to test (blade, heating element, reservoir, etc.)
-file_to_test = os.path.join(script_dir, '../assets/reservoir_systems.csv')
+file_to_test = os.path.join(script_dir, '../assets/heating_element_systems.csv')
 input_data = pd.read_csv(file_to_test)
 
 # ids = list(store_data.id.unique())
@@ -49,7 +49,7 @@ df = make_df(file1)
 r = floor(len(ids)/10)
 # r = 2
 
-combos = list(combinations(ids, r))
+# combos = list(combinations(ids, r))
 
 keep = []
 plots = []
@@ -62,11 +62,11 @@ bd_file = os.path.join(script_dir, '../assets/bd_systems.csv')
 bd_df = make_df(bd_file)
 bd_ids = list(map(int, bd_df.id.unique()))
 
-
-for e in combos:
-    if any(item in e for item in bd_ids):
-        combos.remove(e)
-        print('Removing {0:.2f}'.format(e))
+combos = list(combinations(bd_ids, r))
+# for e in combos:
+#     if any(item in e for item in bd_ids):
+#         combos.remove(e)
+#         # print('Removing {0:.2f}'.format(e))
 
 for e in combos:
     ### Not B&D

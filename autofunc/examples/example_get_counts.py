@@ -208,7 +208,7 @@ plt.show()
 xs_bar = []
 ys_bar = []
 
-k = 'battery'
+k = 'screw'
 
 for vs in comb_sort[k]:
     xs_bar.append(vs[0])
