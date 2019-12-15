@@ -124,7 +124,7 @@ def precision_recall(thresh_results, test_records):
 
 
     # Find overall match factor
-    match_factor = matched_factor / (unmatched_factor + overmatched_factor)
+    # match_factor = matched_factor / (unmatched_factor + overmatched_factor)
 
 
 

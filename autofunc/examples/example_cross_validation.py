@@ -31,7 +31,7 @@ bd = False
 
 # Dataset used for data mining
 script_dir = os.path.dirname(__file__)
-file_to_learn = os.path.join(script_dir, '../assets/consumer_systems.csv')
+file_to_learn = os.path.join(script_dir, '../assets/reservoir_systems.csv')
 
 # CSV with systems to test (blade, heating element, reservoir, etc.)
 file_to_test = os.path.join(script_dir, '../assets/reservoir_systems.csv')
@@ -42,7 +42,7 @@ train_data = pd.read_csv(file_to_learn)
 # test_ids = list(store_data.id.unique())
 test_ids = list(map(int,test_data.id.unique()))
 train_ids = list(map(int,train_data.id.unique()))
-# random.shuffle(test_ids)
+random.shuffle(test_ids)
 
 
 # Use a threshold to get the top XX% of confidence values
@@ -168,3 +168,12 @@ print('Time is {0:.2f}'.format(end - start))
 # with open("same.txt", "wb") as fp:   #Pickling
 #     pickle.dump(averages, fp)
 #
+
+
+## Counting unique CFFs
+counter = 0
+for k,v in thresh_results.items():
+    for vs in v:
+        counter+=1
+
+print(counter)

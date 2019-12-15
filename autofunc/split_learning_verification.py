@@ -20,9 +20,9 @@ def split_learning_verification(dataframe, verification_ids):
             learn_ids.append(e)
 
 
-    ver_df = dataframe[dataframe['id'].isin(verification_ids)]
+    test_df = dataframe[dataframe['id'].isin(verification_ids)]
 
 
-    learn_df = dataframe[dataframe['id'].isin(learn_ids)]
+    train_df = dataframe[dataframe['id'].isin(learn_ids)]
 
-    return  ver_df, learn_df
+    return test_df, train_df

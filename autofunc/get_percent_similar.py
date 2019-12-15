@@ -17,23 +17,32 @@ def unique(filename,col):
 
 
 
-def percent_similar(learning_file, input_file, test_id):
+def percent_similar(train_data, test_data, train_id):
+
+
+    # Need to change: maybe make matrix like Rob's that has every product's percent similar to every other product
+    # Then only need to calculate once
+    # Either way, need to find percent similar between test_id and each product in train_ids
+    # Re-add the loop in main function to loop through all train_ids
+
 
     # # Dataset used for data mining
     # script_dir = os.path.dirname(__file__)
     # file = os.path.join(script_dir, filename)
 
-    learning_set = pd.read_csv(learning_file)
+    # train_data = pd.read_csv(learning_file)
+    #
+    # test_data = pd.read_csv(input_file)
 
-    input_set = pd.read_csv(input_file)
-
-    input_comps = list(input_set.comp.unique())
+    input_comps = list(test_data.comp.unique())
 
     # Find rows with product id
-    learning_comps = learning_set.loc[learning_set['id'] == test_id]['comp']
+    learning_comps = train_data.loc[train_data['id'] == train_id]['comp']
 
     # Find unique components from rows with product id
     unq_learning_comps = list(learning_comps.unique())
+    # unq_learning_comps = list(train_data.comp.unique())
+
 
     similar = 0
 

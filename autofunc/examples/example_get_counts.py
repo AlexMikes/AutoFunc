@@ -200,10 +200,55 @@ plt.ylabel('Consistency')
 plt.show()
 
 
-## Bar Chart
+# ## Bar Chart - No subplots
+#
+# xs_bar = []
+# ys_bar = []
+#
+# k = 'screw'
+#
+# for vs in comb_sort[k]:
+#     xs_bar.append(vs[0])
+#     ys_bar.append(vs[1])
+#
+# # ## Shorten blade or long sets
+# # xs_bar = xs_bar[0:20]
+# # ys_bar = ys_bar[0:20]
+#
+# x_pos = [i for i, _ in enumerate(xs_bar)]
+#
+# line_index = xs_bar.index(thresh_results[k][-1][0])
+#
+# # plt.bar(x_pos, ys_bar, color='green')
+# # plt.barh(ys_bar,x_pos, color='green')
+# # plt.xlabel('Function Flow')
+# # plt.ylabel('Percentage')
+# # plt.title('Percentage of Function-Flow')
+#
+# fig, ax = plt.subplots()
+#
+#
+# ax.barh(x_pos, ys_bar, align='center', color = 'teal')
+# ax.set_yticks(x_pos)
+# ax.set_yticklabels(xs_bar)
+# ax.invert_yaxis()  # labels read top-to-bottom
+# ax.set_xlabel('frequency (%)')
+# # ax.set_title('Percentage of Function Flow in {0}'.format(k))
+#
+# # horizontal line indicating the threshold
+# # ax.plot([0., threshold], [threshold, threshold], "k--")
+#
+# ax.axhline(line_index + 0.5, color='black', linewidth = 3)
+# # plt.xticks(x_pos, xs_bar)
+#
+# plt.show()
+#
+# ## End bar graph, no subplots
 
 
-# plt.style.use('ggplot')
+
+
+## Bar graph, subplot table on the side
 
 xs_bar = []
 ys_bar = []
@@ -222,59 +267,64 @@ x_pos = [i for i, _ in enumerate(xs_bar)]
 
 line_index = xs_bar.index(thresh_results[k][-1][0])
 
-# plt.bar(x_pos, ys_bar, color='green')
-# plt.barh(ys_bar,x_pos, color='green')
-# plt.xlabel('Function Flow')
-# plt.ylabel('Percentage')
-# plt.title('Percentage of Function-Flow')
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import rcParams
+rcParams.update({'figure.autolayout': True})
 
-fig, ax = plt.subplots()
 
-ax.barh(x_pos, ys_bar, align='center')
-ax.set_yticks(x_pos)
-ax.set_yticklabels(xs_bar)
-ax.invert_yaxis()  # labels read top-to-bottom
-ax.set_xlabel('frequency (%)')
-# ax.set_title('Percentage of Function Flow in {0}'.format(k))
+data = [[ 66386, 174296],
+        [ 58230, 381139],
+        [ 89135,  80552],
+        [ 78415,  81858],
+        [139361, 331509]]
 
-# horizontal line indicating the threshold
-# ax.plot([0., threshold], [threshold, threshold], "k--")
+data = ys_bar
 
-ax.axhline(line_index + 0.5, color="black")
-# plt.xticks(x_pos, xs_bar)
+columns = ['Frequency (%)']
+# rows = ['%d year' % x for x in (100, 50, 20, 10, 5)]
 
+values = np.arange(0, 2500, 500)
+value_increment = 1000
+
+# Get some pastel shades for the colors
+# colors = plt.cm.BuPu(np.linspace(0, 0.5, len(rows)))
+n_rows = len(data)
+
+# index = np.arange(len(columns)) + 0.3
+# bar_width = 0.4
+
+# Initialize the vertical-offset for the stacked bar chart.
+# y_offset = np.zeros(len(columns))
+
+# Plot bars and create text labels for the table
+cell_text = []
+for row in range(n_rows):
+    # plt.bar(index, data[row], bar_width, bottom=y_offset, color=colors[row])
+    # y_offset = data[row]
+    cell_text.append(['{0:.2f}'.format(data[row]*100)])
+# Reverse colors and text labels to display the last value at the top.
+# colors = colors[::-1]
+# cell_text.reverse()
+
+# Add a table at the bottom of the axes
+the_table = plt.table(cellText=cell_text,
+                      colLabels=columns,
+                      colWidths=[0.2 for x in columns],
+                      loc='center')
+
+# Adjust layout to make room for the table:
+# plt.subplots_adjust(left=0.2, bottom=0.4)
+
+# plt.ylabel("Loss in ${0}'s".format(value_increment))
+# plt.yticks(values * value_increment, ['%d' % val for val in values])
+# plt.xticks([])
+# plt.title('Loss by Disaster')
+plt.tight_layout()
 plt.show()
 
 
-
-# Writing results with stuff from Rob meeting
-
-# titles = ['comp','func-flow','prob','Number of CFF occurrences','Total Items in Dataset','Total CFF counts', 'averaged(/{0})'.format(average),
-#           'scaled(/{0})'.format(max_component), '# of unique CFFs','average # CFFs','normalized occurrences',
-#           'normalized unique CFFs','# unique CFFs in thresh','ratio unique','harmonic mean']
-
-
-
-# write_results_from_dict(combined_thresh_results, 'heating_element_counts8.csv',titles)
-
-
-
-
-
-# test = pd.DataFrame.from_dict(combined, orient='index', columns=['Total CFF counts', 'averaged(/{0})'.format(average), 'scaled(/{0})'.format(max_component), '# of unique CFFs','average # CFFs'])
-
-# test.to_csv('reservoir_counts.csv', index=True)
-
-
-
-
-# for k,v in thresh_results.items():
-#
-#     scaled_conf[k][v] = thresh_results[k][v]*(v/max_component)
-
-
-
-
+## End bargraph with subplot
 
 
 
