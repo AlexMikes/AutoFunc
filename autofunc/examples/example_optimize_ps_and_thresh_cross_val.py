@@ -2,6 +2,7 @@ from autofunc.get_percent_similar import *
 from autofunc.get_precision_recall import precision_recall
 from autofunc.get_top_results import get_top_results
 from autofunc.make_df import make_df
+from autofunc.find_similarities import find_similarities
 from autofunc.counter_pandas import counter_pandas
 from autofunc.split_learning_verification import split_learning_verification
 from autofunc.df_to_list import df_to_list
@@ -11,6 +12,8 @@ from operator import itemgetter
 import numpy as np
 from mpl_toolkits import mplot3d
 import time
+import pandas as pd
+from statistics import mean
 
 
 
@@ -48,17 +51,25 @@ keep_ps = []
 keep_ps_thresh = []
 threshes = []
 
-# threshold = 0.5
+
 
 points = []
+save_data = []
+
+similarity_df = find_similarities(train_data)
+
+# greater_than_threshold = similarity_df[similarity_df[169]>0.5].index.tolist()
 
 
 for test_id in all_train_ids:
-
+    # print(test_id)
+#
     test_df, train_df = split_learning_verification(train_df_whole, [test_id])
     test_list = df_to_list(test_df)
     train_ids = list(map(int, train_df.id.unique()))
 
+#
+# Outer loop through percent similar
     for i in range(0,100,10):
 
         f1_plot = []
@@ -69,54 +80,20 @@ for test_id in all_train_ids:
 
         ps_thresh = i/100
 
-        for train_id in train_ids:
+        keep_ids = similarity_df[similarity_df[test_id] > ps_thresh].index.tolist()
 
-            ps = percent_similar(train_df, test_df, train_id)
+        keep_ids.remove(test_id)
 
-            print(ps)
-
-            if ps > ps_thresh:
-
-                keep_ids.append(test_id)
-                keep_ps.append(ps)
 
         # Only keep rows from data frame that have an id that is in the keep_ids list
-        keep_df = train_data[train_data['id'].isin(keep_ids)]
-
-        # # Name each file for writing then reading back in
-        # s = ['../opt/', str(ps_thresh),'.csv']
-        # sep = ''
-        # name = sep.join(s)
-        #
-        # # Write each file with the name of the threshold
-        # export_csv = keep_df.to_csv(os.path.join(script_dir, name), index = None, header=True)
-        #
-        #
-        #
-        # # Re-analyze by reading each file in
-        # file3 = os.path.join(script_dir, name)
-
-        # comb_sort = count_stuff(file3)
+        keep_df = train_df[train_df['id'].isin(keep_ids)]
 
         comb_sort = counter_pandas(keep_df)
 
 
-        ## End Not B&D
-
-
         for t in range(10, 100, 5):
             threshold = t / 100
-
-            # thresh_results = get_top_results(comb_sort, threshold)
-
-            # Use a known product for verification
-
-            # test_data, test_records = get_data(file2)
-
-            # Find the match factor of the verification test by comparing the learned results with the known function/flows
-            # learned_dict, matched, overmatched, unmatched, match_factor = match(thresh_results, test_records)
-
-            # learned_dict, matched, overmatched, unmatched, recall, precision, f1 = precision_recall(thresh_results,test_records)
+            print(test_id, ' ', ps_thresh, ' ',threshold)
 
             thresh_results = get_top_results(comb_sort, threshold)
 
@@ -128,58 +105,127 @@ for test_id in all_train_ids:
                                                                                                     test_list)
 
 
+            save_data.append((test_id,ps_thresh,threshold, len(keep_ids),f1))
+
             points.append((ps_thresh,threshold,f1))
 
-
             f1s.append(f1)
-            keep_ps_thresh.append(ps_thresh)
-            threshes.append(threshold)
-
-            f1_plot.append(f1)
-            thresh_plot.append(threshold)
-            ps_plot.append(ps_thresh)
-
-
-
-        #Plotting in loop for each threshold
-        plt.plot(thresh_plot, f1_plot)
-        plt.xlabel('Threshold')
-        plt.ylabel('F1')
-        plt.title('PS = {0:.2f}'.format(ps_thresh))
-        plt.grid()
-        plt.show()
-
-
-
-# Find the tuple with the highest match factor
-optimum = max(points,key=itemgetter(2))
-
-print('Optimum Percent Similar Threshold = {0:.2f}'.format(optimum[0]))
-print('Optimum Threshold = {0:.2f}'.format(optimum[1]))
-print('Maximum F1 = {0:.4f}'.format(optimum[2]))
-
-end = time.time()
-print('Time is {0:.2f}'.format(end - start))
+            # keep_ps_thresh.append(ps_thresh)
+            # threshes.append(threshold)
+            #
+            # f1_plot.append(f1)
+            # thresh_plot.append(threshold)
+            # ps_plot.append(ps_thresh)
+            #
+            #
+            #
+            # #Plotting in loop for each threshold
+            # plt.plot(thresh_plot, f1_plot)
+            # plt.xlabel('Threshold')
+            # plt.ylabel('F1')
+            # plt.title('PS = {0:.2f}'.format(ps_thresh))
+            # plt.grid()
+            # plt.show()
 
 
-ax = plt.axes(projection='3d')
+
+        # # Find the tuple with the highest match factor
+        # optimum = max(points,key=itemgetter(2))
+        #
+        # print('Optimum Percent Similar Threshold = {0:.2f}'.format(optimum[0]))
+        # print('Optimum Threshold = {0:.2f}'.format(optimum[1]))
+        # print('Maximum F1 = {0:.4f}'.format(optimum[2]))
 
 
-zdata = f1s
-xdata = keep_ps_thresh
-ydata = threshes
+
+
+        # ax = plt.axes(projection='3d')
+        #
+        #
+        # zdata = f1s
+        # xdata = keep_ps_thresh
+        # ydata = threshes
+        #
+        #
+        # # 3D Scatter Plot
+        # # Data for three-dimensional scattered points
+        # ax.scatter3D(xdata, ydata, zdata, c=zdata, cmap='Dark2');
+        # ax.set_xlabel('Percent Similar')
+        # ax.set_ylabel('Threshold')
+        # ax.set_zlabel('F1 Score');
+        # plt.show()
+
+## End working plots
+
+# MultiIndex if needed
+# index = pd.MultiIndex.from_tuples(save_data, names=['Product ID', 'PS Thresh','Thresh','Num Keep IDs'])
+# all_data = pd.Series(f1s, index=index )
+
+all_data = pd.DataFrame(save_data,columns = ['Product ID', 'PS Thresh','Thresh','Num Keep IDs','F1'])
+
+
+
+# all_data.to_csv('test_export.csv', index = False, header=True)
+
+averages = []
+
+ps_3d = []
+thresh_3d = []
+f1_3d = []
+
+for i in range(0,100,10):
+    ps_thresh = i / 100
+
+    f1_plot = []
+    thresh_plot = []
+    ps_plot = []
+
+    for t in range(10, 100, 5):
+        threshold = t / 100
+
+        avg_f1 = mean(all_data['F1'][(all_data['Thresh'] == threshold) & (all_data['PS Thresh'] == ps_thresh)])
+        averages.append((ps_thresh,threshold,avg_f1))
+
+        f1_plot.append(avg_f1)
+        thresh_plot.append(threshold)
+        ps_plot.append(ps_thresh)
+
+        ps_3d.append(ps_thresh)
+        thresh_3d.append(threshold)
+        f1_3d.append(avg_f1)
+
+    #Plotting in loop for each threshold
+    plt.plot(thresh_plot, f1_plot)
+    plt.xlabel('Threshold')
+    plt.ylabel('F1')
+    plt.title('PS = {0:.2f}'.format(ps_thresh))
+    plt.grid()
+    plt.show()
 
 
 # 3D Scatter Plot
+ax = plt.axes(projection='3d')
+
+zdata = f1_3d
+xdata = ps_3d
+ydata = thresh_3d
+
 # Data for three-dimensional scattered points
 ax.scatter3D(xdata, ydata, zdata, c=zdata, cmap='Dark2');
 ax.set_xlabel('Percent Similar')
 ax.set_ylabel('Threshold')
 ax.set_zlabel('F1 Score');
 plt.show()
-#
-#
-#
+
+avg_df = pd.DataFrame(averages,columns = ['PS Thresh','Thresh','Avg F1'])
+
+# avg_df.to_csv('averages.csv',index = False, header=True)
+
+
+
+end = time.time()
+print('Time is {0:.2f}'.format(end - start))
+
 # #3D Surface Plot
 # X, Y, Z = np.meshgrid(xdata, ydata, zdata)
 # fig = plt.figure()
