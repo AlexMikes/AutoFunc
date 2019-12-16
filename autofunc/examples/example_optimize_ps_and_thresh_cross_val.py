@@ -117,45 +117,6 @@ for test_id in all_train_ids:
             # thresh_plot.append(threshold)
             # ps_plot.append(ps_thresh)
             #
-            #
-            #
-            # #Plotting in loop for each threshold
-            # plt.plot(thresh_plot, f1_plot)
-            # plt.xlabel('Threshold')
-            # plt.ylabel('F1')
-            # plt.title('PS = {0:.2f}'.format(ps_thresh))
-            # plt.grid()
-            # plt.show()
-
-
-
-        # # Find the tuple with the highest match factor
-        # optimum = max(points,key=itemgetter(2))
-        #
-        # print('Optimum Percent Similar Threshold = {0:.2f}'.format(optimum[0]))
-        # print('Optimum Threshold = {0:.2f}'.format(optimum[1]))
-        # print('Maximum F1 = {0:.4f}'.format(optimum[2]))
-
-
-
-
-        # ax = plt.axes(projection='3d')
-        #
-        #
-        # zdata = f1s
-        # xdata = keep_ps_thresh
-        # ydata = threshes
-        #
-        #
-        # # 3D Scatter Plot
-        # # Data for three-dimensional scattered points
-        # ax.scatter3D(xdata, ydata, zdata, c=zdata, cmap='Dark2');
-        # ax.set_xlabel('Percent Similar')
-        # ax.set_ylabel('Threshold')
-        # ax.set_zlabel('F1 Score');
-        # plt.show()
-
-## End working plots
 
 # MultiIndex if needed
 # index = pd.MultiIndex.from_tuples(save_data, names=['Product ID', 'PS Thresh','Thresh','Num Keep IDs'])
@@ -168,54 +129,99 @@ all_data = pd.DataFrame(save_data,columns = ['Product ID', 'PS Thresh','Thresh',
 # all_data.to_csv('test_export.csv', index = False, header=True)
 
 averages = []
+average_ids = []
+avg_avgf1 = []
 
+ids_3d = []
 ps_3d = []
 thresh_3d = []
 f1_3d = []
+ids_plot = []
+ps_plot = []
 
 for i in range(0,100,10):
     ps_thresh = i / 100
 
+
     f1_plot = []
     thresh_plot = []
-    ps_plot = []
+
+
+    avg_ids = mean(all_data['Num Keep IDs'][(all_data['Thresh'] == threshold) & (all_data['PS Thresh'] == ps_thresh)])
+    average_ids.append((ps_thresh, threshold, avg_ids))
+    ids_plot.append(avg_ids)
+    ps_plot.append(ps_thresh)
 
     for t in range(10, 100, 5):
         threshold = t / 100
 
+        # Find the average F1 score for each combination of threshold and percent similar
         avg_f1 = mean(all_data['F1'][(all_data['Thresh'] == threshold) & (all_data['PS Thresh'] == ps_thresh)])
         averages.append((ps_thresh,threshold,avg_f1))
 
         f1_plot.append(avg_f1)
         thresh_plot.append(threshold)
-        ps_plot.append(ps_thresh)
 
+
+        ids_3d.append(avg_ids)
         ps_3d.append(ps_thresh)
         thresh_3d.append(threshold)
         f1_3d.append(avg_f1)
 
-    #Plotting in loop for each threshold
-    plt.plot(thresh_plot, f1_plot)
-    plt.xlabel('Threshold')
-    plt.ylabel('F1')
-    plt.title('PS = {0:.2f}'.format(ps_thresh))
-    plt.grid()
-    plt.show()
+    avg_avgf1.append(mean(f1_plot))
+
+    # Line plot of f1 vs threshold for each percent similar
+    # #Plotting in loop for each threshold
+    # plt.plot(thresh_plot, f1_plot)
+    # plt.xlabel('Threshold')
+    # plt.ylabel('F1')
+    # plt.title('PS = {0:.2f}'.format(ps_thresh))
+    # plt.grid()
+    # plt.show()
+
+#Plotting f1 vs num ids
+plt.plot(ps_plot, ids_plot)
+plt.xlabel('Percent Similar')
+plt.ylabel('Number of Products')
+plt.title('Number of products vs percent similar threshold')
+plt.grid()
+plt.show()
+
+#Plotting f1 vs num ids
+plt.plot(ids_plot,avg_avgf1)
+plt.ylabel('Average F1 Score')
+plt.xlabel('Number of Products')
+plt.title('Avg F1 score vs Number of Products')
+plt.grid()
+plt.show()
 
 
 # 3D Scatter Plot
 ax = plt.axes(projection='3d')
 
 zdata = f1_3d
+ydata2 = ids_3d
 xdata = ps_3d
 ydata = thresh_3d
 
-# Data for three-dimensional scattered points
+# Data for three-dimensional scattered points of F1
 ax.scatter3D(xdata, ydata, zdata, c=zdata, cmap='Dark2');
 ax.set_xlabel('Percent Similar')
 ax.set_ylabel('Threshold')
 ax.set_zlabel('F1 Score');
 plt.show()
+
+
+# ## 3D Scatter plot of percent similar, num ids, f1: Kind of weird
+# # Data for three-dimensional scattered points of ids
+# ax2 = plt.axes(projection='3d')
+# ax2.scatter3D(xdata, ydata2, zdata, c=zdata, cmap='Dark2');
+# ax2.set_xlabel('Percent Similar')
+# ax2.set_ylabel('Num IDs')
+# ax2.set_zlabel('F1 Score');
+# plt.show()
+
+
 
 avg_df = pd.DataFrame(averages,columns = ['PS Thresh','Thresh','Avg F1'])
 
