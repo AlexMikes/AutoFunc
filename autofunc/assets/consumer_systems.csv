@@ -301,12 +301,6 @@ screw,couple solid,288
 shaft,convert mechanical,288
 shaft,guide solid,288
 spring,secure solid,288
-extension,actuate acoustic,621
-extension,couple material,621
-extension,join material,621
-extension,join solid,621
-extension,link material,621
-nut-bolt,actuate acoustic,621
 blade,export solid,591
 blade,guide solid,591
 blade,import solid,591
@@ -6240,7 +6234,6 @@ wheel,transfer control,225
 wheel,transfer mechanical,225
 wheel,transfer mechanical,225
 wheel,transfer mechanical,225
-system,separate object,353
 blade,separate solid,355
 blade,separate solid,355
 cover,position solid,355

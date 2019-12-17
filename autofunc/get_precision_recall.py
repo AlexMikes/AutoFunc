@@ -140,7 +140,10 @@ def precision_recall(thresh_results, test_records):
 
     precision = true_positive / (true_positive + false_positive)
 
-    f1 = 2 * ((precision * recall)/(precision + recall))
+    if precision == 0 or recall == 0:
+        f1 = 0
+    else:
+        f1 = 2 * ((precision * recall)/(precision + recall))
 
     return learned_dict, matched, overmatched, unmatched, recall, precision, f1 #, match_factor
 

@@ -29,7 +29,7 @@ start = time.time()
 
 # Dataset used for data mining
 script_dir = os.path.dirname(__file__)
-file_to_learn = os.path.join(script_dir, '../assets/blade_systems.csv')
+file_to_learn = os.path.join(script_dir, '../assets/consumer_systems.csv')
 
 train_data = pd.read_csv(file_to_learn)
 train_df_whole = make_df(file_to_learn)
@@ -56,7 +56,21 @@ threshes = []
 points = []
 save_data = []
 
-similarity_df = find_similarities(train_data)
+
+## Uncomment 1 or 2, not both
+## Reading boolean changes datatype to string when finding keep_ids below to deal with how
+## Pandas reads in a csv to dataframe being different than how it makes its own the first time
+# 1. Make similarity dataframe, takes a while so it is saved to csv first for reading in later
+# similarity_df = find_similarities(train_data)
+# similarity_df.to_csv('blade_similarity.csv', index = True, index_label=False, header= True)
+# reading = False
+
+# 2. Reading in dataframe as computed above
+similarity_df = pd.read_csv('consumer_similarity.csv')
+reading = True
+
+
+
 
 # greater_than_threshold = similarity_df[similarity_df[169]>0.5].index.tolist()
 
@@ -80,7 +94,11 @@ for test_id in all_train_ids:
 
         ps_thresh = i/100
 
-        keep_ids = similarity_df[similarity_df[test_id] > ps_thresh].index.tolist()
+        if reading:
+            keep_ids = similarity_df[similarity_df[str(test_id)] > ps_thresh].index.tolist()
+        else:
+            keep_ids = similarity_df[similarity_df[test_id] > ps_thresh].index.tolist()
+
 
         keep_ids.remove(test_id)
 
@@ -124,9 +142,7 @@ for test_id in all_train_ids:
 
 all_data = pd.DataFrame(save_data,columns = ['Product ID', 'PS Thresh','Thresh','Num Keep IDs','F1'])
 
-
-
-# all_data.to_csv('test_export.csv', index = False, header=True)
+# all_data.to_csv('consumer_opt_export.csv', index = False, header=True)
 
 averages = []
 average_ids = []
@@ -178,6 +194,11 @@ for i in range(0,100,10):
     # plt.title('PS = {0:.2f}'.format(ps_thresh))
     # plt.grid()
     # plt.show()
+
+optimum = max(averages,key=itemgetter(2))
+print('Optimum Percent Similar Threshold = {0:.2f}'.format(optimum[0]))
+print('Optimum Threshold = {0:.2f}'.format(optimum[1]))
+print('Maximum F1 = {0:.4f}'.format(optimum[2]))
 
 #Plotting f1 vs num ids
 plt.plot(ps_plot, ids_plot)
@@ -238,33 +259,5 @@ print('Time is {0:.2f}'.format(end - start))
 # # ax = plt.axes(projection='3d')
 # ax.contour3D(X, Y, Z, 50, cmap='binary')
 
-
-
-
-# # Find max match factor and corresponding threshold
-# m = max(matches)
-# ind = matches.index(m)
-#
-# opt_ps = keep_ps_thresh[ind]
-#
-# print('Optimum Percent Similar = {0:.5f}'.format(opt_ps))
-#
-# # Find max match factor and corresponding threshold
-# m = max(matches)
-# ind = matches.index(m)
-#
-# opt = threshes[ind]
-#
-# print('Optimum Threshold = {0:.5f}'.format(opt))
-#
-# plt.plot(keep_ps_thresh, matches)
-# plt.xlabel('Percent Similar Threshold')
-# plt.ylabel('Match Factor')
-# plt.title('Match Factor vs Percent Similar Threshold')
-# plt.grid()
-# plt.show()
-
-
-# Getting match factors, comparing with percent similar
 
 

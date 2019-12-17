@@ -31,4 +31,6 @@ def find_similarities(input_dataframe):
 
             similarity_df.loc[e,id]=percent_similar
 
+            print(percent_similar)
+
     return similarity_df
