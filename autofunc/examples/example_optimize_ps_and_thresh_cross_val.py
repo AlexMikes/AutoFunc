@@ -147,6 +147,7 @@ all_data = pd.DataFrame(save_data,columns = ['Product ID', 'PS Thresh','Thresh',
 averages = []
 average_ids = []
 avg_avgf1 = []
+optimums = []
 
 ids_3d = []
 ps_3d = []
@@ -158,7 +159,7 @@ ps_plot = []
 for i in range(0,100,10):
     ps_thresh = i / 100
 
-
+    opt_finder = []
     f1_plot = []
     thresh_plot = []
 
@@ -173,7 +174,8 @@ for i in range(0,100,10):
 
         # Find the average F1 score for each combination of threshold and percent similar
         avg_f1 = mean(all_data['F1'][(all_data['Thresh'] == threshold) & (all_data['PS Thresh'] == ps_thresh)])
-        averages.append((ps_thresh,threshold,avg_f1))
+        averages.append((ps_thresh,threshold,avg_f1, avg_ids))
+        opt_finder.append((ps_thresh,threshold,avg_f1, avg_ids))
 
         f1_plot.append(avg_f1)
         thresh_plot.append(threshold)
@@ -184,7 +186,11 @@ for i in range(0,100,10):
         thresh_3d.append(threshold)
         f1_3d.append(avg_f1)
 
+    # Find best threshold for each percent similar
+    optimums.append(max(opt_finder,key=itemgetter(2)))
+
     avg_avgf1.append(mean(f1_plot))
+
 
     # Line plot of f1 vs threshold for each percent similar
     # #Plotting in loop for each threshold
@@ -195,10 +201,29 @@ for i in range(0,100,10):
     # plt.grid()
     # plt.show()
 
+avg_opt = mean([x[1] for x in optimums])
 optimum = max(averages,key=itemgetter(2))
 print('Optimum Percent Similar Threshold = {0:.2f}'.format(optimum[0]))
 print('Optimum Threshold = {0:.2f}'.format(optimum[1]))
 print('Maximum F1 = {0:.4f}'.format(optimum[2]))
+
+# Plotting f1s vs ps at 0.55 threshold
+plot_f1s = [x[2] for x in averages if x[1] == 0.55]
+plt.plot(ps_plot, plot_f1s)
+plt.xlabel('Percent Similar')
+plt.ylabel('F1 Score')
+plt.title('F1 Score vs PS at 0.55 threshold')
+plt.grid()
+plt.show()
+
+# Plotting f1s vs threshold at 0.2 ps
+plot_f1s = [x[2] for x in averages if x[0] == 0.2]
+plt.plot(thresh_plot, plot_f1s)
+plt.xlabel('Threshold')
+plt.ylabel('F1 Score')
+plt.title('F1 Score vs Threshold at 0.2 Percent Similar')
+plt.grid()
+plt.show()
 
 #Plotting f1 vs num ids
 plt.plot(ps_plot, ids_plot)
@@ -244,9 +269,9 @@ plt.show()
 
 
 
-avg_df = pd.DataFrame(averages,columns = ['PS Thresh','Thresh','Avg F1'])
+avg_df = pd.DataFrame(averages,columns = ['PS Thresh','Thresh','Avg F1', 'Avg IDs'])
 
-# avg_df.to_csv('averages.csv',index = False, header=True)
+avg_df.to_csv('averages.csv',index = False, header=True)
 
 
 
