@@ -7,6 +7,9 @@ from autofunc.counter_pandas import counter_pandas
 from autofunc.split_learning_verification import split_learning_verification
 from autofunc.df_to_list import df_to_list
 import os.path
+from matplotlib import rcParams
+rcParams['font.family'] = 'serif'
+rcParams['font.serif'] = ['Times New Roman']
 import matplotlib.pyplot as plt
 from operator import itemgetter
 import numpy as np
@@ -50,8 +53,7 @@ f1s = []
 keep_ps = []
 keep_ps_thresh = []
 threshes = []
-
-
+ps_time = []
 
 points = []
 save_data = []
@@ -85,6 +87,8 @@ for test_id in all_train_ids:
 #
 # Outer loop through percent similar
     for i in range(0,100,10):
+
+        ps_start = time.time()
 
         f1_plot = []
         thresh_plot = []
@@ -135,6 +139,8 @@ for test_id in all_train_ids:
             # thresh_plot.append(threshold)
             # ps_plot.append(ps_thresh)
             #
+        ps_end = time.time()
+        ps_time.append((len(keep_ids), (ps_end - ps_start)))
 
 # MultiIndex if needed
 # index = pd.MultiIndex.from_tuples(save_data, names=['Product ID', 'PS Thresh','Thresh','Num Keep IDs'])
@@ -210,34 +216,46 @@ print('Maximum F1 = {0:.4f}'.format(optimum[2]))
 # Plotting f1s vs ps at 0.55 threshold
 plot_f1s = [x[2] for x in averages if x[1] == 0.55]
 plt.plot(ps_plot, plot_f1s)
-plt.xlabel('Percent Similar')
+plt.xlabel('Similarity Threshold')
 plt.ylabel('F1 Score')
-plt.title('F1 Score vs PS at 0.55 threshold')
+# plt.title('F1 Score vs PS at 0.55 threshold')
 plt.grid()
 plt.show()
 
 # Plotting f1s vs threshold at 0.2 ps
 plot_f1s = [x[2] for x in averages if x[0] == 0.2]
 plt.plot(thresh_plot, plot_f1s)
-plt.xlabel('Threshold')
+plt.xlabel('Classification Threshold')
 plt.ylabel('F1 Score')
-plt.title('F1 Score vs Threshold at 0.2 Percent Similar')
+# plt.title('F1 Score vs Threshold at 0.2 Percent Similar')
 plt.grid()
 plt.show()
 
 #Plotting f1 vs num ids
 plt.plot(ps_plot, ids_plot)
-plt.xlabel('Percent Similar')
-plt.ylabel('Number of Products')
-plt.title('Number of products vs percent similar threshold')
+plt.xlabel('Similarity Threshold')
+plt.ylabel('Number of Products in Training Set')
+# plt.title('Number of products vs similarity threshold')
 plt.grid()
 plt.show()
 
 #Plotting f1 vs num ids
 plt.plot(ids_plot,avg_avgf1)
 plt.ylabel('Average F1 Score')
-plt.xlabel('Number of Products')
-plt.title('Avg F1 score vs Number of Products')
+plt.xlabel('Number of Products in Training Set')
+# plt.title('Avg F1 score vs Number of Products')
+plt.grid()
+plt.show()
+
+# Plotting # Prods vs time
+plot_time = [x[1] for x in ps_time]
+plot_num_ids = [x[0] for x in ps_time]
+plot_time.sort()
+plot_num_ids.sort()
+plt.plot(plot_time, plot_num_ids)
+plt.xlabel('Time (s)')
+plt.ylabel('Number of Products in Training Set')
+# plt.title('Number of Products vs. Time ')
 plt.grid()
 plt.show()
 
@@ -252,8 +270,8 @@ ydata = thresh_3d
 
 # Data for three-dimensional scattered points of F1
 ax.scatter3D(xdata, ydata, zdata, c=zdata, cmap='Dark2');
-ax.set_xlabel('Percent Similar')
-ax.set_ylabel('Threshold')
+ax.set_xlabel('Similarity Threshold')
+ax.set_ylabel('Classification Threshold')
 ax.set_zlabel('F1 Score');
 plt.show()
 
@@ -271,9 +289,21 @@ plt.show()
 
 avg_df = pd.DataFrame(averages,columns = ['PS Thresh','Thresh','Avg F1', 'Avg IDs'])
 
-avg_df.to_csv('averages.csv',index = False, header=True)
+# avg_df.to_csv('averages.csv',index = False, header=True)
 
 
+# # def is_pareto_efficient_simple(costs):
+# #     """
+# #     Find the pareto-efficient points
+# #     :param costs: An (n_points, n_costs) array
+# #     :return: A (n_points, ) boolean array, indicating whether each point is Pareto efficient
+# #     """
+# is_efficient = np.ones(points.shape[0], dtype = bool)
+# for i, c in enumerate(costs):
+#     if is_efficient[i]:
+#         is_efficient[is_efficient] = np.any(costs[is_efficient]<c, axis=1)  # Keep any point with a lower cost
+#         is_efficient[i] = True  # And keep self
+#     # return is_efficient
 
 end = time.time()
 print('Time is {0:.2f}'.format(end - start))
