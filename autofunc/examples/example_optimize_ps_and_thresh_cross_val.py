@@ -217,7 +217,7 @@ print('Maximum F1 = {0:.4f}'.format(optimum[2]))
 plot_f1s = [x[2] for x in averages if x[1] == 0.55]
 plt.plot(ps_plot, plot_f1s)
 plt.xlabel('Similarity Threshold')
-plt.ylabel('F1 Score')
+plt.ylabel('Average F1 Score')
 # plt.title('F1 Score vs PS at 0.55 threshold')
 plt.grid()
 plt.show()
@@ -226,7 +226,7 @@ plt.show()
 plot_f1s = [x[2] for x in averages if x[0] == 0.2]
 plt.plot(thresh_plot, plot_f1s)
 plt.xlabel('Classification Threshold')
-plt.ylabel('F1 Score')
+plt.ylabel('Average F1 Score')
 # plt.title('F1 Score vs Threshold at 0.2 Percent Similar')
 plt.grid()
 plt.show()
@@ -272,7 +272,7 @@ ydata = thresh_3d
 ax.scatter3D(xdata, ydata, zdata, c=zdata, cmap='Dark2');
 ax.set_xlabel('Similarity Threshold')
 ax.set_ylabel('Classification Threshold')
-ax.set_zlabel('F1 Score');
+ax.set_zlabel('Average F1 Score');
 plt.show()
 
 

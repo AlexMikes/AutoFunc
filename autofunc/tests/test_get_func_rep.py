@@ -1,22 +1,24 @@
-from autofunc.simple_counter import count_stuff
-from autofunc.get_func_rep import get_func_rep
 from autofunc.get_top_results import get_top_results
+from autofunc.counter_pandas import counter_pandas
+from autofunc.get_func_rep import get_func_rep
 import os.path
+import pandas as pd
 
 def test_1():
 
-    """ Example showing how to automate result finding with probability values  """
 
+    """ Example showing how to automate functional representation with frequency values"""
 
     # Dataset used for data mining
     script_dir = os.path.dirname(__file__)
-    file1 = os.path.join(script_dir, '../assets/bladeCombined.csv')
+    file_to_test = os.path.join(script_dir, '../assets/consumer_systems.csv')
 
-    comb_sort = count_stuff(file1)
+    test_data = pd.read_csv(file_to_test)
+    combos_sorted = counter_pandas(test_data)
 
     # Use a threshold to get the top XX% of confidence values
     threshold = 0.5
-    thresh_results = get_top_results(comb_sort, threshold)
+    thresh_results = get_top_results(combos_sorted, threshold)
 
     # Use a known product for verification
     input_file = os.path.join(script_dir, '../assets/InputExample.csv')
@@ -31,18 +33,18 @@ def test_1():
 
 def test_2():
 
-    """ Example showing how to automate result finding without probability values """
-
+    """ Example showing how to automate result finding without frequency values """
 
     # Dataset used for data mining
     script_dir = os.path.dirname(__file__)
-    file1 = os.path.join(script_dir, '../assets/bladeCombined.csv')
+    file_to_test = os.path.join(script_dir, '../assets/consumer_systems.csv')
 
-    comb_sort = count_stuff(file1)
+    test_data = pd.read_csv(file_to_test)
+    combos_sorted = counter_pandas(test_data)
 
     # Use a threshold to get the top XX% of confidence values
     threshold = 0.5
-    thresh_results = get_top_results(comb_sort, threshold)
+    thresh_results = get_top_results(combos_sorted, threshold)
 
     # Use a known product for verification
     input_file = os.path.join(script_dir, '../assets/InputExample.csv')

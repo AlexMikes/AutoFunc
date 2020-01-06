@@ -12,7 +12,7 @@ def get_func_rep(thresh_results, input_comps, conf_values = True):
     input_comps : string
        The filename of a .csv file containing the components of a product
     conf_values : bool
-        A boolean of whether or not to return the results with the confidence values, default is True
+        A boolean of whether or not to return the results with the frequency values, default is True
 
     Returns
     -------
@@ -42,7 +42,7 @@ def get_func_rep(thresh_results, input_comps, conf_values = True):
 
 
 
-    # Method of returning results with confidence values
+    # Method of returning results with frequency values
     if conf_values is True:
 
         res_with_conf = {}
@@ -63,7 +63,7 @@ def get_func_rep(thresh_results, input_comps, conf_values = True):
 
     else:
 
-    # Method of returning restuls without confidence values
+    # Method of returning results without frequency values
 
         # List for keeping track of which function-flows happen for each component
         keep_flows = []
