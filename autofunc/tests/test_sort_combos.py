@@ -1,4 +1,6 @@
+from autofunc.counter_pandas import counter_pandas
 import os.path
+import pandas as pd
 
 
 def test_1():
