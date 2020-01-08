@@ -1,7 +1,6 @@
 from autofunc.get_percent_similar import *
 from autofunc.get_match_factor import match
 from autofunc.simple_counter import count_stuff
-from autofunc.count_with_id import *
 from autofunc.get_top_results import get_top_results
 from autofunc.get_data import get_data
 import os.path

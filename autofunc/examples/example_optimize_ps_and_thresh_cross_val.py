@@ -19,15 +19,6 @@ import pandas as pd
 from statistics import mean
 
 
-
-## New algorithm
-# 1. Pull out test set (one product) from training set
-# 2. Make dfs
-# 3. Loop percent similar
-# 4. Loop threshold
-# 5.
-
-
 start = time.time()
 
 # Dataset used for data mining
@@ -37,16 +28,7 @@ file_to_learn = os.path.join(script_dir, '../assets/consumer_systems.csv')
 train_data = pd.read_csv(file_to_learn)
 train_df_whole = make_df(file_to_learn)
 
-
-# ids = list(store_data.id.unique())
-# ids = list(map(int,input_data.id.unique()))
 all_train_ids = list(map(int,train_data.id.unique()))
-
-# test_id = ids[3]
-
-# learning_comps = test_data.loc[test_data['id'] == test_id]['comp']
-#
-# unq_learning_comps = list(learning_comps.unique())
 
 ps_thresh = []
 f1s = []
@@ -60,21 +42,23 @@ save_data = []
 
 
 ## Uncomment 1 or 2, not both
+## If generating similarity dataframe for the first time, uncomment 1 and comment 2
+## If reading in the similarity dataframe from 1, uncomment 2 and comment 1
 ## Reading boolean changes datatype to string when finding keep_ids below to deal with how
-## Pandas reads in a csv to dataframe being different than how it makes its own the first time
-# 1. Make similarity dataframe, takes a while so it is saved to csv first for reading in later
+## Pandas reads in a csv to a dataframe being different than how it makes its own the first time
+
+## 1. Make similarity dataframe, takes a while so it is saved to csv first for reading in later
 # similarity_df = find_similarities(train_data)
 # similarity_df.to_csv('blade_similarity.csv', index = True, index_label=False, header= True)
 # reading = False
+## End 1
 
-# 2. Reading in dataframe as computed above
+## 2. Reading in dataframe as computed above
 similarity_df = pd.read_csv('consumer_similarity.csv')
 reading = True
+## End 2
 
 
-
-
-# greater_than_threshold = similarity_df[similarity_df[169]>0.5].index.tolist()
 
 
 for test_id in all_train_ids:
@@ -103,9 +87,7 @@ for test_id in all_train_ids:
         else:
             keep_ids = similarity_df[similarity_df[test_id] > ps_thresh].index.tolist()
 
-
         keep_ids.remove(test_id)
-
 
         # Only keep rows from data frame that have an id that is in the keep_ids list
         keep_df = train_df[train_df['id'].isin(keep_ids)]
@@ -197,16 +179,6 @@ for i in range(0,100,10):
 
     avg_avgf1.append(mean(f1_plot))
 
-
-    # Line plot of f1 vs threshold for each percent similar
-    # #Plotting in loop for each threshold
-    # plt.plot(thresh_plot, f1_plot)
-    # plt.xlabel('Threshold')
-    # plt.ylabel('F1')
-    # plt.title('PS = {0:.2f}'.format(ps_thresh))
-    # plt.grid()
-    # plt.show()
-
 avg_opt = mean([x[1] for x in optimums])
 optimum = max(averages,key=itemgetter(2))
 print('Optimum Percent Similar Threshold = {0:.2f}'.format(optimum[0]))
@@ -290,20 +262,6 @@ plt.show()
 avg_df = pd.DataFrame(averages,columns = ['PS Thresh','Thresh','Avg F1', 'Avg IDs'])
 
 # avg_df.to_csv('averages.csv',index = False, header=True)
-
-
-# # def is_pareto_efficient_simple(costs):
-# #     """
-# #     Find the pareto-efficient points
-# #     :param costs: An (n_points, n_costs) array
-# #     :return: A (n_points, ) boolean array, indicating whether each point is Pareto efficient
-# #     """
-# is_efficient = np.ones(points.shape[0], dtype = bool)
-# for i, c in enumerate(costs):
-#     if is_efficient[i]:
-#         is_efficient[is_efficient] = np.any(costs[is_efficient]<c, axis=1)  # Keep any point with a lower cost
-#         is_efficient[i] = True  # And keep self
-#     # return is_efficient
 
 end = time.time()
 print('Time is {0:.2f}'.format(end - start))

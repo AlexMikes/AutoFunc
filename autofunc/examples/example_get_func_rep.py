@@ -11,6 +11,8 @@ import pandas as pd
 script_dir = os.path.dirname(__file__)
 file_to_test = os.path.join(script_dir, '../assets/consumer_systems.csv')
 
+include_frequencies = True
+
 test_data = pd.read_csv(file_to_test)
 combos_sorted = counter_pandas(test_data)
 
@@ -22,7 +24,7 @@ thresh_results = get_top_results(combos_sorted, threshold)
 input_file = os.path.join(script_dir, '../assets/InputExample.csv')
 
 # Get dictionary of functions and flows for each component based on data mining
-results, unmatched = get_func_rep(thresh_results, input_file, True)
+results, unmatched = get_func_rep(thresh_results, input_file, include_frequencies)
 
 
 # Optional write to file - uncomment and rename to write file

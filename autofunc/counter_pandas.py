@@ -1,27 +1,24 @@
 """
-This is a simplified version to find statistical prevalence that counts instances and is numerically equivalent
-to the confidence metric in association rules (# of occurrences / total occurrences).
+This counts instances of function-flow combinations per component to find the frequency of each combination by
+dividing it by all of the combinations for each component (# of occurrences / total occurrences).
 
 """
-
-
-# import pandas as pd
 
 def counter_pandas(dataframe):
 
     """
-        Counts instances and sorts them by prevalence
+        Counts instances and sorts them by frequency
 
         Parameters
         ----------
-        filename : string
-            A .csv file of a SQL query
+        dataframa : Pandas dataframe
+            A Pandas dataframe with the product information
 
         Returns
         -------
         comb_sort
-            Returns a dictionary of function and flow combinations sorted by prevalence. The key is the
-            component and the value is a list of type: [function-flow, statistical prevalence]
+            Returns a dictionary of function and flow combinations sorted by frequency. The key is the
+            component and the value is a list of the structure: [function-flow, frequency]
 
     """
 
