@@ -1,7 +1,5 @@
-from autofunc.get_percent_similar import *
 from autofunc.get_precision_recall import precision_recall
 from autofunc.get_top_results import get_top_results
-from autofunc.get_data import get_data
 from autofunc.counter_pandas import counter_pandas
 from autofunc.counter_pandas_with_counts import counter_pandas_with_counts
 from autofunc.make_df import make_df

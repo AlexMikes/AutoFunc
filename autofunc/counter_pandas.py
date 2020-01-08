@@ -11,7 +11,7 @@ def counter_pandas(dataframe):
 
         Parameters
         ----------
-        dataframa : Pandas dataframe
+        dataframe : Pandas dataframe
             A Pandas dataframe with the product information
 
         Returns

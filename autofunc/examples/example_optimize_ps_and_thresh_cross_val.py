@@ -1,4 +1,3 @@
-from autofunc.get_percent_similar import *
 from autofunc.get_precision_recall import precision_recall
 from autofunc.get_top_results import get_top_results
 from autofunc.make_df import make_df
@@ -49,7 +48,7 @@ save_data = []
 
 ## 1. Make similarity dataframe, takes a while so it is saved to csv first for reading in later
 # similarity_df = find_similarities(train_data)
-# similarity_df.to_csv('blade_similarity.csv', index = True, index_label=False, header= True)
+# similarity_df.to_csv('consumer_similarity.csv', index = True, index_label=False, header= True)
 # reading = False
 ## End 1
 

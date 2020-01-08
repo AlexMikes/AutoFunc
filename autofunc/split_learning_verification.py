@@ -1,19 +1,37 @@
+"""
 
+Split a dataframe into training and testing sets
+
+"""
 
 def split_learning_verification(dataframe, verification_ids):
 
+    """
+        Takes a Pandas dataframe and splits it into training and testing sets. The input IDs are the testing set, the
+        rest of the dataframe is the training set
 
+        Parameters
+        ----------
+        dataframe : Pandas dataframe
+            A Pandas dataframe of the whole set that will be split
+
+        verification_ids : list
+            The ID(s) that will be separated from the dataframe to constitute the testing set
+
+        Returns
+        -------
+        test_df
+            Returns a Pandas  dataframe with the testing set consisting of the products with the IDs in the input list
+
+        train_df
+            Returns a Pandas dataframe with the training set consisting of every product with IDs that were not
+            in the input list
+
+    """
 
     ids = list(map(int, dataframe.id.unique()))
 
     learn_ids = []
-
-    # for e in verification_ids:
-    #     if e not in ids:
-    #         # continue
-    #         print('Skipping {0:.2f}'.format(e))
-    #         # continue
-    #         # raise ValueError('The verification ids are not in the learning set')
 
     for e in ids:
         if e not in verification_ids:
