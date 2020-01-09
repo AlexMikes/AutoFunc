@@ -1,3 +1,10 @@
+"""
+
+Takes the results of the frequency-finding and sorting algorithm and cuts off the sum of frequencies at a threshold
+
+"""
+
+
 def get_top_results(conf_results, threshold=0.7):
 
     """

@@ -1,7 +1,7 @@
 
 """
 
-Convert csv file into Pandas Data Frames
+Convert csv file into Pandas Data Frames. Removes some of the erroneous data from The Design Repository queries
 
 """
 

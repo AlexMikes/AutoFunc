@@ -1,3 +1,21 @@
+"""
+
+Example using k-fold cross-validation to find the accuracy of a data mining classifier
+
+The products in the folds are randomized, so it calculates an average of multiple iterations of the cross-validation
+To change the number of folds, change the variable "k = 10" to a different number
+To change the number of iterations folds that are averaged, change the variable "iters = 10" at the top of the main loop
+
+This can use separate sets of data for training and testing sets. The training set comes from the first file called
+"file_to_learn" and the testing set comes from the second file called "file_to_test"
+
+If using the Black and Decker as the training set, set the boolean near the top to "bd = True" and it will use a
+different loop that changes all of the necessary variables
+
+"""
+
+
+
 from autofunc.get_precision_recall import precision_recall
 from autofunc.get_top_results import get_top_results
 from autofunc.counter_pandas import counter_pandas
@@ -8,6 +26,7 @@ from autofunc.df_to_list import df_to_list
 import os.path
 from math import floor
 import random
+import pandas as pd
 from itertools import combinations
 import matplotlib.pyplot as plt
 from operator import itemgetter
@@ -46,23 +65,8 @@ threshold = 0.7
 # Pandas
 df = make_df(file_to_learn)
 
-
-
 # # Split into folds
 k = 10
-#
-# new_ids = [x for x in test_ids if x not in train_ids]
-#
-#
-# n = floor(len(test_ids)/k)
-#
-# # Making folds using list comprehension
-# folds = [test_ids[i * n:(i + 1) * n] for i in range((len(test_ids) + n - 1) // n)]
-
-
-
-
-
 
 keep = []
 plots = []
@@ -93,7 +97,6 @@ averages = []
 for i in range(iters):
     random.shuffle(test_ids)
     # Split into folds
-    # new_ids = [x for x in test_ids if x not in train_ids]
     n = floor(len(test_ids) / k)
     # Making folds using list comprehension
     folds = [test_ids[i * n:(i + 1) * n] for i in range((len(test_ids) + n - 1) // n)]
@@ -106,21 +109,17 @@ for i in range(iters):
         ver_list = df_to_list(ver_df)
 
         if not bd:
-            # Not B&De
             comb_sort, counts, combos = counter_pandas_with_counts(learn_df)
             thresh_results = get_top_results(comb_sort, threshold)
 
             # Find the F1 score of the verification test by comparing the learned results with the known function/flows
             learned_dict, matched, overmatched, unmatched, recall, precision, f1 = precision_recall(thresh_results, ver_list)
-            ## End Not B&D
 
 
         if bd:
-            ## B&D
             bd_comb_sort = counter_pandas(bd_df)
             bd_thresh_results = get_top_results(bd_comb_sort, threshold)
             learned_dict, matched, overmatched, unmatched, recall, precision, f1 = precision_recall(bd_thresh_results, ver_list)
-            ## End B&D
 
         precisions.append(precision)
         recalls.append(recall)
@@ -148,27 +147,7 @@ avg_f1 = mean(averages)
 
 print('Maximum is {0:.2f}'.format(optimum[1]))
 print('Average F1 is {0:.4f}'.format(avg_f1))
-# print(averages)
 
-
-# print('Average MF is {0:.2f}'.format(avg_mf))
 
 end = time.time()
 print('Time is {0:.2f}'.format(end - start))
-
-
-
-# import pickle
-# #
-# with open("same.txt", "wb") as fp:   #Pickling
-#     pickle.dump(averages, fp)
-#
-
-
-## Counting unique CFFs
-counter = 0
-for k,v in thresh_results.items():
-    for vs in v:
-        counter+=1
-
-print(counter)

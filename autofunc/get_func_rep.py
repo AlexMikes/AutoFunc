@@ -1,3 +1,10 @@
+"""
+
+Find and return a functional representation of a product based on its constituent components and the results previously
+found from data mining
+
+"""
+
 import csv
 
 def get_func_rep(thresh_results, input_comps, conf_values = True):

@@ -1,3 +1,19 @@
+"""
+
+Example showing how to implement all of the main modules and optimize the similarity and classification thresholds
+
+It performs a leave-one-out cross-validation in a triple nested loop:
+
+1. Iterate through which product is the testing set
+    2. Iterate through similarity thresholds and make training sets based on which products are within the threshold
+        3. Iterate through classification thresholds and find the F1 scores for each combination of testing product,
+        similarity threshold, and classification threshold
+
+The optimization process is simply finding the highest average F1 score and extracting the similarity and classification
+thresholds for that number.
+
+"""
+
 from autofunc.get_precision_recall import precision_recall
 from autofunc.get_top_results import get_top_results
 from autofunc.make_df import make_df
@@ -129,6 +145,7 @@ for test_id in all_train_ids:
 
 all_data = pd.DataFrame(save_data,columns = ['Product ID', 'PS Thresh','Thresh','Num Keep IDs','F1'])
 
+# Uncomment to write to csv
 # all_data.to_csv('consumer_opt_export.csv', index = False, header=True)
 
 averages = []
@@ -257,9 +274,8 @@ plt.show()
 # plt.show()
 
 
-
-avg_df = pd.DataFrame(averages,columns = ['PS Thresh','Thresh','Avg F1', 'Avg IDs'])
-
+# Optional write all data to a dataframe and csv file
+# avg_df = pd.DataFrame(averages,columns = ['PS Thresh','Thresh','Avg F1', 'Avg IDs'])
 # avg_df.to_csv('averages.csv',index = False, header=True)
 
 end = time.time()

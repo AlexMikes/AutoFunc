@@ -9,12 +9,12 @@ import pandas as pd
 
 # Dataset used for data mining
 script_dir = os.path.dirname(__file__)
-file_to_test = os.path.join(script_dir, '../assets/consumer_systems.csv')
+file_to_learn = os.path.join(script_dir, '../assets/consumer_systems.csv')
 
 include_frequencies = True
 
-test_data = pd.read_csv(file_to_test)
-combos_sorted = counter_pandas(test_data)
+train_data = pd.read_csv(file_to_learn)
+combos_sorted = counter_pandas(train_data)
 
 # Use a threshold to get the top XX% of confidence values
 threshold = 0.5

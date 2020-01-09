@@ -1,44 +1,78 @@
+"""
+
+Find the accuracy of a prediction based on the known results in a testing set and the predicted results from
+a training set. The accuracy is represented in the F1 score.
+
+"""
+
+
 import itertools
 
 
 def precision_recall(thresh_results, test_records):
 
     """
-    Compares the results learned from data mining with a verification case for which the actual results are known
-    and outputs a "Match Factor" based on how well the automation matched the actual results as if they weren't known.
+    Imports the results of the frequency-finding and thresholding algorithm, which are the results predicted to be in
+    future components. The functions and flows for the components in the testing set are predicted based on these
+    results, which are compared with the actual results and used to calculate the accuracy of how well the prediction
+    performed.
 
-    Imports the results of the thresholding as well as the data from the verification case.
+    +--------+-----+---------------------------------+
+    |              |            Predicted?           |
+    +--------+-----+----------------+----------------+
+    |              | Yes            | No             |
+    +--------+-----+----------------+----------------+
+    |        | Yes | True Positive  | False Negative |
+    |Actual? +-----+----------------+----------------+
+    |        | No  | False Positive | True Negative  |
+    +--------+-----+----------------+----------------+
 
-    The match factor is a ratio of correct to incorrect learning. Correct means a function and flow is learned for a
-    component and that function and flow exist in the verification case for that component.
+    TP = True Positive, FP = False Positive, FN = False Negative, TN = True Negative
 
-    Incorrect means one of two things. It could be overmatched, in which a function and flow is learned for a component
-    that was not in the verification case. Unmatched means a function and flow exists in the verification case for a
-    component that was not learned from the data mining.
+    Precision is the ratio of correct predictions to all predictions made by the classifier (TP/(TP + FP)).
+    This number is the ratio of predictions that were identified as being in the product that are actually in the product.
 
-    The match factor is then the correct matches divided by the sum of the overmatched and unmatched numbers.
+    Recall is the ratio of correct predictions to all actual results made by the classifier (TP/(TP + FN)).
+    This number is the ratio of the actual results that were correctly predicted.
 
-    The outputs are the match factor as a number and dictionaries of each case: matched, overmatched, and unmatched.
+    Recall is representative of the confidence that no positives have been missed and precision is
+    representative of the confidence in the True Positives.
+
+    The F1 score is the harmonic mean of precision and recall
+
+    (2 * precision * recall) / (precision + recall)
 
     Parameters
     ----------
     thresh_results : dict
-    The results of the "find_top_thresh" function
-    test_records : dict
-    The results of the "get_data" function for the verification test case
+    The results of the "find_top_thresh" function. These are the predicted function and flow combinations for each
+    component
+
+    test_records : list
+    The function and flow combinations for each component in the testing set, organized in a list.
 
     Returns
     -------
     learned_dict
     Returns a dictionary of what was learned from the results of the data mining automation
+
     matched
     A dictionary of the functions and flows that were correctly matched for each component
+
     overmatched
     A dictionary of the functions and flows that were overmatched for each component
+
     unmatched
     A dictionary of the functions and flows that were unmatched for each component
-    match_factor
-    A float of the match factor
+
+    recall
+    A single number for the recall score for this combination of testing and training sets
+
+    precision
+    A single number for the precision score for this combination of testing and training sets
+
+    f1
+    A single number for the F1 score for this combination of testing and training sets
 
     """
 
@@ -123,13 +157,6 @@ def precision_recall(thresh_results, test_records):
                 unmatched_factor += len(test_actual[k])
 
 
-    # Find overall match factor
-    # match_factor = matched_factor / (unmatched_factor + overmatched_factor)
-
-
-
-
-
     ## Precision and Recall Stuff
 
     true_positive = matched_factor
@@ -145,9 +172,8 @@ def precision_recall(thresh_results, test_records):
     else:
         f1 = 2 * ((precision * recall)/(precision + recall))
 
-    return learned_dict, matched, overmatched, unmatched, recall, precision, f1 #, match_factor
+    return learned_dict, matched, overmatched, unmatched, recall, precision, f1
 
 
 
 
-    # return learned_dict, matched, overmatched, unmatched, match_factor

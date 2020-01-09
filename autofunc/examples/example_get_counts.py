@@ -1,3 +1,10 @@
+"""
+
+Using a bunch of random stuff that we were using to find some of the values for a paper, not organized or commented
+
+"""
+
+
 from autofunc.get_precision_recall import precision_recall
 from autofunc.get_top_results import get_top_results
 from autofunc.counter_pandas import counter_pandas
@@ -13,7 +20,7 @@ import pandas as pd
 import copy
 
 
-""" Example showing how to find the match factor using the simple counting file """
+
 
 script_dir = os.path.dirname(__file__)
 file1 = os.path.join(script_dir, '../assets/consumer_systems.csv')

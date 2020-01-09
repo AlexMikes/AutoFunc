@@ -1,3 +1,9 @@
+'''
+
+Writes a dictionary to a .csv file in a format helpful for visualizing product information
+
+'''
+
 import csv
 
 def write_results_from_dict(learned_dict, outfile, titles = None):
