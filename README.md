@@ -21,6 +21,15 @@ Once downloaded as a .zip file, install with:
 pip install /path/to/file/AutoFunc-master.zip
 ```
 
+## Dependencies
+
+This package uses Pandas (Python Data Analysis Library). It can be installed with pip using:
+
+```bash
+pip install pandas
+```
+
+
 ## Usage
 
 Example files are provided in the examples folder. Autofunc will automate the functional representations of components
