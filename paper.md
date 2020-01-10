@@ -44,28 +44,16 @@ several engineering design publications and presentations. Further development i
 functional model, but this software is a significant step in that direction. Automating functional modeling will 
 help standardize the format and syntax, decrease the time required to make them, and increase the prevalence and 
 accuracy of functional models in engineering design and design repositories. ``AutoFunc`` has been archived to 
-Zenodo with the linked DOI: 
+Zenodo with the linked DOI [@alexmikes]
 
-
-
-
-# Citations
-
-Citations to entries in paper.bib should be in
-[rMarkdown](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
-format.
-
-For a quick reference, the following citation commands can be used:
-- `@author:2001`  ->  "Author et al. (2001)"
-- `[@author:2001]` -> "(Author et al., 2001)"
-- `[@author1:2001; @author2:2001]` -> "(Author1 et al., 2001; Author2 et al., 2002)"
-
-# Figures
-
-Figures can be included like this: ![Example figure.](figure.png)
 
 # Acknowledgements
 
+Thanks to Katherine Edmonds, Rob Stone, and Bryony DuPont for research support. Thanks to Kyle Niemeyer for support with
+all things digital.
 
+This material is based upon work supported by the National Science Foundation under Grant No. CMMI-1826469. 
+Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and 
+do not necessarily reflect the views of the National Science Foundation.
 
 # References
