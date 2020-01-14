@@ -114,36 +114,46 @@ for test_id in all_train_ids:
         train_comps = list(keep_df.comp.unique())
 
         if train_comps:
+            comp_ratio = len(train_comps)/num_all_comps
             comp_ratios.append((len(keep_ids), i, len(train_comps)/num_all_comps))
 
+        if comp_ratio > 0.7:
 
-        for t in range(10, 100, 5):
-            threshold = t / 100
-            print(test_id, ' ', ps_thresh, ' ',threshold)
 
-            thresh_results = get_top_results(comb_sort, threshold)
+            for t in range(10, 100, 5):
+                threshold = t / 100
+                print(test_id, ' ', ps_thresh, ' ',threshold)
 
-            if not keep_ids:
-                f1 = 0
-                num_train_comps = 0
-            else:
-                # Find the F1 score of the verification test by comparing the learned results with the known function/flows
-                learned_dict, matched, overmatched, unmatched, recall, precision, f1 = precision_recall(thresh_results,
-                                                                                                    test_list)
-                num_train_comps = len(train_comps)
+                thresh_results = get_top_results(comb_sort, threshold)
 
-            save_data.append((test_id,ps_thresh,threshold, len(keep_ids),f1, num_train_comps/num_all_comps))
+                if not keep_ids:
+                    f1 = 0
+                    num_train_comps = 0
+                else:
+                    # Find the F1 score of the verification test by comparing the learned results with the known function/flows
+                    learned_dict, matched, overmatched, unmatched, recall, precision, f1 = precision_recall(thresh_results,
+                                                                                                        test_list)
+                    num_train_comps = len(train_comps)
 
-            points.append((ps_thresh,threshold,f1))
+                save_data.append((test_id,ps_thresh,threshold, len(keep_ids),f1, num_train_comps/num_all_comps))
 
-            f1s.append(f1)
-            # keep_ps_thresh.append(ps_thresh)
-            # threshes.append(threshold)
-            #
-            # f1_plot.append(f1)
-            # thresh_plot.append(threshold)
-            # ps_plot.append(ps_thresh)
-            #
+                points.append((ps_thresh,threshold,f1))
+
+                f1s.append(f1)
+                # keep_ps_thresh.append(ps_thresh)
+                # threshes.append(threshold)
+                #
+                # f1_plot.append(f1)
+                # thresh_plot.append(threshold)
+                # ps_plot.append(ps_thresh)
+                #
+
+        else:
+            f1 = 0
+            save_data.append((test_id, ps_thresh, threshold, len(keep_ids), f1, num_train_comps / num_all_comps))
+
+
+
         ps_end = time.time()
         ps_time.append((len(keep_ids), (ps_end - ps_start)))
 
@@ -257,23 +267,23 @@ plt.grid()
 plt.show()
 
 
-# Plotting comp ratio and num prods vs f1
-x = avg_avgf1
-y1 = comp_ratio_plot
-y2 = ids_plot
-fig, ax1 = plt.subplots()
-color = 'tab:red'
-ax1.set_xlabel('time (s)')
-ax1.set_ylabel('exp', color=color)
-ax1.plot(x, y1, color=color)
-ax1.tick_params(axis='y', labelcolor=color)
-ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
-color = 'tab:blue'
-ax2.set_ylabel('sin', color=color)  # we already handled the x-label with ax1
-ax2.plot(x, y2, color=color)
-ax2.tick_params(axis='y', labelcolor=color)
-fig.tight_layout()  # otherwise the right y-label is slightly clipped
-plt.show()
+# # Plotting comp ratio and num prods vs f1
+# x = avg_avgf1
+# y1 = comp_ratio_plot
+# y2 = ids_plot
+# fig, ax1 = plt.subplots()
+# color = 'tab:red'
+# ax1.set_xlabel('time (s)')
+# ax1.set_ylabel('exp', color=color)
+# ax1.plot(x, y1, color=color)
+# ax1.tick_params(axis='y', labelcolor=color)
+# ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+# color = 'tab:blue'
+# ax2.set_ylabel('sin', color=color)  # we already handled the x-label with ax1
+# ax2.plot(x, y2, color=color)
+# ax2.tick_params(axis='y', labelcolor=color)
+# fig.tight_layout()  # otherwise the right y-label is slightly clipped
+# plt.show()
 
 
 # Plotting comp ratio and f1 vs num proudcts in training set
@@ -289,31 +299,6 @@ ax1.tick_params(axis='y', labelcolor=color)
 ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
 color = 'tab:blue'
 ax2.set_ylabel('Average F1 scores', color=color)  # we already handled the x-label with ax1
-ax2.plot(x, y2, color=color)
-ax2.tick_params(axis='y', labelcolor=color)
-fig.tight_layout()  # otherwise the right y-label is slightly clipped
-plt.axvline(x=27)
-plt.grid()
-plt.show()
-
-
-# Plotting comp ratio and delta f1 vs num products in training set
-d_f1 = []
-for i in range(len(avg_avgf1) - 1):
-    d_f1.append((avg_avgf1[i+1] - avg_avgf1[i]) / (ids_plot[i+1] - ids_plot[i]))
-
-x = ids_plot[1:]
-y1 = comp_ratio_plot[1:]
-y2 = d_f1
-fig, ax1 = plt.subplots()
-color = 'tab:red'
-ax1.set_xlabel('Number of Products in Training Set')
-ax1.set_ylabel('Ratio of Components Represented', color=color)
-ax1.plot(x, y1, color=color)
-ax1.tick_params(axis='y', labelcolor=color)
-ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
-color = 'tab:blue'
-ax2.set_ylabel('Change in Average F1 Scores', color=color)  # we already handled the x-label with ax1
 ax2.plot(x, y2, color=color)
 ax2.tick_params(axis='y', labelcolor=color)
 fig.tight_layout()  # otherwise the right y-label is slightly clipped
