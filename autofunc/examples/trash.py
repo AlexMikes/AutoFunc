@@ -23,6 +23,7 @@ from autofunc.split_learning_verification import split_learning_verification
 from autofunc.df_to_list import df_to_list
 import os.path
 from matplotlib import rcParams
+
 rcParams['font.family'] = 'serif'
 rcParams['font.serif'] = ['Times New Roman']
 import matplotlib.pyplot as plt
@@ -33,7 +34,6 @@ import time
 import pandas as pd
 from statistics import mean
 
-
 start = time.time()
 
 # Dataset used for data mining
@@ -43,7 +43,7 @@ file_to_learn = os.path.join(script_dir, '../assets/consumer_systems.csv')
 train_data = pd.read_csv(file_to_learn)
 train_df_whole = make_df(file_to_learn)
 
-all_train_ids = list(map(int,train_data.id.unique()))
+all_train_ids = list(map(int, train_data.id.unique()))
 
 ps_thresh = []
 f1s = []
@@ -54,7 +54,7 @@ ps_time = []
 comp_ratios = []
 points = []
 save_data = []
-
+combinations_used = []
 
 ## Uncomment 1 or 2, not both
 ## If generating similarity dataframe for the first time, uncomment 1 and comment 2
@@ -79,13 +79,13 @@ num_all_comps = len(all_comps)
 
 for test_id in all_train_ids:
     # print(test_id)
-#
+    #
     test_df, train_df = split_learning_verification(train_df_whole, [test_id])
     test_list = df_to_list(test_df)
     train_ids = list(map(int, train_df.id.unique()))
-#
-# Outer loop through percent similar
-    for i in range(0,100,10):
+    #
+    # Outer loop through percent similar
+    for i in range(0, 100, 10):
 
         ps_start = time.time()
 
@@ -95,7 +95,7 @@ for test_id in all_train_ids:
 
         keep_ids = []
 
-        ps_thresh = i/100
+        ps_thresh = i / 100
 
         if reading:
             keep_ids = similarity_df[similarity_df[str(test_id)] > ps_thresh].index.tolist()
@@ -109,41 +109,51 @@ for test_id in all_train_ids:
 
         comb_sort = counter_pandas(keep_df)
 
-
         # Component counting and fractions
         train_comps = list(keep_df.comp.unique())
 
         if train_comps:
-            comp_ratios.append((len(keep_ids), i, len(train_comps)/num_all_comps))
+            comp_ratio = len(train_comps) / num_all_comps
+            comp_ratios.append((len(keep_ids), i, len(train_comps) / num_all_comps))
 
+        if comp_ratio > 0.7 and len(keep_ids) < 40:
 
-        for t in range(10, 100, 5):
-            threshold = t / 100
-            print(test_id, ' ', ps_thresh, ' ',threshold)
+            for t in range(10, 100, 5):
+                threshold = t / 100
+                print(test_id, ' ', ps_thresh, ' ', threshold)
 
-            thresh_results = get_top_results(comb_sort, threshold)
+                thresh_results = get_top_results(comb_sort, threshold)
 
-            if not keep_ids:
-                f1 = 0
-                num_train_comps = 0
-            else:
-                # Find the F1 score of the verification test by comparing the learned results with the known function/flows
-                learned_dict, matched, overmatched, unmatched, recall, precision, f1 = precision_recall(thresh_results,
-                                                                                                    test_list)
-                num_train_comps = len(train_comps)
+                if not keep_ids:
+                    f1 = 0
+                    num_train_comps = 0
+                else:
+                    # Find the F1 score of the verification test by comparing the learned results with the known function/flows
+                    learned_dict, matched, overmatched, unmatched, recall, precision, f1 = precision_recall(
+                        thresh_results,
+                        test_list)
+                    num_train_comps = len(train_comps)
 
-            save_data.append((test_id,ps_thresh,threshold, len(keep_ids),f1, num_train_comps/num_all_comps))
+                if (i, t) not in combinations_used:
+                    combinations_used.append((i, t))
 
-            points.append((ps_thresh,threshold,f1))
+                save_data.append((test_id, ps_thresh, threshold, len(keep_ids), f1, num_train_comps / num_all_comps))
 
-            f1s.append(f1)
-            # keep_ps_thresh.append(ps_thresh)
-            # threshes.append(threshold)
-            #
-            # f1_plot.append(f1)
-            # thresh_plot.append(threshold)
-            # ps_plot.append(ps_thresh)
-            #
+                points.append((ps_thresh, threshold, f1))
+
+                f1s.append(f1)
+                # keep_ps_thresh.append(ps_thresh)
+                # threshes.append(threshold)
+                #
+                # f1_plot.append(f1)
+                # thresh_plot.append(threshold)
+                # ps_plot.append(ps_thresh)
+                #
+
+        else:
+            f1 = 0
+            # save_data.append((test_id, ps_thresh, threshold, len(keep_ids), f1, num_train_comps / num_all_comps))
+
         ps_end = time.time()
         ps_time.append((len(keep_ids), (ps_end - ps_start)))
 
@@ -151,7 +161,8 @@ for test_id in all_train_ids:
 # index = pd.MultiIndex.from_tuples(save_data, names=['Product ID', 'PS Thresh','Thresh','Num Keep IDs'])
 # all_data = pd.Series(f1s, index=index )
 
-all_data = pd.DataFrame(save_data,columns = ['Test Product ID', 'PS Thresh','Thresh','Num Keep IDs','F1','Comp Ratio'])
+all_data = pd.DataFrame(save_data,
+                        columns=['Test Product ID', 'PS Thresh', 'Thresh', 'Num Keep IDs', 'F1', 'Comp Ratio'])
 
 # Uncomment to write to csv
 # all_data.to_csv('consumer_opt_export.csv', index = False, header=True)
@@ -169,70 +180,82 @@ ids_plot = []
 ps_plot = []
 comp_ratio_plot = []
 
-for i in range(0, 100, 10):
+# for i in range(0, 100, 10):
+for e in combinations_used:
+    i = e[0]
+    t = e[1]
     ps_thresh = i / 100
 
     opt_finder = []
     f1_plot = []
     thresh_plot = []
 
+    try:
+        avg_ids = mean(
+            all_data['Num Keep IDs'][(all_data['Thresh'] == threshold) & (all_data['PS Thresh'] == ps_thresh)])
+        average_ids.append((ps_thresh, threshold, avg_ids))
+        ids_plot.append(avg_ids)
+    except:
+        print('No matching products for this combination')
 
-    avg_ids = mean(all_data['Num Keep IDs'][(all_data['Thresh'] == threshold) & (all_data['PS Thresh'] == ps_thresh)])
-    average_ids.append((ps_thresh, threshold, avg_ids))
-    ids_plot.append(avg_ids)
     ps_plot.append(ps_thresh)
 
-    avg_comp_ratio = mean(all_data['Comp Ratio'][(all_data['Thresh'] == threshold) & (all_data['PS Thresh'] == ps_thresh)])
-    comp_ratio_plot.append(avg_comp_ratio)
+    try:
+        avg_comp_ratio = mean(
+            all_data['Comp Ratio'][(all_data['Thresh'] == threshold) & (all_data['PS Thresh'] == ps_thresh)])
+        comp_ratio_plot.append(avg_comp_ratio)
+    except:
+        print('No matching ratios for this combination')
 
+    # for t in range(10, 100, 5):
+    threshold = t / 100
 
-    for t in range(10, 100, 5):
-        threshold = t / 100
-
-        # Find the average F1 score for each combination of threshold and percent similar
+    # Find the average F1 score for each combination of threshold and percent similar
+    try:
         avg_f1 = mean(all_data['F1'][(all_data['Thresh'] == threshold) & (all_data['PS Thresh'] == ps_thresh)])
-        averages.append((ps_thresh,threshold,avg_f1, avg_ids))
-        opt_finder.append((ps_thresh,threshold,avg_f1, avg_ids))
-
+        averages.append((ps_thresh, threshold, avg_f1, avg_ids))
+        opt_finder.append((ps_thresh, threshold, avg_f1, avg_ids))
         f1_plot.append(avg_f1)
-        thresh_plot.append(threshold)
+    except:
+        print('No F1s for this combinations')
 
+    thresh_plot.append(threshold)
 
-        ids_3d.append(avg_ids)
-        ps_3d.append(ps_thresh)
-        thresh_3d.append(threshold)
-        f1_3d.append(avg_f1)
+    ids_3d.append(avg_ids)
+    ps_3d.append(ps_thresh)
+    thresh_3d.append(threshold)
+    f1_3d.append(avg_f1)
 
     # Find best threshold for each percent similar
-    optimums.append(max(opt_finder,key=itemgetter(2)))
+    optimums.append(max(opt_finder, key=itemgetter(2)))
 
     avg_avgf1.append(mean(f1_plot))
 
 avg_opt = mean([x[1] for x in optimums])
-optimum = max(averages,key=itemgetter(2))
+optimum = max(averages, key=itemgetter(2))
 print('Optimum Percent Similar Threshold = {0:.2f}'.format(optimum[0]))
 print('Optimum Threshold = {0:.2f}'.format(optimum[1]))
 print('Maximum F1 = {0:.4f}'.format(optimum[2]))
 
-# Plotting f1s vs ps at 0.55 threshold
-plot_f1s = [x[2] for x in averages if x[1] == 0.55]
-plt.plot(ps_plot, plot_f1s)
-plt.xlabel('Similarity Threshold')
-plt.ylabel('Average F1 Score')
-# plt.title('F1 Score vs PS at 0.55 threshold')
-plt.grid()
-plt.show()
+# # Plotting f1s vs ps at 0.55 threshold
+# plot_f1s = [x[2] for x in averages if x[1] == 0.55]
+# plt.plot(ps_plot, plot_f1s)
+# plt.xlabel('Similarity Threshold')
+# plt.ylabel('Average F1 Score')
+# # plt.title('F1 Score vs PS at 0.55 threshold')
+# plt.grid()
+# plt.show()
 
-# Plotting f1s vs threshold at 0.2 ps
-plot_f1s = [x[2] for x in averages if x[0] == 0.2]
-plt.plot(thresh_plot, plot_f1s)
-plt.xlabel('Classification Threshold')
-plt.ylabel('Average F1 Score')
-# plt.title('F1 Score vs Threshold at 0.2 Percent Similar')
-plt.grid()
-plt.show()
+# # Plotting f1s vs threshold at 0.2 ps
+# plot_f1s = [x[2] for x in averages if x[0] == 0.2]
+# plt.plot(thresh_plot, plot_f1s)
+# plt.xlabel('Classification Threshold')
+# plt.ylabel('Average F1 Score')
+# # plt.title('F1 Score vs Threshold at 0.2 Percent Similar')
+# plt.grid()
+# plt.show()
 
-#Plotting f1 vs num ids
+# Plotting f1 vs num ids
 plt.plot(ps_plot, ids_plot)
 plt.xlabel('Similarity Threshold')
 plt.ylabel('Number of Products in Training Set')
@@ -240,8 +263,8 @@ plt.ylabel('Number of Products in Training Set')
 plt.grid()
 plt.show()
 
-#Plotting f1 vs num ids
-plt.plot(ids_plot,avg_avgf1)
+# Plotting f1 vs num ids
+plt.plot(ids_plot, avg_avgf1)
 plt.ylabel('Average F1 Score')
 plt.xlabel('Number of Products in Training Set')
 # plt.title('Avg F1 score vs Number of Products')
@@ -249,13 +272,12 @@ plt.grid()
 plt.show()
 
 # Plotting f1 vs comp ratio
-plt.plot(comp_ratio_plot,avg_avgf1)
+plt.plot(comp_ratio_plot, avg_avgf1)
 plt.ylabel('Average F1 Score')
 plt.xlabel('Average Component Ratios')
 # plt.title('Avg F1 score vs Component Ratios')
 plt.grid()
 plt.show()
-
 
 # # Plotting comp ratio and num prods vs f1
 # x = avg_avgf1
@@ -296,54 +318,11 @@ plt.axvline(x=27)
 plt.grid()
 plt.show()
 
-
-# Plotting comp ratio and delta f1 vs num products in training set
-d_f1 = []
-for i in range(len(avg_avgf1) - 1):
-    d_f1.append((avg_avgf1[i+1] - avg_avgf1[i]) / (ids_plot[i+1] - ids_plot[i]))
-
-x = ids_plot[1:]
-y1 = comp_ratio_plot[1:]
-y2 = d_f1
-fig, ax1 = plt.subplots()
-color = 'tab:red'
-ax1.set_xlabel('Number of Products in Training Set')
-ax1.set_ylabel('Ratio of Components Represented', color=color)
-ax1.plot(x, y1, color=color)
-ax1.tick_params(axis='y', labelcolor=color)
-ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
-color = 'tab:blue'
-ax2.set_ylabel('Change in Average F1 Scores', color=color)  # we already handled the x-label with ax1
-ax2.plot(x, y2, color=color)
-ax2.tick_params(axis='y', labelcolor=color)
-fig.tight_layout()  # otherwise the right y-label is slightly clipped
-plt.axvline(x=27)
-plt.grid()
-plt.show()
-
-
 # Plot comp ratio vs num prods
-plt.plot(ids_plot,comp_ratio_plot)
+plt.plot(ids_plot, comp_ratio_plot)
 plt.xlabel('Average Number of Proucts in Training Set')
 plt.ylabel('Average Component Ratios')
 # plt.title('Avg F1 score vs Number of Products')
-plt.grid()
-plt.show()
-
-#Plotting delta f1 vs num prods
-plt.plot(ids_plot[1:], d_f1)
-plt.ylabel('Change in Average F1 Scores')
-plt.xlabel('Average Number of Products in Training Set')
-# plt.title('Avg F1 score vs Number of Products')
-plt.grid()
-plt.show()
-
-#Plotting delta f1 vs comp ratio
-plt.plot(comp_ratio_plot[1:], d_f1)
-plt.ylabel('Change in Average F1 Scores')
-plt.xlabel('Average Component Ratio')
-# plt.title('Avg F1 score vs Number of Products')
-plt.axvline(x=0.75)
 plt.grid()
 plt.show()
 
@@ -359,7 +338,6 @@ plt.ylabel('Number of Products in Training Set')
 plt.grid()
 plt.show()
 
-
 # 3D Scatter Plot
 ax = plt.axes(projection='3d')
 
@@ -374,7 +352,6 @@ ax.set_xlabel('Similarity Threshold')
 ax.set_ylabel('Classification Threshold')
 ax.set_zlabel('Average F1 Score');
 plt.show()
-
 
 # ## 3D Scatter plot of percent similar, num ids, f1: Kind of weird
 # # Data for three-dimensional scattered points of ids

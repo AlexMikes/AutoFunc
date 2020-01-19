@@ -54,6 +54,8 @@ ps_time = []
 comp_ratios = []
 points = []
 save_data = []
+keepers = []
+id_comp_ratios = []
 
 
 ## Uncomment 1 or 2, not both
@@ -83,6 +85,8 @@ for test_id in all_train_ids:
     test_df, train_df = split_learning_verification(train_df_whole, [test_id])
     test_list = df_to_list(test_df)
     train_ids = list(map(int, train_df.id.unique()))
+
+    id_comp_ratios.append((test_id, len(list(test_df.comp.unique()))/num_all_comps))
 #
 # Outer loop through percent similar
     for i in range(0,100,10):
@@ -115,42 +119,43 @@ for test_id in all_train_ids:
 
         if train_comps:
             comp_ratio = len(train_comps)/num_all_comps
-            comp_ratios.append((len(keep_ids), i, len(train_comps)/num_all_comps))
+            comp_ratios.append((len(keep_ids), i, comp_ratio))
 
-        if comp_ratio > 0.7:
+        if comp_ratio > 0.7 and len(keep_ids) < 40:
+            keepers.append(keep_ids)
 
 
-            for t in range(10, 100, 5):
-                threshold = t / 100
-                print(test_id, ' ', ps_thresh, ' ',threshold)
 
-                thresh_results = get_top_results(comb_sort, threshold)
 
-                if not keep_ids:
-                    f1 = 0
-                    num_train_comps = 0
-                else:
-                    # Find the F1 score of the verification test by comparing the learned results with the known function/flows
-                    learned_dict, matched, overmatched, unmatched, recall, precision, f1 = precision_recall(thresh_results,
-                                                                                                        test_list)
-                    num_train_comps = len(train_comps)
+        for t in range(10, 100, 5):
+            threshold = t / 100
+            print(test_id, ' ', ps_thresh, ' ',threshold)
 
-                save_data.append((test_id,ps_thresh,threshold, len(keep_ids),f1, num_train_comps/num_all_comps))
+            thresh_results = get_top_results(comb_sort, threshold)
 
-                points.append((ps_thresh,threshold,f1))
+            if not keep_ids:
+                f1 = 0
+                num_train_comps = 0
+            else:
+                # Find the F1 score of the verification test by comparing the learned results with the known function/flows
+                learned_dict, matched, overmatched, unmatched, recall, precision, f1 = precision_recall(thresh_results,
+                                                                                                    test_list)
+                num_train_comps = len(train_comps)
 
-                f1s.append(f1)
-                # keep_ps_thresh.append(ps_thresh)
-                # threshes.append(threshold)
-                #
-                # f1_plot.append(f1)
-                # thresh_plot.append(threshold)
-                # ps_plot.append(ps_thresh)
-                #
+            save_data.append((test_id,ps_thresh,threshold, len(keep_ids),f1, num_train_comps/num_all_comps))
 
-        else:
-            f1 = 0
-            save_data.append((test_id, ps_thresh, threshold, len(keep_ids), f1, num_train_comps / num_all_comps))
+            points.append((ps_thresh,threshold,f1))
+
+            f1s.append(f1)
+
+
+            # keep_ps_thresh.append(ps_thresh)
+            # threshes.append(threshold)
+            #
+            # f1_plot.append(f1)
+            # thresh_plot.append(threshold)
+            # ps_plot.append(ps_thresh)
+            #
 
 
 
@@ -161,7 +166,7 @@ for test_id in all_train_ids:
 # index = pd.MultiIndex.from_tuples(save_data, names=['Product ID', 'PS Thresh','Thresh','Num Keep IDs'])
 # all_data = pd.Series(f1s, index=index )
 
-all_data = pd.DataFrame(save_data,columns = ['Product ID', 'PS Thresh','Thresh','Num Keep IDs','F1','Comp Ratio'])
+all_data = pd.DataFrame(save_data,columns = ['Test Product ID', 'PS Thresh','Thresh','Num Keep IDs','F1','Comp Ratio'])
 
 # Uncomment to write to csv
 # all_data.to_csv('consumer_opt_export.csv', index = False, header=True)
@@ -217,6 +222,68 @@ for i in range(0, 100, 10):
     optimums.append(max(opt_finder,key=itemgetter(2)))
 
     avg_avgf1.append(mean(f1_plot))
+
+
+
+
+
+
+## Comp Ratio Stuff
+
+comp_ratio_mean = np.mean(id_comp_ratios,axis=0)
+
+keeper_count = {}
+
+for id_list in keepers:
+    for id in id_list:
+        if id not in keeper_count:
+            keeper_count[id] = 1
+        else:
+            keeper_count[id] += 1
+
+## Bar Chart - No subplots
+count_keepers = []
+
+for k,v in keeper_count.items():
+    count_keepers.append((k, v))
+    # ids_bar.append(k)
+    # counts_bar.append(v)
+
+count_keepers.sort(key=lambda x: x[1], reverse=True)
+
+ids_bar = [x[0] for x in count_keepers[0:30]]
+counts_bar = [x[1] for x in count_keepers[0:30]]
+
+# best_ids = [319, 370, 380, 603, 364, 225, 652, 689, 688, 697, 609, 357, 712, 605, 208, 606, 206, 345, 335, 599, 601, 615, 686, 358, 376, 366, 670, 334, 305, 671]
+
+x_pos = [i for i, _ in enumerate(ids_bar)]
+plt.bar(x_pos, counts_bar, color='green')
+plt.xlabel("Product ID")
+plt.ylabel("Number of Instances")
+plt.title("Count of products in keepers")
+
+plt.xticks(x_pos, ids_bar)
+
+plt.show()
+
+
+# x = ['Nuclear', 'Hydro', 'Gas', 'Oil', 'Coal', 'Biofuel']
+# energy = [5, 6, 15, 22, 24, 8]
+#
+# x_pos = [i for i, _ in enumerate(x)]
+#
+# plt.bar(x_pos, energy, color='green')
+# plt.xlabel("Energy Source")
+# plt.ylabel("Energy Output (GJ)")
+# plt.title("Energy output from various fuel sources")
+#
+# plt.xticks(x_pos, x)
+#
+# plt.show()
+
+## End bar graph, no subplots
+
+
 
 avg_opt = mean([x[1] for x in optimums])
 optimum = max(averages,key=itemgetter(2))
@@ -307,6 +374,31 @@ plt.grid()
 plt.show()
 
 
+# Plotting comp ratio and delta f1 vs num products in training set
+d_f1 = []
+for i in range(len(avg_avgf1) - 1):
+    d_f1.append((avg_avgf1[i+1] - avg_avgf1[i]) / (ids_plot[i+1] - ids_plot[i]))
+
+x = ids_plot[1:]
+y1 = comp_ratio_plot[1:]
+y2 = d_f1
+fig, ax1 = plt.subplots()
+color = 'tab:red'
+ax1.set_xlabel('Number of Products in Training Set')
+ax1.set_ylabel('Ratio of Components Represented', color=color)
+ax1.plot(x, y1, color=color)
+ax1.tick_params(axis='y', labelcolor=color)
+ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+color = 'tab:blue'
+ax2.set_ylabel('Change in Average F1 Scores', color=color)  # we already handled the x-label with ax1
+ax2.plot(x, y2, color=color)
+ax2.tick_params(axis='y', labelcolor=color)
+fig.tight_layout()  # otherwise the right y-label is slightly clipped
+plt.axvline(x=27)
+plt.grid()
+plt.show()
+
+
 # Plot comp ratio vs num prods
 plt.plot(ids_plot,comp_ratio_plot)
 plt.xlabel('Average Number of Proucts in Training Set')
@@ -315,7 +407,22 @@ plt.ylabel('Average Component Ratios')
 plt.grid()
 plt.show()
 
+#Plotting delta f1 vs num prods
+plt.plot(ids_plot[1:], d_f1)
+plt.ylabel('Change in Average F1 Scores')
+plt.xlabel('Average Number of Products in Training Set')
+# plt.title('Avg F1 score vs Number of Products')
+plt.grid()
+plt.show()
 
+#Plotting delta f1 vs comp ratio
+plt.plot(comp_ratio_plot[1:], d_f1)
+plt.ylabel('Change in Average F1 Scores')
+plt.xlabel('Average Component Ratio')
+# plt.title('Avg F1 score vs Number of Products')
+plt.axvline(x=0.75)
+plt.grid()
+plt.show()
 
 # Plotting # Prods vs time
 plot_time = [x[1] for x in ps_time]
