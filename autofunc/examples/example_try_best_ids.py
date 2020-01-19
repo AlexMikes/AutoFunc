@@ -137,6 +137,7 @@ for t in range(10, 100, 5):
 plt.plot(thresh_plot,avg_f1s)
 plt.ylabel('Average F1 Score')
 plt.xlabel('Classification Threshold')
+plt.ylim(0.19,0.46)
 # plt.title('Avg F1 score vs Number of Products')
 plt.grid()
 plt.show()

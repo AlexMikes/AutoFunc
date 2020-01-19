@@ -56,6 +56,7 @@ points = []
 save_data = []
 keepers = []
 id_comp_ratios = []
+scatter_keep = []
 
 
 ## Uncomment 1 or 2, not both
@@ -124,7 +125,7 @@ for test_id in all_train_ids:
         if comp_ratio > 0.7 and len(keep_ids) < 40:
             keepers.append(keep_ids)
 
-
+        scatter_keep.append((comp_ratio,len(keep_ids)))
 
 
         for t in range(10, 100, 5):
@@ -257,12 +258,12 @@ counts_bar = [x[1] for x in count_keepers[0:30]]
 # best_ids = [319, 370, 380, 603, 364, 225, 652, 689, 688, 697, 609, 357, 712, 605, 208, 606, 206, 345, 335, 599, 601, 615, 686, 358, 376, 366, 670, 334, 305, 671]
 
 x_pos = [i for i, _ in enumerate(ids_bar)]
-plt.bar(x_pos, counts_bar, color='green')
+plt.bar(x_pos, counts_bar)
 plt.xlabel("Product ID")
 plt.ylabel("Number of Instances")
-plt.title("Count of products in keepers")
+# plt.title("Count of products in keepers")
 
-plt.xticks(x_pos, ids_bar)
+plt.xticks(x_pos, ids_bar, rotation=45)
 
 plt.show()
 
@@ -476,5 +477,93 @@ print('Time is {0:.2f}'.format(end - start))
 # # ax = plt.axes(projection='3d')
 # ax.contour3D(X, Y, Z, 50, cmap='binary')
 
+# Scatter plot Num Prods and Comp Ratio
+# fig=plt.figure()
+# ax=fig.add_axes([0,0,1,1])
+scatter_comp_ratio = [x[0] for x in scatter_keep if x[1] > 0]
+scatter_keep_ids = [x[1] for x in scatter_keep if x[1] > 0]
+
+scatter_highlight = [x for x in scatter_keep if x[0] > 0.7 and x[1] < 40]
+scatter_cr_highlight = [x[0] for x in scatter_highlight if x[1] > 0]
+scatter_ids_highlight = [x[1] for x in scatter_highlight if x[1] > 0]
+
+plt.scatter(scatter_comp_ratio,scatter_keep_ids, color = "blue")
+plt.scatter(scatter_cr_highlight,scatter_ids_highlight, color = "red")
+plt.xlabel('Component Ratio')
+plt.ylabel('Number of Products in Training Set')
+plt.axhline(y=40)
+plt.axvline(x=0.7)
+plt.grid()
+plt.show()
 
 
+#############################
+## TRYING BEST IDS  #########
+
+f1s = []
+save_data = []
+
+best_ids = [319, 370, 380, 603, 364, 225, 652, 689, 688, 697, 609, 357, 712, 605, 208, 606, 206, 345, 335, 599, 601, 615, 686, 358, 376, 366, 670, 334, 305, 671]
+
+# Remove best_ids from all_train_ids
+test_ids = [x for x in all_train_ids if x not in best_ids]
+
+train_df = train_df_whole[train_df_whole['id'].isin(best_ids)]
+
+comb_sort = counter_pandas(train_df)
+
+for test_id in test_ids:
+
+    test_df = train_df_whole[train_df_whole['id']==test_id]
+    test_list = df_to_list(test_df)
+
+    for t in range(10, 100, 5):
+        threshold = t / 100
+        print(test_id, ' ', threshold)
+
+        thresh_results = get_top_results(comb_sort, threshold)
+
+        # Find the F1 score of the verification test by comparing the learned results with the known function/flows
+        learned_dict, matched, overmatched, unmatched, recall, precision, f1 = precision_recall(thresh_results,
+                                                                                                test_list)
+        # num_train_comps = len(train_comps)
+
+        save_data.append((test_id, threshold, f1))
+
+        # points.append((ps_thresh, threshold, f1))
+
+        f1s.append(f1)
+
+all_data = pd.DataFrame(save_data,columns = ['Test Product ID', 'Thresh','F1'])
+
+thresh_plot = []
+avg_f1s = []
+for t in range(10, 100, 5):
+    threshold = t/100
+    avg_f1s.append(mean(all_data['F1'][(all_data['Thresh'] == threshold)]))
+    thresh_plot.append(threshold)
+
+#Plotting f1 vs thresholds for best_ids
+plt.plot(thresh_plot,avg_f1s)
+plt.ylabel('Average F1 Score')
+plt.xlabel('Classification Threshold')
+plt.ylim(0.19,0.46)
+# plt.title('Avg F1 score vs Number of Products')
+plt.grid()
+plt.show()
+
+#Plotting f1 vs thresholds for best_ids and regular at 0.2 ps
+plot_f1s = [x[2] for x in averages if x[0] == 0.2]
+plt.plot(thresh_plot,plot_f1s, linewidth=2, linestyle='dashed', label="Full Dataset")
+plt.plot(thresh_plot,avg_f1s, label="Restricted Dataset")
+plt.ylabel('Average F1 Score')
+plt.xlabel('Classification Threshold')
+plt.ylim(0.19,0.46)
+# plt.title('Avg F1 score vs Number of Products')
+plt.grid()
+plt.legend()
+plt.show()
+
+
+
+############################
