@@ -32,6 +32,7 @@ from mpl_toolkits import mplot3d
 import time
 import pandas as pd
 from statistics import mean
+import scipy.stats as stats
 
 
 start = time.time()
@@ -80,6 +81,8 @@ reading = True
 all_comps = list(train_df_whole.comp.unique())
 num_all_comps = len(all_comps)
 
+
+## Main loop, comment if not reading in all_data
 for test_id in all_train_ids:
     # print(test_id)
 #
@@ -162,15 +165,28 @@ for test_id in all_train_ids:
 
         ps_end = time.time()
         ps_time.append((len(keep_ids), (ps_end - ps_start)))
+##### End Main Loop
 
-# MultiIndex if needed
+
+###### MultiIndex if needed
 # index = pd.MultiIndex.from_tuples(save_data, names=['Product ID', 'PS Thresh','Thresh','Num Keep IDs'])
 # all_data = pd.Series(f1s, index=index )
 
+
+## Uncomment 1 or 2, not both
+## If generating all_data from the main loop uncommented, uncomment 1 and comment 2
+## If reading in the all_data dataframe, uncomment 2 and comment 1
+
+## 1. Make all_data from main loop
 all_data = pd.DataFrame(save_data,columns = ['Test Product ID', 'PS Thresh','Thresh','Num Keep IDs','F1','Comp Ratio'])
 
 # Uncomment to write to csv
-# all_data.to_csv('consumer_opt_export.csv', index = False, header=True)
+# all_data.to_csv('all_data_export.csv', index = False, header=True)
+
+## 2. Read all_data from csv
+# all_data = pd.read_csv('all_data_export.csv')
+
+
 
 averages = []
 average_ids = []
@@ -193,12 +209,12 @@ for i in range(0, 100, 10):
     thresh_plot = []
 
 
-    avg_ids = mean(all_data['Num Keep IDs'][(all_data['Thresh'] == threshold) & (all_data['PS Thresh'] == ps_thresh)])
-    average_ids.append((ps_thresh, threshold, avg_ids))
+    avg_ids = mean(all_data['Num Keep IDs'][(all_data['PS Thresh'] == ps_thresh)])
+    average_ids.append((ps_thresh, avg_ids))
     ids_plot.append(avg_ids)
     ps_plot.append(ps_thresh)
 
-    avg_comp_ratio = mean(all_data['Comp Ratio'][(all_data['Thresh'] == threshold) & (all_data['PS Thresh'] == ps_thresh)])
+    avg_comp_ratio = mean(all_data['Comp Ratio'][(all_data['PS Thresh'] == ps_thresh)])
     comp_ratio_plot.append(avg_comp_ratio)
 
 
@@ -255,6 +271,7 @@ count_keepers.sort(key=lambda x: x[1], reverse=True)
 ids_bar = [x[0] for x in count_keepers[0:30]]
 counts_bar = [x[1] for x in count_keepers[0:30]]
 
+# 30 best ids
 # best_ids = [319, 370, 380, 603, 364, 225, 652, 689, 688, 697, 609, 357, 712, 605, 208, 606, 206, 345, 335, 599, 601, 615, 686, 358, 376, 366, 670, 334, 305, 671]
 
 x_pos = [i for i, _ in enumerate(ids_bar)]
@@ -354,7 +371,7 @@ plt.show()
 # plt.show()
 
 
-# Plotting comp ratio and f1 vs num proudcts in training set
+# Plotting comp ratio and f1 vs num products in training set
 x = ids_plot
 y1 = comp_ratio_plot
 y2 = avg_avgf1
@@ -477,9 +494,8 @@ print('Time is {0:.2f}'.format(end - start))
 # # ax = plt.axes(projection='3d')
 # ax.contour3D(X, Y, Z, 50, cmap='binary')
 
+
 # Scatter plot Num Prods and Comp Ratio
-# fig=plt.figure()
-# ax=fig.add_axes([0,0,1,1])
 scatter_comp_ratio = [x[0] for x in scatter_keep if x[1] > 0]
 scatter_keep_ids = [x[1] for x in scatter_keep if x[1] > 0]
 
@@ -489,7 +505,7 @@ scatter_ids_highlight = [x[1] for x in scatter_highlight if x[1] > 0]
 
 plt.scatter(scatter_comp_ratio,scatter_keep_ids, color = "blue")
 plt.scatter(scatter_cr_highlight,scatter_ids_highlight, color = "red")
-plt.xlabel('Component Ratio')
+plt.xlabel('Ratio of Component Basis Terms Covered in Training Set')
 plt.ylabel('Number of Products in Training Set')
 plt.axhline(y=40)
 plt.axvline(x=0.7)
@@ -501,8 +517,9 @@ plt.show()
 ## TRYING BEST IDS  #########
 
 f1s = []
-save_data = []
+save_data2 = []
 
+# 30 best_ids
 best_ids = [319, 370, 380, 603, 364, 225, 652, 689, 688, 697, 609, 357, 712, 605, 208, 606, 206, 345, 335, 599, 601, 615, 686, 358, 376, 366, 670, 334, 305, 671]
 
 # Remove best_ids from all_train_ids
@@ -528,20 +545,30 @@ for test_id in test_ids:
                                                                                                 test_list)
         # num_train_comps = len(train_comps)
 
-        save_data.append((test_id, threshold, f1))
+        save_data2.append((test_id, threshold, f1))
 
         # points.append((ps_thresh, threshold, f1))
 
         f1s.append(f1)
 
-all_data = pd.DataFrame(save_data,columns = ['Test Product ID', 'Thresh','F1'])
+all_data2 = pd.DataFrame(save_data2,columns = ['Test Product ID', 'Thresh','F1'])
 
 thresh_plot = []
 avg_f1s = []
+anova = []
 for t in range(10, 100, 5):
     threshold = t/100
-    avg_f1s.append(mean(all_data['F1'][(all_data['Thresh'] == threshold)]))
+    avg_f1s.append(mean(all_data2['F1'][(all_data2['Thresh'] == threshold)]))
     thresh_plot.append(threshold)
+
+
+    ## ANOVA on all_data and subset data for F1s at each threshold
+    all_f1s = all_data['F1'][(all_data['Thresh'] == threshold)]
+    subset_f1s = all_data2['F1'][(all_data['Thresh'] == threshold)]
+
+    anova.append((threshold, stats.f_oneway(all_f1s, subset_f1s)))
+
+
 
 #Plotting f1 vs thresholds for best_ids
 plt.plot(thresh_plot,avg_f1s)
@@ -562,6 +589,18 @@ plt.ylim(0.19,0.46)
 # plt.title('Avg F1 score vs Number of Products')
 plt.grid()
 plt.legend()
+plt.show()
+
+
+#Plotting percentage of accuracy of reduced dataset vs full dataset
+percent = [full / reduced for full,reduced in zip(avg_f1s, plot_f1s)]
+avg_percent = mean(percent)
+# plt.plot(thresh_plot,plot_f1s
+plt.plot(thresh_plot,percent)
+plt.ylabel('Percent of Accuracy Achieved by Reduced Dataset')
+plt.xlabel('Classification Threshold')
+# plt.title('Avg F1 score vs Number of Products')
+plt.grid()
 plt.show()
 
 
