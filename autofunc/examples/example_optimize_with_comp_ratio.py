@@ -258,7 +258,7 @@ for id_list in keepers:
         else:
             keeper_count[id] += 1
 
-## Bar Chart - No subplots
+## Bar Chart - Best IDs
 count_keepers = []
 
 for k,v in keeper_count.items():
@@ -267,21 +267,17 @@ for k,v in keeper_count.items():
     # counts_bar.append(v)
 
 count_keepers.sort(key=lambda x: x[1], reverse=True)
-
 ids_bar = [x[0] for x in count_keepers[0:30]]
 counts_bar = [x[1] for x in count_keepers[0:30]]
-
 # 30 best ids
 # best_ids = [319, 370, 380, 603, 364, 225, 652, 689, 688, 697, 609, 357, 712, 605, 208, 606, 206, 345, 335, 599, 601, 615, 686, 358, 376, 366, 670, 334, 305, 671]
 
 x_pos = [i for i, _ in enumerate(ids_bar)]
 plt.bar(x_pos, counts_bar)
 plt.xlabel("Product ID")
-plt.ylabel("Number of Instances")
+plt.ylabel("Number of Appearances in Best Training Sets")
 # plt.title("Count of products in keepers")
-
 plt.xticks(x_pos, ids_bar, rotation=45)
-
 plt.show()
 
 
@@ -403,7 +399,7 @@ y2 = d_f1
 fig, ax1 = plt.subplots()
 color = 'tab:red'
 ax1.set_xlabel('Number of Products in Training Set')
-ax1.set_ylabel('Ratio of Components Represented', color=color)
+ax1.set_ylabel('Ratio of Component Basis Terms Covered in Training Set', color=color)
 ax1.plot(x, y1, color=color)
 ax1.tick_params(axis='y', labelcolor=color)
 ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
@@ -503,12 +499,12 @@ scatter_highlight = [x for x in scatter_keep if x[0] > 0.7 and x[1] < 40]
 scatter_cr_highlight = [x[0] for x in scatter_highlight if x[1] > 0]
 scatter_ids_highlight = [x[1] for x in scatter_highlight if x[1] > 0]
 
-plt.scatter(scatter_comp_ratio,scatter_keep_ids, color = "blue")
-plt.scatter(scatter_cr_highlight,scatter_ids_highlight, color = "red")
-plt.xlabel('Ratio of Component Basis Terms Covered in Training Set')
-plt.ylabel('Number of Products in Training Set')
-plt.axhline(y=40)
-plt.axvline(x=0.7)
+plt.scatter(scatter_keep_ids,scatter_comp_ratio, color = "blue")
+plt.scatter(scatter_ids_highlight,scatter_cr_highlight, color = "red")
+plt.ylabel('Ratio of Component Basis Terms Covered in Training Set')
+plt.xlabel('Number of Products in Training Set')
+plt.axhline(y=0.7)
+plt.axvline(x=40)
 plt.grid()
 plt.show()
 
@@ -582,7 +578,7 @@ plt.show()
 #Plotting f1 vs thresholds for best_ids and regular at 0.2 ps
 plot_f1s = [x[2] for x in averages if x[0] == 0.2]
 plt.plot(thresh_plot,plot_f1s, linewidth=2, linestyle='dashed', label="Full Dataset")
-plt.plot(thresh_plot,avg_f1s, label="Restricted Dataset")
+plt.plot(thresh_plot,avg_f1s, label="Reduced Dataset")
 plt.ylabel('Average F1 Score')
 plt.xlabel('Classification Threshold')
 plt.ylim(0.19,0.46)
