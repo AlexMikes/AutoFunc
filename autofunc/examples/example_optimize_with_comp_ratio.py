@@ -281,6 +281,34 @@ plt.xticks(x_pos, ids_bar, rotation=45)
 plt.show()
 
 
+## Horizontal bar chart
+
+ys_bar = counts_bar[0:20]
+xs_bar = ids_bar[0:20]
+
+product_names = ['datsun truck','robotic arm','star scanner','brother sewing machine','power station','irobot roomba',
+                 'weedeater riding lawn mower','firestorm drill','firestorm circular saw','firestorm saber saw',
+                 'delta nail gun','mac cordless dril-driver','neato robotics vacuum cleaner','delta circular saw',
+                 'eyeglass cleaner','delta drill','all-in-one printer','garage door opener genie','electric stapler',
+                 'b and d screwdriver','bissell hand vac','orion paintball gun','b and d jigsaw','mini bumble ball',
+                 'skil jigsaw','proctor silex iron','oliso frisper','helicopter and controller',
+                 'black 12 cup deluxe coffee','oliso smart iron']
+
+x_pos = [i for i, _ in enumerate(xs_bar)]
+
+fig, ax = plt.subplots()
+
+ax.barh(x_pos, ys_bar, align='center', color = 'teal')
+ax.set_yticks(x_pos)
+ax.set_yticklabels(product_names[0:20])
+ax.invert_yaxis()  # labels read top-to-bottom
+ax.set_xlabel('Number of Appearances in Best Training Sets')
+
+plt.show()
+
+## End bar graph, no subplots
+
+
 # x = ['Nuclear', 'Hydro', 'Gas', 'Oil', 'Coal', 'Biofuel']
 # energy = [5, 6, 15, 22, 24, 8]
 #
@@ -323,7 +351,7 @@ plt.ylabel('Average F1 Score')
 plt.grid()
 plt.show()
 
-#Plotting f1 vs num ids
+#Plotting number of products vs similarity threshold
 plt.plot(ps_plot, ids_plot)
 plt.xlabel('Similarity Threshold')
 plt.ylabel('Number of Products in Training Set')
@@ -397,18 +425,18 @@ x = ids_plot[1:]
 y1 = comp_ratio_plot[1:]
 y2 = d_f1
 fig, ax1 = plt.subplots()
-color = 'tab:red'
+color = 'red'
 ax1.set_xlabel('Number of Products in Training Set')
 ax1.set_ylabel('Ratio of Component Basis Terms Covered in Training Set', color=color)
 ax1.plot(x, y1, color=color)
 ax1.tick_params(axis='y', labelcolor=color)
 ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
-color = 'tab:blue'
+color = 'darkblue'
 ax2.set_ylabel('Change in Average F1 Scores', color=color)  # we already handled the x-label with ax1
 ax2.plot(x, y2, color=color)
 ax2.tick_params(axis='y', labelcolor=color)
 fig.tight_layout()  # otherwise the right y-label is slightly clipped
-plt.axvline(x=27)
+plt.axvline(x=27,color='black',linewidth=2)
 plt.grid()
 plt.show()
 
