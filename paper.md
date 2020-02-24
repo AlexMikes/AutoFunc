@@ -12,14 +12,15 @@ authors:
 affiliations:
  - name: Design Engineering Lab, Oregon State University
    index: 1
-date: 9 January 2020
+date: 24 February 2020
 bibliography: paper.bib
 
 ---
 
 # Summary
 
-Each component in a product performs a corresponding set of subfunctions that contribute to the overall functionality 
+Engineering design is a multi-step process that uses various iterative tools that help improve products. Each component 
+in a product performs a corresponding set of subfunctions that contribute to the overall functionality 
 of the product. A design repository is a database of product information that includes component and subfunction 
 relationships. Functional modeling is an engineering design tool that organizes these subfunctions into a graphical 
 format for better understanding and visualization. Therefore, functional modeling is a popular tool in the concept 
@@ -32,12 +33,12 @@ engineering design [@Kurfman2003].
 
 ``AutoFunc`` is a Python package that automatically generates the functional chains of components based on data from 
 design repositories. The functional chains of components can be connected to form a complete functional model. 
-``AutoFunc`` also contains methods to validate and optimize the automation. A designer can use this software to 
+``AutoFunc`` also contains methods to validate and optimize the automation algorithm. A designer can use this software to 
 input a list of components in their product, and it will automatically generate the functional chains for those 
 components based on the most commonly seen functions and flows from previous products in the design repository. 
 The package uses common data-mining techniques for finding information and classifying new observations based on 
 that data. ``AutoFunc`` also uses the common methods of cross-validation and the F1 score to find the accuracy at 
-different values for the variables involved. 
+different values for the threshold variables.
 
 ``AutoFunc`` is intended for use by engineering design researchers, students, and professionals. It has been used in 
 several engineering design publications and presentations. Further development is required to automate a complete 
@@ -49,8 +50,8 @@ Zenodo with the linked DOI [@alexmikes]
 
 # Acknowledgements
 
-Thanks to Katherine Edmonds, Rob Stone, and Bryony DuPont for research support. Thanks to Kyle Niemeyer for support with
-all things digital.
+Thanks to Katherine Edmonds, Rob Stone, and Bryony DuPont for their research support. Thanks to Kyle Niemeyer for 
+support with open software and open science.
 
 This material is based upon work supported by the National Science Foundation under Grant No. CMMI-1826469. 
 Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and 
