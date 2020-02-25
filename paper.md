@@ -9,6 +9,12 @@ tags:
 authors:
   - name: Alex Mikes
     affiliation: 1
+  - name: Katherine Edmonds
+    affiliation: 1
+  - name: Robert B. Stone
+    affiliation: 1
+  - name: Bryony DuPont
+    affiliation: 1
 affiliations:
  - name: Design Engineering Lab, Oregon State University
    index: 1
@@ -19,12 +25,12 @@ bibliography: paper.bib
 
 # Summary
 
-Engineering design is a multi-step process that uses various iterative tools that help improve products. Each component 
+Engineering design is a multi-step process that uses various iterative tools to help improve products. Each component 
 in a product performs a corresponding set of subfunctions that contribute to the overall functionality 
 of the product. A design repository is a database of product information that includes component and subfunction 
 relationships. Functional modeling is an engineering design tool that organizes these subfunctions into a graphical 
-format for better understanding and visualization. Therefore, functional modeling is a popular tool in the concept 
-generation phase that helps designers ensure the product adheres to the customer requirements while maintaining the 
+format for better understanding and visualization. Therefore, functional modeling is a popular tool in the early design
+phase that helps designers ensure the product adheres to the customer requirements while maintaining the 
 desired functionality. While significant work has been done to help increase consistency in the structure, syntax, 
 and formatting of functional models, they are still highly subjective and time-consuming to create [@Stone2000; @Hirtz2002; @kurtoglu2005]. 
 Because of the time requirements, inconsistencies, and inaccuracies involved with making them, functional models are 
@@ -50,8 +56,7 @@ Zenodo with the linked DOI [@alexmikes]
 
 # Acknowledgements
 
-Thanks to Katherine Edmonds, Rob Stone, and Bryony DuPont for their research support. Thanks to Kyle Niemeyer for 
-support with open software and open science.
+Thanks to Kyle Niemeyer for support with open software and open science.
 
 This material is based upon work supported by the National Science Foundation under Grant No. CMMI-1826469. 
 Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and 
