@@ -73,7 +73,7 @@ write_results_from_dict(results, 'test1.csv')
 ```
 
 
-Run from within examples folder:
+Run from within ```examples``` folder:
 
 ```bash
 python example_get_func_rep.py
