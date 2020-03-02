@@ -18,7 +18,7 @@ authors:
 affiliations:
  - name: Design Engineering Lab, Oregon State University
    index: 1
-date: 24 February 2020
+date: 2 March 2020
 bibliography: paper.bib
 
 ---
