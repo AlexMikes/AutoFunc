@@ -9,7 +9,7 @@ import os.path
 
 def test1():
 
-    """ Example showing how to find F1 score by manually selecting product id(s) from original data to test """
+    """ Test to find F1 score by manually selecting product id(s) from original data to test """
 
     script_dir = os.path.dirname(__file__)
     file_to_learn = os.path.join(script_dir, '../assets/consumer_systems.csv')
