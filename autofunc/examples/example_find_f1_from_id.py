@@ -6,7 +6,7 @@ from autofunc.df_to_list import df_to_list
 import pandas as pd
 import os.path
 
-""" Example showing how to find F1 score by selecting product id(s) from original data to test """
+""" Example showing how to find F1 score by manually selecting product id(s) from original data to test """
 
 script_dir = os.path.dirname(__file__)
 file_to_learn = os.path.join(script_dir, '../assets/consumer_systems.csv')

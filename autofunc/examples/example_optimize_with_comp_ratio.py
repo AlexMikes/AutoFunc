@@ -1,16 +1,13 @@
 """
 
-Example showing how to implement all of the main modules and optimize the similarity and classification thresholds
+This is the same as "example_optimize.py" - see that file for more info on the whole optimization.
 
-It performs a leave-one-out cross-validation in a triple nested loop:
+This file also optimizes a training set to have only 30 products but still have high accuracy (96% as good as the
+whole training set with 138 products).
 
-1. Iterate through which product is the testing set
-    2. Iterate through similarity thresholds and make training sets based on which products are within the threshold
-        3. Iterate through classification thresholds and find the F1 scores for each combination of testing product,
-        similarity threshold, and classification threshold
+This is done by stratifying the training set for high accuracy and a high ratio of component basis terms (>75%)
 
-The optimization process is simply finding the highest average F1 score and extracting the similarity and classification
-thresholds for that number.
+Some additional plots are added at the end also that were used in a paper
 
 """
 

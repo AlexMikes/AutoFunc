@@ -7,6 +7,8 @@ file_to_learn = os.path.join(script_dir, '../assets/consumer_systems.csv')
 
 train_data = pd.read_csv(file_to_learn)
 
-## Make similarity dataframe, takes a while so it is saved to csv first for reading in later
+## Make similarity dataframe
 similarity_df = find_similarities(train_data)
-# similarity_df.to_csv('consumer_similarity.csv', index = True, index_label=False, header= True)
+
+## This can take a while but never changes for each dataset, so uncomment this line to save to a csv
+similarity_df.to_csv('consumer_similarity1.csv', index = True, index_label=False, header= True)

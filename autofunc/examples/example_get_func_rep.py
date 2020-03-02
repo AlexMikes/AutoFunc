@@ -1,6 +1,7 @@
 from autofunc.get_top_results import get_top_results
 from autofunc.counter_pandas import counter_pandas
 from autofunc.get_func_rep import get_func_rep
+from autofunc.write_results import write_results_from_dict
 import os.path
 import pandas as pd
 
@@ -28,4 +29,4 @@ results, unmatched = get_func_rep(thresh_results, input_file, include_frequencie
 
 
 # Optional write to file - uncomment and rename to write file
-# write_results_from_dict(results, 'test1.csv')
+write_results_from_dict(results, 'testrep.csv')

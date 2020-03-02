@@ -393,11 +393,5 @@ plt.show()
 end = time.time()
 print('Time is {0:.2f}'.format(end - start))
 
-# #3D Surface Plot
-# X, Y, Z = np.meshgrid(xdata, ydata, zdata)
-# fig = plt.figure()
-# # ax = plt.axes(projection='3d')
-# ax.contour3D(X, Y, Z, 50, cmap='binary')
-
 
 
