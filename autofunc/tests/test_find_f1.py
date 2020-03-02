@@ -32,7 +32,7 @@ def test1():
     # Find the F1 score
     learned_dict, matched, overmatched, unmatched, recall, precision, f1 = precision_recall(thresh_results, test_list)
 
-    assert len(learned_dict !=0)
+    assert len(learned_dict) !=0
     assert f1>0
 
 
