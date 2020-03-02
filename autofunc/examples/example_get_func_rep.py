@@ -29,4 +29,4 @@ results, unmatched = get_func_rep(thresh_results, input_file, include_frequencie
 
 
 # Optional write to file - uncomment and rename to write file
-write_results_from_dict(results, 'testrep.csv')
+write_results_from_dict(results, 'test1.csv')
