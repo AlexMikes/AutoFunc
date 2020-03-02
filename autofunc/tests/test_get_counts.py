@@ -8,8 +8,7 @@ def test1():
 
     script_dir = os.path.dirname(__file__)
     file1 = os.path.join(script_dir, '../assets/consumer_systems.csv')
-
-    # Pandas
+    
     df = make_df(file1)
 
     comb_sort, counts, combos = counter_pandas_with_counts(df)
