@@ -50,12 +50,12 @@ The following lists the examples included, with their expected functionality and
 
 1. ```example_get_func_rep.py``` will create a functional representation of the components in the input file using data mining and a classification threshold. This can be used to automate functional modeling by connecting the functions and flows at the interface of components in a product. This example will write a .csv file with the results of component-function-flow and optional frequency.
 
-1. ```example_optimization.py``` incorporates all of the main modules and optimizes the similarity and classification thresholds.
+1. ```example_optimization.py``` incorporates all of the main modules and optimizes the similarity and classification thresholds. This example will display a lot of plots and print optimum values for thresholds.
 
-1. ```example_optimize_with_comp_ratio.py``` begins with ```example_optimization.py``` and also includes the stratification and optimization of a training set.
+1. ```example_optimize_with_comp_ratio.py``` begins with ```example_optimization.py``` and also includes the stratification and optimization of a training set. This example will display a lot of plots and print optimum values for thresholds.
 
 1. ```example_try_best_ids.py``` is a subset of ```example_optimize_with_comp_ratio.py``` which only includes the stratified training set and some
-relevant plots
+relevant plots. This example will display a plot of the F1 scores vs. Classification threshold of the stratified dataset.
 
 
 This is the ```example_get_func_rep.py``` file:
