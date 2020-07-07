@@ -36,6 +36,17 @@ Example files are provided in the examples folder. Autofunc will automate the fu
 as  long as the format of the .csv file is has the component in column 1 and the function-flow in column 2
 
 
+The following lists the examples included, with their expected functionality and outputs:
+
+1. ```example_cross_validation.py``` uses the k-fold cross validation functionality to find the accuracy of a data mining classifer. This example will print the maximum and average accuracies using this verification method.
+
+1. ```example_find_f1_from_file.py``` finds the F1 score of a single product when the component-function-flow combinations for that product are in a separate .csv file
+
+1. ```example_find_f1_from_id.py``` finds the F1 score of a single product using that product's ID number from the original dataset
+
+
+
+
 This is the ```example_get_func_rep.py``` file:
 
 ```python
