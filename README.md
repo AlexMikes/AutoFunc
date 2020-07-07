@@ -40,11 +40,13 @@ The following lists the examples included, with their expected functionality and
 
 1. ```example_cross_validation.py``` uses the k-fold cross validation functionality to find the accuracy of a data mining classifer. This example will print the maximum and average accuracies using this verification method.
 
-1. ```example_find_f1_from_file.py``` finds the F1 score of a single product when the component-function-flow combinations for that product are in a separate .csv file
+1. ```example_find_f1_from_file.py``` finds the F1 score of a single product when the component-function-flow combinations for that product are in a separate .csv file. This example will print the Recall, Precision, and F1 score for that testing product.
 
-1. ```example_find_f1_from_id.py``` finds the F1 score of a single product using that product's ID number from the original dataset
+1. ```example_find_f1_from_id.py``` finds the F1 score of a single product using that product's ID number from the original dataset. Any number of IDs can be used. This example will print the testing ID(s) used, and the recall, precision, and F1 score for those testing IDs.
 
+1. ```example_find_similarity.py``` will create a similarity matrix for the training dataset. This is the percent of similar components between each product in the dataset. The main diagonal of this matrix consists of ones because every product is 100% similar to itself, but the matrix is not symmetric because each product can contain a different number of components. For example, consider a case where Product 1 has 20 components and Product 2 has 40 components. If they have 10 components in common, the similarity between Product 1 and Product 2 is 10/20 = 50%, but the similarity between Product 2 and Product 1 is 10/40 = 25%. The first product of the pair is known as the ”generating” product, which is the product in the column of this matrix. This example will create a Pandas dataframe of the similarity matrix and write this to a .csv file.
 
+1. ```example_get_func_rep.py``` will create a functional representation of the components in the input file using data mining and a classification threshold. This can be used to automate functional modeling by connecting the functions and flows at the interface of components in a product. This example will write a .csv file with the results of component-function-flow and optional frequency.
 
 
 This is the ```example_get_func_rep.py``` file:
