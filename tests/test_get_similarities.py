@@ -8,7 +8,7 @@ def test1():
     """ Testing to ensure the main diagonal of the similarity matrix is 1"""
 
     script_dir = os.path.dirname(__file__)
-    file_to_learn = os.path.join(script_dir, '../assets/blade_systems.csv')
+    file_to_learn = os.path.join(script_dir, '../autofunc/assets/blade_systems.csv')
 
     train_data = pd.read_csv(file_to_learn)
 

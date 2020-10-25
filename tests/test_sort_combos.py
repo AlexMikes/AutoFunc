@@ -11,7 +11,7 @@ def test_1():
     """
 
     script_dir = os.path.dirname(__file__)
-    file_to_test = os.path.join(script_dir, '../assets/consumer_systems.csv')
+    file_to_test = os.path.join(script_dir, '../autofunc/assets/consumer_systems.csv')
 
     test_data = pd.read_csv(file_to_test)
 

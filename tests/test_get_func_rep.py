@@ -11,7 +11,7 @@ def test_1():
 
     # Dataset used for data mining
     script_dir = os.path.dirname(__file__)
-    file_to_test = os.path.join(script_dir, '../assets/consumer_systems.csv')
+    file_to_test = os.path.join(script_dir, '../autofunc/assets/consumer_systems.csv')
 
     test_data = pd.read_csv(file_to_test)
     combos_sorted = counter_pandas(test_data)
@@ -21,7 +21,7 @@ def test_1():
     thresh_results = get_top_results(combos_sorted, threshold)
 
     # Use a known product for verification
-    input_file = os.path.join(script_dir, '../assets/InputExample.csv')
+    input_file = os.path.join(script_dir, '../autofunc/assets/InputExample.csv')
 
     # Get dictionary of functions and flows for each component based on data mining
     results, unmatched = get_func_rep(thresh_results, input_file, True)
