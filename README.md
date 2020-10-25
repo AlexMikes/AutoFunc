@@ -28,7 +28,11 @@ This package uses Pandas (Python Data Analysis Library). It can be installed wit
 ```bash
 pip install pandas
 ```
+Many of the examples also use Matplotlib for plotting. While not required to use the AutoFunc modules, it is required to run the examples. It can be installed with:
 
+```bash
+pip install -U matplotlib
+```
 
 ## Usage
 
