@@ -108,7 +108,10 @@ python example_get_func_rep.py
 And it will generate a file ```test1.csv``` with the results of the automated functional representation of the 
  components in the ```input_file``` based on the data from the ```file_to_learn``` in the ```assets``` folder.
  
- 
+## Testing
+All tests are automated through [Travis CI](https://travis-ci.org/). Visit [this page](https://travis-ci.org/github/AlexMikes/AutoFunc) to view the results.
+
+
 ## Support
 Please submit requests for support or problems with software as issues in the repository.
 
