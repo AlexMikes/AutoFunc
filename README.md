@@ -11,6 +11,8 @@ web interface can be found here: http://ftest.mime.oregonstate.edu/repo/browse/
 
 ## Installation
 
+### Pip
+
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install autofunc.
 
 The package is not yet on PyPI, so it must be downloaded from here as a .zip file: https://github.com/AlexMikes/AutoFunc
@@ -19,6 +21,16 @@ Once downloaded as a .zip file, install with:
 
 ```bash
 pip install /path/to/file/AutoFunc-master.zip
+```
+
+### From repository
+
+To install from this repository:
+
+```bash
+git clone https://github.com/AlexMikes/AutoFunc.git
+cd autofunc
+python setup.py install
 ```
 
 ## Dependencies
