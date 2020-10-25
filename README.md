@@ -116,7 +116,13 @@ All tests are automated through [Travis CI](https://travis-ci.org/). Visit [this
 Please submit requests for support or problems with software as issues in the repository.
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+We welcome contributions to the `autofunc` package in the form of [pull requests](https://github.com/AlexMikes/AutoFunc/pulls) and [issues](https://github.com/AlexMikes/AutoFunc/issues) made in the repository.
+
+If you are having any problems using `autofunc`, please open an issue.
+If there is some functionality you would like to see added to `autofunc`, you can also open an issue up to discuss that.
+
+If you have a feature that you would like to propose be integrated into `autofunc`, then you should open a pull request.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
