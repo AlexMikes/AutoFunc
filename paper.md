@@ -32,7 +32,7 @@ a database known as a design repository. In addition to storing product informat
 in a graphical representation known as a functional model. Functional modeling is a popular tool in the early design
 phases that helps designers ensure the product adheres to the customer requirements while maintaining the 
 desired functionality. While significant work has been done to help increase consistency in the structure, syntax, 
-and formatting of functional models, they are still highly subjective and time-consuming to create [@Stone2000; @Hirtz2002; @kurtoglu2005]. 
+and formatting of functional models, they are still highly subjective and time-consuming to create [@Stone2000; @Hirtz2002]. 
 Because of the time requirements, inconsistencies, and inaccuracies involved with making them, functional models are 
 often omitted from the concept generation process, despite their useful contributions to the early stages of 
 engineering design [@Kurfman2003]. 
