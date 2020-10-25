@@ -3,7 +3,7 @@ import pandas as pd
 import os.path
 
 script_dir = os.path.dirname(__file__)
-file_to_learn = os.path.join(script_dir, '../assets/consumer_systems.csv')
+file_to_learn = os.path.join(script_dir, '../autofunc/assets/consumer_systems.csv')
 
 train_data = pd.read_csv(file_to_learn)
 

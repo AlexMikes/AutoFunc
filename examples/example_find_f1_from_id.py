@@ -9,7 +9,7 @@ import os.path
 """ Example showing how to find F1 score by manually selecting product id(s) from original data to test """
 
 script_dir = os.path.dirname(__file__)
-file_to_learn = os.path.join(script_dir, '../assets/consumer_systems.csv')
+file_to_learn = os.path.join(script_dir, '../autofunc/assets/consumer_systems.csv')
 
 train_data = pd.read_csv(file_to_learn)
 

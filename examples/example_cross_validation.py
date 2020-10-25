@@ -45,10 +45,10 @@ bd = False
 
 # Dataset used for data mining
 script_dir = os.path.dirname(__file__)
-file_to_learn = os.path.join(script_dir, '../assets/reservoir_systems.csv')
+file_to_learn = os.path.join(script_dir, '../autofunc/assets/reservoir_systems.csv')
 
 # CSV with systems to test (blade, heating element, reservoir, etc.)
-file_to_test = os.path.join(script_dir, '../assets/reservoir_systems.csv')
+file_to_test = os.path.join(script_dir, '../autofunc/assets/reservoir_systems.csv')
 
 test_data = pd.read_csv(file_to_test)
 train_data = pd.read_csv(file_to_learn)
@@ -79,7 +79,7 @@ f1s = 0
 ## If using B&D
 # BD Dataframe
 if bd:
-    bd_file = os.path.join(script_dir, '../assets/bd_systems.csv')
+    bd_file = os.path.join(script_dir, '../autofunc/assets/bd_systems.csv')
     bd_df = make_df(bd_file)
     bd_ids = list(map(int, bd_df.id.unique()))
 

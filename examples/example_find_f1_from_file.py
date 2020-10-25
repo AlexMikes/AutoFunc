@@ -10,7 +10,7 @@ import pandas as pd
 
 # Dataset used for data mining
 script_dir = os.path.dirname(__file__)
-file_to_learn = os.path.join(script_dir, '../assets/consumer_systems.csv')
+file_to_learn = os.path.join(script_dir, '../autofunc/assets/consumer_systems.csv')
 
 train_data = pd.read_csv(file_to_learn)
 combos_sorted = counter_pandas(train_data)
@@ -20,7 +20,7 @@ threshold = 0.5
 thresh_results = get_top_results(combos_sorted, threshold)
 
 # Use a known product for verification
-test_file = os.path.join(script_dir, '../assets/jigsawQuery_headers.csv')
+test_file = os.path.join(script_dir, '../autofunc/assets/jigsawQuery_headers.csv')
 test_data = pd.read_csv(test_file)
 test_list = df_to_list(test_data)
 
