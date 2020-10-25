@@ -11,6 +11,8 @@ web interface can be found here: http://ftest.mime.oregonstate.edu/repo/browse/
 
 ## Installation
 
+`autofunc` has been tested on Python 3.6+ and MacOS, Linux, and Windows operating systems. 
+
 ### Pip
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install autofunc.
