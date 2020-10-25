@@ -70,14 +70,14 @@ scatter_keep = []
 ## Pandas reads in a csv to a dataframe being different than how it makes its own the first time
 
 ## 1. Make similarity dataframe, takes a while so it is saved to csv first for reading in later
-# similarity_df = find_similarities(train_data)
-# similarity_df.to_csv('consumer_similarity.csv', index = True, index_label=False, header= True)
-# reading = False
+similarity_df = find_similarities(train_data)
+similarity_df.to_csv('consumer_similarity.csv', index = True, index_label=False, header= True)
+reading = False
 ## End 1
 
 ## 2. Reading in dataframe as computed above
-similarity_df = pd.read_csv('consumer_similarity.csv')
-reading = True
+# similarity_df = pd.read_csv('consumer_similarity.csv')
+# reading = True
 ## End 2
 
 
