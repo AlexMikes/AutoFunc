@@ -5,8 +5,15 @@ Data Mining for Automated Functional Representations
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3243689.svg)](https://doi.org/10.5281/zenodo.3243689)
 
-This package automatically generates functional representations for components based on the results of data mining a
-design repository. It was developed for use with the Design Repository house at Oregon State University. A rudimentary 
+``AutoFunc`` is a Python package that automatically generates the functional representations of components based on data from 
+design repositories. ``AutoFunc`` also contains methods to validate and optimize the automation algorithm. A designer can use this software to 
+input a list of components in their product, and it will automatically generate the functional representations for those 
+components based on the most commonly seen functions and flows from previous products in the design repository. 
+The package uses common data-mining techniques for finding information and classifying new observations based on 
+that data. ``AutoFunc`` also uses the common methods of cross-validation and the F1 score to find the accuracy at 
+different values for the threshold variables.
+
+`AutoFunc` was developed for use with the Design Repository housed at Oregon State University. A rudimentary 
 web interface can be found here: http://ftest.mime.oregonstate.edu/repo/browse/
 
 ## Installation
