@@ -22,6 +22,12 @@ import os.path
 from matplotlib import rcParams
 rcParams['font.family'] = 'serif'
 rcParams['font.serif'] = ['Times New Roman']
+rcParams['axes.titlesize'] = 'large'
+rcParams['axes.labelsize'] = 'x-large'
+rcParams['axes.labelweight'] = 'bold'
+# 'axes.labelweight': 'normal',
+# axes.titlesize      : large   # fontsize of the axes title
+# axes.labelsize      : medium  # fontsize of the x any y labels
 import matplotlib.pyplot as plt
 from operator import itemgetter
 import numpy as np
@@ -478,6 +484,7 @@ plt.show()
 
 # 3D Scatter Plot
 ax = plt.axes(projection='3d')
+fig = plt.figure()
 
 zdata = f1_3d
 ydata2 = ids_3d
@@ -485,10 +492,13 @@ xdata = ps_3d
 ydata = thresh_3d
 
 # Data for three-dimensional scattered points of F1
-ax.scatter3D(xdata, ydata, zdata, c=zdata, cmap='Dark2');
+p = ax.scatter3D(xdata, ydata, zdata, c=zdata, cmap='Dark2');
 ax.set_xlabel('Similarity Threshold')
 ax.set_ylabel('Classification Threshold')
 ax.set_zlabel('Average F1 Score');
+
+fig.colorbar(p, shrink=0.5, aspect=5)
+
 plt.show()
 
 

@@ -57,13 +57,13 @@ def precision_recall(thresh_results, test_records):
     Returns a dictionary of what was learned from the results of the data mining automation
 
     matched
-    A dictionary of the functions and flows that were correctly matched for each component
+    A dictionary of the functions and flows that were True Positives
 
     overmatched
-    A dictionary of the functions and flows that were overmatched for each component
+    A dictionary of the functions and flows that were False Positives
 
     unmatched
-    A dictionary of the functions and flows that were unmatched for each component
+    A dictionary of the functions and flows that were False Negatives
 
     recall
     A single number for the recall score for this combination of testing and training sets
