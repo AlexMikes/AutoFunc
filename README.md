@@ -11,6 +11,8 @@ web interface can be found here: http://ftest.mime.oregonstate.edu/repo/browse/
 
 ## Installation
 
+### Pip
+
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install autofunc.
 
 The package is not yet on PyPI, so it must be downloaded from here as a .zip file: https://github.com/AlexMikes/AutoFunc
@@ -19,6 +21,16 @@ Once downloaded as a .zip file, install with:
 
 ```bash
 pip install /path/to/file/AutoFunc-master.zip
+```
+
+### From repository
+
+To install from this repository:
+
+```bash
+git clone https://github.com/AlexMikes/AutoFunc.git
+cd autofunc
+python setup.py install
 ```
 
 ## Dependencies
@@ -108,12 +120,21 @@ python example_get_func_rep.py
 And it will generate a file ```test1.csv``` with the results of the automated functional representation of the 
  components in the ```input_file``` based on the data from the ```file_to_learn``` in the ```assets``` folder.
  
- 
+## Testing
+All tests are automated through [Travis CI](https://travis-ci.org/). Visit [this page](https://travis-ci.org/github/AlexMikes/AutoFunc) to view the results.
+
+
 ## Support
 Please submit requests for support or problems with software as issues in the repository.
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+We welcome contributions to the `autofunc` package in the form of [pull requests](https://github.com/AlexMikes/AutoFunc/pulls) and [issues](https://github.com/AlexMikes/AutoFunc/issues) made in the repository.
+
+If you are having any problems using `autofunc`, please open an issue.
+If there is some functionality you would like to see added to `autofunc`, you can also open an issue up to discuss that.
+
+If you have a feature that you would like to propose be integrated into `autofunc`, then you should open a pull request.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
