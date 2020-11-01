@@ -58,7 +58,7 @@ pip install -U matplotlib
 ## Usage
 
 Example files are provided in the examples folder. Autofunc will automate the functional representations of components
-as  long as the format of the .csv file is has the component in column 1 and the function-flow in column 2
+as  long as the format of the .csv file has the component in column 1 and the function-flow in column 2
 
 More information on the methods used in these files can found in the various research papers that this software supports, especcially IDETC2020-22346
 "OPTIMIZING AN ALGORITHM FOR DATA MINING A DESIGN REPOSITORY TO AUTOMATE FUNCTIONAL MODELING". All of the plots for this paper were created in the ```example_optimize_with_comp_ratio.py``` file.
