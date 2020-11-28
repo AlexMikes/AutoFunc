@@ -5,11 +5,20 @@ Data Mining for Automated Functional Representations
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3243689.svg)](https://doi.org/10.5281/zenodo.3243689)
 
-This package automatically generates functional representations for components based on the results of data mining a
-design repository. It was developed for use with the Design Repository house at Oregon State University. A rudimentary 
+``AutoFunc`` is a Python package that automatically generates the functional representations of components based on data from 
+design repositories. ``AutoFunc`` also contains methods to validate and optimize the automation algorithm. A designer can use this software to 
+input a list of components in their product, and it will automatically generate the functional representations for those 
+components based on the most commonly seen functions and flows from previous products in the design repository. 
+The package uses common data-mining techniques for finding information and classifying new observations based on 
+that data. ``AutoFunc`` also uses the common methods of cross-validation and the F1 score to find the accuracy at 
+different values for the threshold variables.
+
+`AutoFunc` was developed for use with the Design Repository housed at Oregon State University. A rudimentary 
 web interface can be found here: http://ftest.mime.oregonstate.edu/repo/browse/
 
 ## Installation
+
+`autofunc` has been tested on Python 3.6+ and MacOS, Linux, and Windows operating systems. 
 
 ### Pip
 
@@ -49,7 +58,7 @@ pip install -U matplotlib
 ## Usage
 
 Example files are provided in the examples folder. Autofunc will automate the functional representations of components
-as  long as the format of the .csv file is has the component in column 1 and the function-flow in column 2
+as  long as the format of the .csv file has the component in column 1 and the function-flow in column 2
 
 More information on the methods used in these files can found in the various research papers that this software supports, especcially IDETC2020-22346
 "OPTIMIZING AN ALGORITHM FOR DATA MINING A DESIGN REPOSITORY TO AUTOMATE FUNCTIONAL MODELING". All of the plots for this paper were created in the ```example_optimize_with_comp_ratio.py``` file.
