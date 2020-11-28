@@ -18,7 +18,7 @@ web interface can be found here: http://ftest.mime.oregonstate.edu/repo/browse/
 
 ## Installation
 
-`autofunc` has been tested on Python 3.6+ and MacOS, Linux, and Windows operating systems. 
+`autofunc` has been tested on Linux Python 3.6, 3.7, and 3.8
 
 ### Pip
 
