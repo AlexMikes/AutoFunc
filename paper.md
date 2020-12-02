@@ -47,7 +47,7 @@ that data. ``AutoFunc`` also uses the common methods of cross-validation and the
 different values for the threshold variables.
 
 ``AutoFunc`` is intended for use by engineering design researchers, students, and professionals. It has been used in 
-several engineering design publications and presentations [@edmonds2020;@mikes2020;@edmonds2020_2]. Further development is required to 
+several engineering design publications and presentations [@mikes2020;@edmonds2020_2]. Further development is required to 
 automate a complete functional model, but this software is a significant step in that direction. Automating functional 
 modeling will help standardize the format and syntax, decrease the time required to make them, and increase the 
 prevalence and accuracy of functional models in engineering design and design repositories. ``AutoFunc`` has been 
