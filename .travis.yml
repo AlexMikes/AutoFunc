@@ -28,4 +28,5 @@ script:
     - pip install doctr
     - cd docs
     - make html
+    - cd ..
     - doctr deploy . --built-docs docs/
