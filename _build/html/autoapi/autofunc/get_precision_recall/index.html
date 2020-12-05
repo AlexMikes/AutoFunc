@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>autofunc.get_precision_recall &#8212; autofunc  documentation</title>
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-autofunc.get_precision_recall">
+<span id="autofunc-get-precision-recall"></span><h1><a class="reference internal" href="#module-autofunc.get_precision_recall" title="autofunc.get_precision_recall"><code class="xref py py-mod docutils literal notranslate"><span class="pre">autofunc.get_precision_recall</span></code></a><a class="headerlink" href="#module-autofunc.get_precision_recall" title="Permalink to this headline">¶</a></h1>
+<p>Find the accuracy of a prediction based on the known results in a testing set and the predicted results from
+a training set. The accuracy is represented in the F1 score.</p>
+<div class="section" id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#autofunc.get_precision_recall.precision_recall" title="autofunc.get_precision_recall.precision_recall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">precision_recall</span></code></a>(thresh_results, test_records)</p></td>
+<td><p>Imports the results of the frequency-finding and thresholding algorithm, which are the results predicted to be in</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt id="autofunc.get_precision_recall.precision_recall">
+<code class="sig-prename descclassname">autofunc.get_precision_recall.</code><code class="sig-name descname">precision_recall</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">thresh_results</span></em>, <em class="sig-param"><span class="n">test_records</span></em><span class="sig-paren">)</span><a class="headerlink" href="#autofunc.get_precision_recall.precision_recall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports the results of the frequency-finding and thresholding algorithm, which are the results predicted to be in
+future components. The functions and flows for the components in the testing set are predicted based on these
+results, which are compared with the actual results and used to calculate the accuracy of how well the prediction
+performed.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 11%" />
+<col style="width: 36%" />
+<col style="width: 36%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="2"></td>
+<td colspan="2"><p>Predicted?</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>Actual?</p></td>
+<td><p>Yes</p></td>
+<td><p>True Positive</p></td>
+<td><p>False Negative</p></td>
+</tr>
+<tr class="row-even"><td><p>No</p></td>
+<td><p>False Positive</p></td>
+<td><p>True Negative</p></td>
+</tr>
+</tbody>
+</table>
+<p>TP = True Positive, FP = False Positive, FN = False Negative, TN = True Negative</p>
+<p>Precision is the ratio of correct predictions to all predictions made by the classifier (TP/(TP + FP)).
+This number is the ratio of predictions that were identified as being in the product that are actually in the product.</p>
+<p>Recall is the ratio of correct predictions to all actual results made by the classifier (TP/(TP + FN)).
+This number is the ratio of the actual results that were correctly predicted.</p>
+<p>Recall is representative of the confidence that no positives have been missed and precision is
+representative of the confidence in the True Positives.</p>
+<p>The F1 score is the harmonic mean of precision and recall</p>
+<p>(2 * precision * recall) / (precision + recall)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>thresh_results</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) – </p></li>
+<li><p><strong>results of the &quot;find_top_thresh&quot; function. These are the predicted function and flow combinations for each</strong> (<em>The</em>) – </p></li>
+<li><p><strong>component</strong> – </p></li>
+<li><p><strong>test_records</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – </p></li>
+<li><p><strong>function and flow combinations for each component in the testing set</strong> (<em>The</em>) – </p></li>
+<li><p><strong>in a list.</strong> (<em>organized</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>learned_dict</em></p></li>
+<li><p><em>Returns a dictionary of what was learned from the results of the data mining automation</em></p></li>
+<li><p><em>matched</em></p></li>
+<li><p><em>A dictionary of the functions and flows that were True Positives</em></p></li>
+<li><p><em>overmatched</em></p></li>
+<li><p><em>A dictionary of the functions and flows that were False Positives</em></p></li>
+<li><p><em>unmatched</em></p></li>
+<li><p><em>A dictionary of the functions and flows that were False Negatives</em></p></li>
+<li><p><em>recall</em></p></li>
+<li><p><em>A single number for the recall score for this combination of testing and training sets</em></p></li>
+<li><p><em>precision</em></p></li>
+<li><p><em>A single number for the precision score for this combination of testing and training sets</em></p></li>
+<li><p><em>f1</em></p></li>
+<li><p><em>A single number for the F1 score for this combination of testing and training sets</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">autofunc</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Alex Mikes.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/autoapi/autofunc/get_precision_recall/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

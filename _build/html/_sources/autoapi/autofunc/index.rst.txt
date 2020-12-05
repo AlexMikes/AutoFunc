@@ -1,0 +1,24 @@
+:mod:`autofunc`
+===============
+
+.. py:module:: autofunc
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   counter_pandas/index.rst
+   counter_pandas_with_counts/index.rst
+   df_to_list/index.rst
+   find_similarities/index.rst
+   get_func_rep/index.rst
+   get_precision_recall/index.rst
+   get_top_results/index.rst
+   make_df/index.rst
+   split_learning_verification/index.rst
+   write_results/index.rst
+
+

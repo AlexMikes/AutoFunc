@@ -1,0 +1,40 @@
+:mod:`autofunc.get_func_rep`
+============================
+
+.. py:module:: autofunc.get_func_rep
+
+.. autoapi-nested-parse::
+
+   Find and return a functional representation of a product based on its constituent components and the results previously
+   found from data mining
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   autofunc.get_func_rep.get_func_rep
+
+
+.. function:: get_func_rep(thresh_results, input_comps, conf_values=True)
+
+   Find the functional representation of a set of components based on the results of data mining
+
+   :param thresh_results: The return dictionary from the "get_top_results" function
+   :type thresh_results: dict
+   :param input_comps: The filename of a .csv file containing the components of a product
+   :type input_comps: string
+   :param conf_values: A boolean of whether or not to return the results with the frequency values, default is True
+   :type conf_values: bool
+
+   :returns: * *learned_dict* -- Returns a dictionary of function and flow combinations sorted by confidence for each component in the input_case.
+               The key is the component and the value is a list of function-flow combinations.
+             * *unmatched* -- Returns a list of components that were in the set of input components but not found in the data mining results.
+
+

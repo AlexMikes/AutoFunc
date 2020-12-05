@@ -1,0 +1,36 @@
+:mod:`autofunc.counter_pandas`
+==============================
+
+.. py:module:: autofunc.counter_pandas
+
+.. autoapi-nested-parse::
+
+   This counts instances of function-flow combinations per component to find the frequency of each combination by
+   dividing it by all of the combinations for each component (# of occurrences / total occurrences).
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   autofunc.counter_pandas.counter_pandas
+
+
+.. function:: counter_pandas(dataframe)
+
+   Counts instances and sorts them by frequency
+
+   :param dataframe: A Pandas dataframe with the product information
+   :type dataframe: Pandas dataframe
+
+   :returns: Returns a dictionary of function and flow combinations sorted by frequency. The key is the
+             component and the value is a list of the structure: [function-flow, frequency]
+   :rtype: comb_sort
+
+

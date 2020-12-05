@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>:mod:autofunc.find_similarities &#8212; autofunc  documentation</title>
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="mod-autofunc-find-similarities">
+<h1>:mod:<code class="docutils literal notranslate"><span class="pre">autofunc.find_similarities</span></code><a class="headerlink" href="#mod-autofunc-find-similarities" title="Permalink to this headline">¶</a></h1>
+<p>.. py:module:: autofunc.find_similarities</p>
+<p>.. autoapi-nested-parse::</p>
+<p>Builds a similarity matrix with product IDs as the rows and headers and the similarity between each combination as
+the matrix value in that index. The diagonal is 1 because each product is 100% similar to itself.</p>
+<p>Similarity here is defined as the percentage of components that two products have in common. The matrix is not symmetric
+because each product can have a different number of components.</p>
+<div class="section" id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<p>Functions</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="o">..</span> <span class="n">autoapisummary</span><span class="p">::</span>
+
+   <span class="n">autofunc</span><span class="o">.</span><span class="n">find_similarities</span><span class="o">.</span><span class="n">find_similarities</span>
+
+
+<span class="o">..</span> <span class="n">function</span><span class="p">::</span> <span class="n">find_similarities</span><span class="p">(</span><span class="n">input_dataframe</span><span class="p">)</span>
+
+   <span class="n">Find</span> <span class="n">the</span> <span class="n">similarity</span> <span class="n">between</span> <span class="nb">all</span> <span class="n">products</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">repository</span>
+
+   <span class="p">:</span><span class="n">param</span> <span class="n">input_dataframe</span><span class="p">:</span> <span class="n">A</span> <span class="n">Pandas</span> <span class="n">dataframe</span> <span class="k">with</span> <span class="n">the</span> <span class="n">product</span> <span class="n">information</span>
+   <span class="p">:</span><span class="nb">type</span> <span class="n">input_dataframe</span><span class="p">:</span> <span class="n">Pandas</span> <span class="n">dataframe</span>
+
+   <span class="p">:</span><span class="n">returns</span><span class="p">:</span> <span class="n">Returns</span> <span class="n">a</span> <span class="n">Pandas</span> <span class="n">dataframe</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">nxn</span> <span class="n">matrix</span> <span class="nb">format</span> <span class="k">with</span> <span class="n">the</span> <span class="n">similarity</span> <span class="n">between</span> <span class="n">each</span> <span class="n">product</span>
+   <span class="p">:</span><span class="n">rtype</span><span class="p">:</span> <span class="n">similarity_df</span>
+
+
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">autofunc</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Alex Mikes.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/autoapi/autofunc/find_similarities/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
