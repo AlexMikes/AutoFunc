@@ -1,0 +1,36 @@
+:mod:`autofunc.write_results`
+=============================
+
+.. py:module:: autofunc.write_results
+
+.. autoapi-nested-parse::
+
+   Writes a dictionary to a .csv file in a format helpful for visualizing product information
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   autofunc.write_results.write_results_from_dict
+
+
+.. function:: write_results_from_dict(learned_dict, outfile, titles=None)
+
+   Writes a dictionary to a .csv file
+
+   :param learned_dict: The dictionary to write to a file. Can be the result of find_top_thresh
+   :type learned_dict: dict
+   :param outfile: The file name and/or path to write the .csv to
+   :type outfile: str
+
+   :returns:
+   :rtype: None
+
+
