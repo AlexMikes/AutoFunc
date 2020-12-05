@@ -10,6 +10,7 @@ os:
 install:
   - pip install -r requirements.txt
   - pip install pytest-cov
+  - pip install sphinx
 
 
 sudo: false
@@ -24,7 +25,7 @@ env:
 script:
     - pytest -vv --cov=./;
     - set -e
+    - pip install doctr
     - cd docs
     - make html
-    - pip install doctr
-    - doctr deploy --built-docs docs/ 
+    - doctr deploy --built-docs docs/
