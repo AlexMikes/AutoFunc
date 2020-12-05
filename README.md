@@ -57,6 +57,9 @@ pip install -U matplotlib
 
 ## Usage
 
+Every module has NumPy formatted docstrings to explain the inputs, outputs, and usage of each of them.
+Rudimentary API documentation can be found here: https://autofunc.readthedocs.io/
+
 Example files are provided in the examples folder. Autofunc will automate the functional representations of components
 as  long as the format of the .csv file has the component in column 1 and the function-flow in column 2
 
