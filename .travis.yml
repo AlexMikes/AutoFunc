@@ -11,5 +11,20 @@ install:
   - pip install -r requirements.txt
   - pip install pytest-cov
 
+
+sudo: false
+
+env:
+      global:
+        # Doctr deploy key for AlexMikes/AutoFunc
+        - secure: "k0ryFjvYijKjDQfbmCejHWVle8VG1pTqDkMX2AAm6k31rX3zCfi+HDarF1drDqmcU9tpXqmW5V6QF6VGKT/VFodGtfoBcz/GC4uDBLT0C789+dqdo+72niLB6Clrrsck1eu4GO29yunAX2NH0VbhBNbwSi0vyhJ7n/YXes8wpuMGdg7Ietg7ex01B0BRkWo5iY9FIaWuEicwMD38fGzrqZmpo7Rbg7rS8ZtLx3QtqsNdstcTPcJo1K+QkwditN5M5BX2+Bq3RlQTCMRQiLWhlaRT8rlr5zIFw7pPP1QW1O0AuHH4Z/wiITWA+P8D2EV2es3RatZIEnqL42N7tHWvMSAlDQ4IsaZU/EL6myKwjBPOEjGRB+3V2tmY5yiCVWisNIzeCCQ9OBtYO8j9K+UenSa4cQ2s+jNN4RHzzdOGRB43k/2Odxx3HcPW6tv3HfglOGeUeCfUaLmGiKVfv6MS2nRv5t4qfwqvwI4VassdZSXgSdy45ZFQtPrMQtOz8C2STdNjipHwtpgHH6kZAfFsZTOYm7rN46DhuG9mBNiIaZr1OAxyjCGVaBEQwSeYmC6JOPlj+BomhyE9K9LEN4f1LPE4zaOWkI1WuoLX20jAnqeGmqZUkbJisJWmqnODtbQZVyCXJXGklO8XljFKbHorgvzSUfuro+FD1XgeQrtBgCE="
+
+
+
 script:
     - pytest -vv --cov=./;
+    - set -e
+    - cd docs
+    - make html
+    - pip install doctr
+    - doctr deploy --built-docs docs/ 

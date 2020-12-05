@@ -27,8 +27,24 @@ author = 'Alex Mikes'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.napoleon','autoapi.extension']
+extensions = ['recommonmark','sphinx.ext.napoleon','autoapi.extension','sphinx.ext.napoleon','sphinx.ext.intersphinx']
 autoapi_dirs = ['../autofunc']
+
+napoleon_numpy_docstring = True
+
+intersphinx_mapping = {
+  'python': ('https://docs.python.org/3.6', None),
+  'pandas': ('http://pandas.pydata.org/pandas-docs/stable/', None),
+  'numpy': ('https://docs.scipy.org/doc/numpy/', None),
+}
+
+
+source_suffix = {
+  '.rst': 'restructuredtext',
+  '.txt': 'markdown',
+  '.md': 'markdown',
+}
+
 
 
 # Add any paths that contain templates here, relative to this directory.
