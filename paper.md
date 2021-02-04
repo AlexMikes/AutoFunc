@@ -23,7 +23,7 @@ bibliography: paper.bib
 
 ---
 
-# Summary
+# Statement of Need
 
 Engineering design is a multi-step process that uses various iterative tools to help improve products. Each component 
 in a product performs a corresponding set of subfunctions that contribute to the overall functionality 
@@ -36,6 +36,8 @@ and formatting of functional models, they are still highly subjective and time-c
 Because of the time requirements, inconsistencies, and inaccuracies involved with making them, functional models are 
 often omitted from the concept generation process, despite their useful contributions to the early stages of 
 engineering design [@Kurfman2003]. 
+
+# Summary
 
 ``AutoFunc`` is a Python package that automatically generates the functional representations of components based on data from 
 design repositories. The functional representations of components can be connected to form a complete functional model. 
